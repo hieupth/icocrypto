@@ -1,0 +1,15 @@
+{
+  "visible": 7,
+  "items": [
+    {"title": "Home", "url": "/"},
+    {"title": "About", "url": "#about"},
+    {"title": "Platform", "url": "#platform"},
+    {"title": "MVP", "url": "#mvp"},
+    {"title": "Tokens", "url": "#tokens"},
+    {"title": "Roadmap", "url": "#roadmap"},
+    {"title": "Contact", "url": "#contact"},
+    {"title": "Docs", "url": "#docs"},
+    {"title": "Team", "url": "#team"},
+    {"title": "Faqs", "url": "#faqs"}
+  ]
+}
