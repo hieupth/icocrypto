@@ -1,23 +1,34 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 import Modals from "@/components/elements/modals";
+import { useState } from "react";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+
+  const openHandle = () => {
+    setOpen(true);
+  };
+
+  const closeHandle = () => {
+    setOpen(false);
+  };
+
   return (
     <>
-      <Modals size="sm" position="center" open={true}>
+      <button onClick={openHandle}>Open</button>
+      <Modals size="sm" position="bottom" open={open} onClose={closeHandle}>
         <div className="row">
           <div className="col-6">
-          <h3>Test</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          </p>
+            <h3>Test</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            </p>
           </div>
           <div className="col-6">
-          <h3>Test</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          </p>
+            <h3>Test</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            </p>
           </div>
         </div>
       </Modals>

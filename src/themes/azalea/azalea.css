@@ -142,7 +142,8 @@ h6, .h6, .fz-6 { font-size: 0.94rem; }
 
 .nk-df-rel, .has-ovm, .has-bg, [class*='bg-'], .has-bg-image, .has-bg-video { position: relative; }
 
-.nk-df-over-up, .has-ovm > [class*=container], .has-ovm > *:not(.nk-ovm):not(.header-main):not(.nk-header):not([class*=ui-mask]), .has-bg-image > [class*=container], .has-bg-video > [class*=container] { position: relative; z-index: 5; }
+/* .nk-df-over-up, .has-ovm > [class*=container], .has-ovm > *:not(.nk-ovm):not(.header-main):not(.nk-header):not([class*=ui-mask]), .has-bg-image > [class*=container], .has-bg-video > [class*=container] { position: relative; z-index: 5; } */
+.nk-df-over-up, .has-ovm > [class*=container], .has-ovm > *:not(.nk-ovm):not(.header-main):not(.nk-header):not([class*=ui-mask]), .has-bg-image > [class*=container], .has-bg-video > [class*=container] { position: relative;}
 
 .nk-df-t, .nk-df-y { top: 0; }
 
@@ -6769,7 +6770,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
 /** 05.01 Header */
 .header-main { padding: 12px 0; transition: all .4s; }
 
-.is-transparent .header-main, .has-fixed .header-main { width: 100%; z-index: 49; }
+.is-transparent .header-main, .has-fixed .header-main { width: 100%; z-index: 1; }
 
 .is-transparent .header-main { position: absolute !important; }
 
