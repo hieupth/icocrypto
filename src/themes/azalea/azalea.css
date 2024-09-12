@@ -3228,7 +3228,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
 
 .modal-content { background: none; border: none; margin-left: auto; margin-right: auto; width: auto; max-width: 100%; }
 
-.modal-body { background: #fff; border-radius: 6px; }
+.modal-body { background: rgba(255, 255, 255, 0.05); border-radius: 6px; }
 
 @media (min-width: 575px) { .modal-dialog { padding: 0; } }
 
