@@ -1,45 +1,37 @@
 /**
- * Modals component
+ * VideoModals component
  * 
- * A customizable modal dialog that can be positioned and sized according to the props provided. 
- * It supports a close button and can handle click events outside the modal to close it.
+ * A modal dialog specifically designed for video content. It always appears in the center of the screen
+ * and has a fixed size.
  * 
  * @component
  * @example
- * <Modals open={true} size="xl" position="center" onClose={() => console.log('Modal closed')}>
- *   <h3>Header</h3>
- *   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
- * </Modals>
+ * <VideoModals open={true} onClose={() => console.log('Modal closed')}>
+ *   <video controls src="video-url.mp4" />
+ * </VideoModals>
  * 
- * @param {Object} props - The properties for the Modals component.
- * @param {('sm' | 'lg' | 'xl')} [props.size='xl'] - The size of the modal. Options are 'sm', 'lg', 'xl'.
- * @param {('top' | 'center' | 'bottom')} [props.position='center'] - The position of the modal. Options are 'top', 'center', 'bottom'.
- * @param {React.ReactNode} props.children - The content to be displayed inside the modal.
+ * @param {Object} props - The properties for the VideoModals component.
+ * @param {React.ReactNode} props.children - The content to be displayed inside the modal (e.g., video).
  * @param {boolean} props.open - Determines if the modal is open or closed.
  * @param {() => void} [props.onClose] - Optional callback function to be called when the modal is closed.
  * 
  * @author thinhphoenix
  */
 
-
 'use client';
 import React, { ReactNode, useCallback } from "react";
 
-interface ModalsProps {
-  size?: 'sm' | 'lg' | 'xl';
-  position?: 'top' | 'center' | 'bottom';
+interface VideoModalsProps {
   children: ReactNode;
   open: boolean;
   onClose?: () => void;
 }
 
-export default function Modals({ 
-  size = 'xl', 
-  position = 'center', 
+export default function VideoModals({ 
   children, 
   open, 
   onClose 
-}: ModalsProps) {
+}: VideoModalsProps) {
   const handleClose = useCallback(() => {
     onClose?.();
   }, [onClose]);
@@ -52,15 +44,11 @@ export default function Modals({
 
   if (!open) return null;
 
-  const modalSizeClass = size === 'xl' ? 'modal-xl' : size === 'lg' ? 'modal-lg' : '';
-  const modalPositionClass = position === 'center' ? 'modal-dialog-centered' : 
-                             position === 'bottom' ? 'modal-dialog-bottom' : '';
-
   return (
     <>
       <div
         className="modal-backdrop fade show"
-        style={{ zIndex: 50 }}
+        style={{ zIndex: 50, boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px" }}
         onClick={handleOverlayClick}
       />
       <div
@@ -73,7 +61,7 @@ export default function Modals({
         aria-modal="true"
         role="dialog"
       >
-        <div className={`modal-dialog ${modalSizeClass} ${modalPositionClass}`}>
+        <div className="modal-xl modal-dialog-centered">
           <div className="modal-content">
             <a
               href="#"
@@ -86,7 +74,12 @@ export default function Modals({
             >
               <em className="ti ti-close" />
             </a>
-            <div className="modal-body p-md-4 p-lg-5 mfp-s-ready mfp-iframe-holder">
+            <div className="modal-body btn-grp gutter-10px gutter-vr-10px"
+            style={{
+                padding: "0px",
+                objectFit: "fill",
+              }}
+              >
               {children}
             </div>
           </div>

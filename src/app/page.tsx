@@ -1,36 +1,17 @@
-'use client';
+import Ikon from "@/components/elements/ikon";
 import Modals from "@/components/elements/modals";
-import { useState } from "react";
+import PictureModals from "@/components/elements/picture-modals";
+import PlayVideos from "@/components/elements/play-videos";
+import VideoModals from "@/components/elements/video-modals";
+import Videos from "@/components/elements/videos";
+import Image from "next/image";
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-
-  const openHandle = () => {
-    setOpen(true);
-  };
-
-  const closeHandle = () => {
-    setOpen(false);
-  };
-
   return (
     <>
-      <button onClick={openHandle}>Open</button>
-      <Modals size="sm" position="bottom" open={open} onClose={closeHandle}>
-        <div className="row">
-          <div className="col-6">
-            <h3>Test</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            </p>
-          </div>
-          <div className="col-6">
-            <h3>Test</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            </p>
-          </div>
-        </div>
+      <Modals open={true} size="xl" position="center">
+        <h3>Header</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </Modals>
     </>
   );
