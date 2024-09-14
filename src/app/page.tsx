@@ -1,96 +1,52 @@
+'use client'
+
+import Ikon from "@/components/elements/ikon";
+import Modals from "@/components/elements/modals";
+import PictureModals from "@/components/elements/picture-modals";
+import PlayVideos from "@/components/elements/play-videos";
+import VideoModals from "@/components/elements/video-modals";
+import Videos from "@/components/elements/videos";
 import Image from "next/image";
-import styles from "./page.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [open, setOpen] = useState(false)
+  const [open2, setOpen2] = useState(false)
+
+  const openHandle = () => {
+    setOpen(true)
+  }
+
+  const closeHandle = () => {
+    setOpen(false)
+  }
+
+  const openHandle2 = () => {
+    setOpen2(true)
+  }
+
+  const closeHandle2 = () => {
+    setOpen2(false)
+  }
+
   return (
-    // <main className={styles.main}>
-    //   <div className={styles.description}>
-    //     <p>
-    //       Get started by editing&nbsp;
-    //       <code className={styles.code}>src/app/page.tsx</code>
-    //     </p>
-    //     <div>
-    //       <a
-    //         href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         By{" "}
-    //         <Image
-    //           src="/vercel.svg"
-    //           alt="Vercel Logo"
-    //           className={styles.vercelLogo}
-    //           width={100}
-    //           height={24}
-    //           priority
-    //         />
-    //       </a>
-    //     </div>
-    //   </div>
-
-    //   <div className={styles.center}>
-    //     <Image
-    //       className={styles.logo}
-    //       src="/next.svg"
-    //       alt="Next.js Logo"
-    //       width={180}
-    //       height={37}
-    //       priority
-    //     />
-    //   </div>
-
-    //   <div className={styles.grid}>
-    //     <a
-    //       href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       className={styles.card}
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <h2>
-    //         Docs <span>-&gt;</span>
-    //       </h2>
-    //       <p>Find in-depth information about Next.js features and API.</p>
-    //     </a>
-
-    //     <a
-    //       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       className={styles.card}
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <h2>
-    //         Learn <span>-&gt;</span>
-    //       </h2>
-    //       <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-    //     </a>
-
-    //     <a
-    //       href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       className={styles.card}
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <h2>
-    //         Templates <span>-&gt;</span>
-    //       </h2>
-    //       <p>Explore starter templates for Next.js.</p>
-    //     </a>
-
-    //     <a
-    //       href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-    //       className={styles.card}
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       <h2>
-    //         Deploy <span>-&gt;</span>
-    //       </h2>
-    //       <p>
-    //         Instantly deploy your Next.js site to a shareable URL with Vercel.
-    //       </p>
-    //     </a>
-    //   </div>
-    // </main>
-    <></>
+    <>
+      <Videos src="https://www.youtube.com/watch?v=3m30BWkkssA"
+      type={1}
+      thumb="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvZr3ZgReTYWifTT4rRFIl4h506L_mViQRAQ&s"
+      />
+      <button onClick={openHandle}>Open modals content <Ikon ico="ikon-bulb"/></button>
+        <Modals size="xl" position="center" open={open} onClose={closeHandle}>
+          <div className="row">
+              <img src="https://neweralive.na/wp-content/uploads/2024/06/lloyd-sikeba.jpg" className="col-6"/>
+              <div className="col-6">
+                <h3>Header</h3>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias provident optio aperiam est possimus veritatis, suscipit pariatur laboriosam deserunt aspernatur voluptas, eveniet beatae iure repudiandae aliquid. Debitis dolores vero nisi.</span>
+              </div>
+          </div>
+      </Modals>
+      <button onClick={openHandle2}>Open modals picture <Ikon ico="ikon-bulb"/></button>
+      <PictureModals src="https://neweralive.na/wp-content/uploads/2024/06/lloyd-sikeba.jpg" open={open2} onClose={closeHandle2}/>
+    </>
   );
 }
