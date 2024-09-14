@@ -1,21 +1,4 @@
-/**
- * PictureModals component
- * 
- * A modal dialog specifically designed for image content. It always appears in the center of the screen
- * and has a fixed size.
- * 
- * @component
- * @example
- * <PictureModals open={true} onClose={() => console.log('Modal closed')} src="image-url.jpg" />
- * 
- * @param {Object} props - The properties for the PictureModals component.
- * @param {string} props.src - The URL of the image to be displayed in the modal.
- * @param {boolean} props.open - Determines if the modal is open or closed.
- * @param {() => void} [props.onClose] - Optional callback function to be called when the modal is closed.
- * 
- * @author thinhphoenix
- */
-
+// PictureModals.tsx
 'use client';
 import Image from "next/image";
 import React, { useCallback } from "react";
@@ -82,7 +65,14 @@ export default function PictureModals({
                 height: "100%",
               }}
             >
-              <Image src={src} alt="Modal content" layout="intrinsic" width={800} height={600} />
+              <Image 
+                src={src} 
+                alt="Modal content" 
+                layout="intrinsic" 
+                width={600} 
+                height={400} 
+                style={{ maxWidth: "90%", maxHeight: "90%" }} 
+              />
             </div>
           </div>
         </div>

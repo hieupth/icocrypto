@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import PlayVideos from "@/components/elements/play-videos";
-import VideoModals from "@/components/elements/video-modals";
+import PlayVideos from "@/components/elements/element-play-videos";
+import VideoModals from "@/components/elements/element-video-modals";
 
 interface VideosProps {
   type?: number; // Make type optional

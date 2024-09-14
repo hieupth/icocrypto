@@ -1,11 +1,11 @@
 'use client'
 
-import Ikon from "@/components/elements/ikon";
-import Modals from "@/components/elements/modals";
-import PictureModals from "@/components/elements/picture-modals";
-import PlayVideos from "@/components/elements/play-videos";
-import VideoModals from "@/components/elements/video-modals";
-import Videos from "@/components/elements/videos";
+import Ikon from "@/components/elements/element-ikon";
+import Modals from "@/components/elements/element-modals";
+import PictureModals from "@/components/elements/element-picture-modals";
+import PlayVideos from "@/components/elements/element-play-videos";
+import VideoModals from "@/components/elements/element-video-modals";
+import Videos from "@/components/elements/element-videos";
 import Image from "next/image";
 import { useState } from "react";
 
