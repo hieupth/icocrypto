@@ -1,8 +1,7 @@
-import React from "react"
+import React from "react";
 
 const Input_bordered: React.FC = () => {
     return (
-
         <div className="field-item">
             <label className="field-label">Input Element</label>
             <div className="field-wrap">
@@ -26,7 +25,7 @@ const Form_Select: React.FC = () => {
                     <option value="option_d">Option D</option>
                 </select>
             </div>
-            <p>Use <code>.select</code> to activate select2 jQuery plugin for custom select field style. Use <code>data-select2-theme="bordered"</code> for a bordered style.</p>
+            <p>Use <code>.select</code> to activate select2 jQuery plugin for custom select field style. Use <code>data-select2-theme=&quot;bordered&quot;</code> for a bordered style.</p>
         </div>
     );
 }
@@ -44,14 +43,13 @@ const Form_Select_WithSearch: React.FC = () => {
                     <option value="option_d">Option D</option>
                 </select>
             </div>
-            <p>Use <code>data-search="on"</code> to enable search for the select2 element.</p>
+            <p>Use <code>data-search=&quot;on&quot;</code> to enable search for the select2 element.</p>
         </div>
     );
 }
 
 const Text_area: React.FC = () => {
     return (
-
         <div className="field-item">
             <label className="field-label">Textarea Element</label>
             <div className="field-wrap">
@@ -59,9 +57,9 @@ const Text_area: React.FC = () => {
             </div>
             <p>Use <code>.input-textarea</code> with input classes for textarea.</p>
         </div>
-
     );
 }
+
 const Check_box: React.FC = () => {
     return (
         <>
@@ -87,7 +85,6 @@ const Check_box: React.FC = () => {
             </ul>
             <p>Use <code>.input-checkbox</code> class for checkbox inputs.</p>
         </>
-
     );
 }
 
@@ -116,8 +113,6 @@ const Radio: React.FC = () => {
             </ul>
             <p>Use <code>.input-radio</code> class for radio inputs.</p>
         </>
-
-
     );
 }
 
@@ -145,15 +140,12 @@ const Switch: React.FC = () => {
                 </li>
             </ul>
             <p>Use <code>.input-switch</code> for switch inputs.</p>
-
         </>
-
     );
 }
 
 const Input_line: React.FC = () => {
     return (
-
         <div className="field-item">
             <div className="field-wrap input-focused">
                 <input name="inputname2" type="text" className="input-line" id="input-text-1" required />
@@ -161,13 +153,11 @@ const Input_line: React.FC = () => {
             </div>
             <p>Use <code>.input-line</code> class for line input. Add <code>.field-label .field-label-line</code> for label animation.</p>
         </div>
-
     );
 }
 
 const Form_line: React.FC = () => {
     return (
-
         <div className="field-item">
             <div className="field-wrap">
                 <select name="option1" className="select" data-select2-theme="line" required>
@@ -178,15 +168,13 @@ const Form_line: React.FC = () => {
                     <option value="option_d">Option D</option>
                 </select>
             </div>
-            <p>Use <code>.select</code> to activate select2 plugin for custom style, and <code>data-select2-theme="line"</code> for line style.</p>
+            <p>Use <code>.select</code> to activate select2 plugin for custom style, and <code>data-select2-theme=&quot;line&quot;</code> for line style.</p>
         </div>
-
     );
 }
 
 const Text_area_input: React.FC = () => {
     return (
-
         <div className="field-item">
             <div className="field-wrap input-focused">
                 <textarea name="textarea1" id="textarea" className="input-line input-textarea" required></textarea>
@@ -194,13 +182,11 @@ const Text_area_input: React.FC = () => {
             </div>
             <p>Use <code>.input-textarea</code> for textarea input.</p>
         </div>
-
     );
 }
 
 const Banner: React.FC = () => {
     return (
-
         <div className="header-banner bg-theme-grad">
             <div className="nk-banner">
                 <div className="banner banner-page">
@@ -220,53 +206,10 @@ const Banner: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="nk-ovm shape-a-sm"></div>
         </div>
     );
 }
 
-
-
-
-export default function Form() {
-    return (
-        <>
-            <Banner/>
-            <main className="nk-pages">
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title title-md ">Form Element Bordered</h3>
-                        <form action="#" className="form-validate">
-                            <Input_bordered />
-                            <Form_Select />
-                            <Form_Select_WithSearch />
-                            <Text_area />
-                            <Check_box />
-                            <Radio />
-                            <Switch />
-                            <button className="btn btn-grad">Verify</button>
-                        </form>
-                    </div>
-                </section>
-
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title title-md">Form Element Line</h3>
-                        <form action="#" className="form-validate">
-                            <Input_line />
-                            <Form_line />
-                            <Text_area_input />
-
-                            <button className="btn btn-grad">Verify</button>
-                        </form>
-                    </div>
-                </section>
-            </main>
-
-
-        </>
-
-
-    )
-
-}
+export {
+    Banner, Input_bordered, Form_Select, Form_Select_WithSearch, Text_area, Check_box, Radio, Switch, Input_line, Form_line, Text_area_input
+};
