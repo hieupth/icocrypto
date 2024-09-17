@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "@/themes/vendor.bundle.css";
 import './azalea.css';
 import Body from "@/components/body";
+import styles from "@/app/page.module.css"
 
 const AzaleaLayout = ({children} : Readonly<{children: ReactNode}>) => {
 
@@ -38,7 +39,7 @@ const AzaleaLayout = ({children} : Readonly<{children: ReactNode}>) => {
                 </li>
               </NavBar>
             </header>
-            <main className='nk-pages tc-light'>
+            <main className={`${styles.main} nk-pages tc-light `}>
               {children}
             </main>
           </div>
