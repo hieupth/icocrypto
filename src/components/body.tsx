@@ -18,7 +18,7 @@ export default function Body({
     setTouch(isTouch());
     setMobile(isMobile());
     setUserAgent(getUserAgent());
-  });
+  },[]);
 
   return (
     <body 
