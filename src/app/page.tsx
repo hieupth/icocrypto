@@ -1,5 +1,3 @@
-'use client'
-
 import Ikon from "@/components/elements/element-ikon";
 import Modals from "@/components/elements/element-modals";
 import PictureModals from "@/components/elements/element-picture-modals";
