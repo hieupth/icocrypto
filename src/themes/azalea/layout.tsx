@@ -6,7 +6,6 @@ import "@/themes/vendor.bundle.css";
 import styles from "@/app/page.module.css";
 import "./azalea.css";
 import Body from "@/components/body";
-import styles from "@/app/page.module.css"
 
 const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
     const navbarRefs = useRef<HTMLElement>(null);
