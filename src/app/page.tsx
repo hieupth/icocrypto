@@ -64,7 +64,7 @@ export default function Home() {
                         </AccordionItem>
                     </AccordionS1>
                 </TabItem>
-            </FAQsDefault>
+            </FAQDefault>
         </>
     );
 }
