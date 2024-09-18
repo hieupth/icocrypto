@@ -33,6 +33,7 @@ export const AccordionS1: React.FC<{
                             className={`accordion-item ${
                                 isActive ? "current" : ""
                             }`}
+                            
                         >
                             <h5
                                 className={`accordion-title accordion-title-sm ${
