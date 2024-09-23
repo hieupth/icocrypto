@@ -1,38 +1,43 @@
+import { ColorStyle, getColorStyleClass, Stylable } from '@/utils/colorclass'; // Thay đổi đường dẫn phù hợp
+import { getSizeStyleClass, SizeStylable, StyledSize } from '@/utils/sizeclass'; // Đường dẫn của file chứa StyledSize và getSizeStyleClass
 import React from 'react';
 
 // CustomButton Props Interface
 interface CustomButtonProps {
-    text: string;  // Text hiển thị trên nút hoặc badge
-    variant?: 'default' | 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'danger' | 'light' | 'dark' | 'grad';  // Loại nút hoặc badge
-    outline?: boolean;  // Có outline hay không
-    icon?: string;  // Icon class name (nếu có)
-    backgroundClass?: 'on-bg-light' | 'on-bg-light-alt' | 'on-bg-theme' | 'on-bg-theme-alt' | 'on-bg-theme-dark' | 'on-bg-theme-dark-alt';  // Lớp nền gradient
-    badgeText?: string;  // Text hiển thị trên badge
-    badgeVariant?: 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'danger' | 'light' | 'dark';  // Loại badge
-    badgeOutline?: boolean;  // Badge có outline hay không
-    badgeSize?: 'xs' | 'sm' | 'md';  // Kích thước badge
-    size?: 'sm' | 'md' | 'auto';  // Kích thước nút
-    onClick?: () => void;  // Sự kiện click (nếu có)
+    text: string;
+    variant?: ColorStyle;
+    outline?: boolean;
+    icon?: string;
+    backgroundClass?: Stylable;
+    badgeText?: string;
+    badgeVariant?: ColorStyle;
+    badgeOutline?: boolean;
+    badgeSize?: StyledSize; // Thay đổi kiểu dữ liệu để sử dụng StyledSize
+    size?: StyledSize; // Sử dụng StyledSize
+    onClick?: () => void;
 }
 
 // Reusable CustomButton Component
 const CustomButton: React.FC<CustomButtonProps> = ({
     text,
-    variant = 'default',
+    variant = ColorStyle.Default,
     outline = false,
     icon,
     backgroundClass,
     badgeText,
-    badgeVariant = 'primary',
+    badgeVariant = ColorStyle.Primary,
     badgeOutline = false,
     badgeSize,
     size,
     onClick
 }) => {
-    // Xác định lớp CSS của nút
-    const buttonClass = `btn ${outline ? 'btn-outline' : ''} btn-${variant} ${backgroundClass ? backgroundClass : ''} ${size ? `btn-${size}` : ''}`;
-    // Xác định lớp CSS của badge nếu có
-    const badgeClass = badgeText ? `badge ${badgeOutline ? 'badge-outline' : ''} badge-${badgeVariant} ${badgeSize ? `badge-${badgeSize}` : ''}` : '';
+    // Class của button sử dụng getSizeStyleClass
+    const buttonClass = `${Stylable.Button} ${getColorStyleClass(Stylable.Button, variant, outline)} ${getSizeStyleClass(SizeStylable.Button, size)}`;
+
+    // Class của badge nếu có, sử dụng getSizeStyleClass cho badgeSize
+    const badgeClass = badgeText
+        ? `${Stylable.Badge} ${getColorStyleClass(Stylable.Badge, badgeVariant, badgeOutline)} ${getSizeStyleClass(SizeStylable.Badge, badgeSize)}`
+        : '';
 
     return (
         <a href="#" className={buttonClass} onClick={onClick}>

@@ -17,11 +17,26 @@ const enum Stylable {
   Text = 'tc',
   Button = 'btn',
   Background = 'bg',
-  ThemeBackground = 'bg-theme'
+  ThemeBackground = 'bg-theme',
+  Badge = 'badge',
+  OnBackground = 'on-bg',
+  Border = 'bd',
 }
 
-const getColorStyleClass = (item: Stylable, color?: StyledColor | string, alt?: boolean) => {
-  return item + color ? color : StyledColor.Default + alt ? '-alt' : ''
-}
+const getColorStyleClass = (
+  item: Stylable,
+  color?: StyledColor | string,
+  alt?: boolean,
+  dark?: boolean
+) => {
+  return (
+    item +
+    (color ? `-${color}` : '') + // Chỉ thêm màu nếu nó được cung cấp
+    (dark ? '-dark' : '') + // Tùy chọn cho dark class
+    (alt ? '-alt' : '') // Tùy chọn cho alt class
+  );
+};
 
-export {StyledColor as ColorStyle, Stylable, getColorStyleClass}
+export { StyledColor as ColorStyle, Stylable, getColorStyleClass };
+
+
