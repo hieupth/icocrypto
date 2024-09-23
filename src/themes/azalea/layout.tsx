@@ -1,11 +1,11 @@
 "use client";
-import { ReactNode, useEffect, useRef } from "react";
-import NavBar from "@/components/navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@/themes/vendor.bundle.css";
 import styles from "@/app/page.module.css";
-import "./azalea.css";
 import Body from "@/components/body";
+import NavBar from "@/components/navbar";
+import "@/themes/vendor.bundle.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ReactNode, useEffect, useRef } from "react";
+import "./azalea.css";
 
 const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
     const navbarRefs = useRef<HTMLElement>(null);
