@@ -71,7 +71,7 @@ export default function PictureModals({
                 layout="intrinsic" 
                 width={600} 
                 height={400} 
-                style={{ maxWidth: "90%", maxHeight: "90%" }} 
+                style={{ maxWidth: "70%", maxHeight: "70%" }} 
               />
             </div>
           </div>
