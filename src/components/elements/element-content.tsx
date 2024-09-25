@@ -116,10 +116,14 @@ export const ContentTextBlockHead: React.FC<
 export const ContentTitleX1 = ({
     children,
     title,
-}: React.PropsWithChildren<{ title: string }>) => {
+    mainTitle,
+}: React.PropsWithChildren<{ title: string; mainTitle: string }>) => {
     return (
-        <h2 className="title title-xl" title={title}>
+        <div className="section-head section-head-s2 text-center">
+            <h2 className="title title-xl" title={title}>
+                {mainTitle}
+            </h2>
             {children}
-        </h2>
+        </div>
     );
 };

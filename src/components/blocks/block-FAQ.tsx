@@ -1,6 +1,6 @@
 import { Accordion, AccordionItem } from "../elements/element-accordion";
 import { TabItem, TabS1, TabS2, TabS3, TabS4 } from "../elements/element-tab";
-import { getColorStyleClass, ColorStyle, Stylable } from "@/utils/colorclass";
+import { ColorStyle, Stylable } from "@/utils/colorclass";
 
 interface FAQItem {
     title: string;
@@ -40,14 +40,14 @@ export const BlockFAQ: React.FC<BlockFAQProps> = ({
             ? TabS3
             : variant === "S4"
             ? TabS4
-            : TabS1; // Add additional logic for S3 and S4 if needed
+            : TabS1;
     const AccodionComponent =
         variant === "S1"
             ? "S1"
             : variant === "S2"
             ? "S3"
             : variant === "S3"
-            ? "S3"
+            ? "S2"
             : variant === "S4"
             ? "S4"
             : "S1";

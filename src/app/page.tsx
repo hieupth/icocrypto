@@ -57,7 +57,12 @@ export default function Home() {
     ];
     return (
         <>
-            <BlockFAQ variant="S2" tabs={tabData} color={ColorStyle.Default} />
+            <ContentTitleX1 title="what are you doing?" mainTitle="ABC">
+                <p>
+                    Answer about participation.Answer about participation.Answer
+                    about participation.
+                </p>
+            </ContentTitleX1>
         </>
     );
 }
