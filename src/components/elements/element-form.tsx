@@ -342,35 +342,40 @@ export const FormInputLine: React.FC<InputLineProps> = ({ name, label, required 
         setValue(e.target.value);
     };
 
-    const fieldWrapStyle = {
+    const fieldWrapStyle: React.CSSProperties = {
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '16px',
     };
-
-    const inputStyle = {
-        width: '100%',
-        padding: '12px 8px',
+    
+    const inputStyle: React.CSSProperties = {
+        padding: '8px',
         border: '1px solid #ccc',
         borderRadius: '4px',
-        transition: 'border-color 0.3s',
+        outline: 'none',
+        width: '100%',
+        fontSize: '16px',
     };
-
-    const inputFocusStyle = {
-        borderColor: '#007bff', 
+    
+    const inputFocusStyle: React.CSSProperties = {
+        border: '1px solid #007bff', 
     };
-
-    const labelStyle = {
+    
+    const labelStyle: React.CSSProperties = {
         position: 'absolute',
-        left: '8px',
-        top: '12px',
+        top: '50%',
+        left: '10px',
+        transform: 'translateY(-50%)',
+        transition: '0.2s ease all',
         fontSize: '16px',
         color: '#999',
-        transition: 'all 0.3s ease',
     };
-
-    const labelFloatStyle = {
-        top: '-8px',
-        left: '6px',
-        fontSize: '12px', 
+    
+    const labelFloatStyle: React.CSSProperties = {
+        top: '0',
+        fontSize: '12px',
+        color: '#007bff',
     };
 
     return (
@@ -396,24 +401,14 @@ export const FormInputLine: React.FC<InputLineProps> = ({ name, label, required 
 };
 interface FormSelectLineProps {
     name: string;
-    options: { value: string; label: string }[]; 
+    options: { value: string; label: string }[];
     required?: boolean;
 }
 
 export const FormSelectLine: React.FC<FormSelectLineProps> = ({ name, options, required }) => {
     const [selectedValue, setSelectedValue] = useState('');
 
-    useEffect(() => {
-    
-        $(`select[name="${name}"]`).select2({
-            theme: 'line' 
-        });
-
-        return () => {
-            $(`select[name="${name}"]`).select2('destroy');
-        };
-    }, [name]);
-
+    // Xử lý khi người dùng chọn một tùy chọn
     const handleSelect = (value: string) => {
         setSelectedValue(value);
     };
@@ -422,11 +417,11 @@ export const FormSelectLine: React.FC<FormSelectLineProps> = ({ name, options, r
         <div className="field-item">
             <div className="field-wrap">
                 <select 
-                    name={name} 
-                    value={selectedValue} 
-                    onChange={(e) => handleSelect(e.target.value)} 
-                    required={required} 
-                    data-select2-theme="line" 
+                    name={name}
+                    value={selectedValue}
+                    onChange={(e) => handleSelect(e.target.value)} // Khi thay đổi giá trị
+                    required={required}
+                    className="form-select-line" // Thêm className để style
                 >
                     <option value="">Please select</option>
                     {options.map(option => (
