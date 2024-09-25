@@ -24,16 +24,14 @@ export default function Home() {
           marginTop: "5%",
         }}>
           <CustomButton
-            text="Private Sale"
             variant={ColorStyle.Primary}
             borderRadius={SizeStylable.BorderRadius}
-          />
+          >Private Sale</CustomButton>
           <CustomButton
-            text="Private Token"
             outline={ColorStyle.Outline}
             variant={ColorStyle.Primary}
             borderRadius={SizeStylable.BorderRadius}
-          />
+          >Private Token</CustomButton>
         </div>
       </PageHeader>
       <section style={{
