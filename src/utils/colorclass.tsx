@@ -10,7 +10,8 @@ const enum StyledColor {
   Success = 'success',
   Info = 'info',
   Warning = 'warning',
-  Danger = 'danger'
+  Danger = 'danger',
+  Outline = 'outline',
 }
 
 const enum Stylable {
