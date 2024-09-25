@@ -2090,12 +2090,12 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next@14.2.4:
-  version "14.2.4"
-  resolved "https://registry.npmjs.org/next/-/next-14.2.4.tgz"
-  integrity sha512-R8/V7vugY+822rsQGQCjoLhMuC9oFj9SOi4Cl4b2wjDrseD0LRZ10W7R6Czo4w9ZznVSshKjuIomsRjvm9EKJQ==
+next@^14.2.12:
+  version "14.2.12"
+  resolved "https://registry.npmjs.org/next/-/next-14.2.12.tgz"
+  integrity sha512-cDOtUSIeoOvt1skKNihdExWMTybx3exnvbFbb9ecZDIxlvIbREQzt9A5Km3Zn3PfU+IFjyYGsHS+lN9VInAGKA==
   dependencies:
-    "@next/env" "14.2.4"
+    "@next/env" "14.2.12"
     "@swc/helpers" "0.5.5"
     busboy "1.6.0"
     caniuse-lite "^1.0.30001579"
@@ -2103,15 +2103,15 @@ next@14.2.4:
     postcss "8.4.31"
     styled-jsx "5.1.1"
   optionalDependencies:
-    "@next/swc-darwin-arm64" "14.2.4"
-    "@next/swc-darwin-x64" "14.2.4"
-    "@next/swc-linux-arm64-gnu" "14.2.4"
-    "@next/swc-linux-arm64-musl" "14.2.4"
-    "@next/swc-linux-x64-gnu" "14.2.4"
-    "@next/swc-linux-x64-musl" "14.2.4"
-    "@next/swc-win32-arm64-msvc" "14.2.4"
-    "@next/swc-win32-ia32-msvc" "14.2.4"
-    "@next/swc-win32-x64-msvc" "14.2.4"
+    "@next/swc-darwin-arm64" "14.2.12"
+    "@next/swc-darwin-x64" "14.2.12"
+    "@next/swc-linux-arm64-gnu" "14.2.12"
+    "@next/swc-linux-arm64-musl" "14.2.12"
+    "@next/swc-linux-x64-gnu" "14.2.12"
+    "@next/swc-linux-x64-musl" "14.2.12"
+    "@next/swc-win32-arm64-msvc" "14.2.12"
+    "@next/swc-win32-ia32-msvc" "14.2.12"
+    "@next/swc-win32-x64-msvc" "14.2.12"
 
 object-assign@^4.1.1:
   version "4.1.1"
