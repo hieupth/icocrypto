@@ -20,7 +20,6 @@ const enum StyledSize {
     H4 = 'h4',
     H5 = 'h5',
     H6 = 'h6',
-
 }
 
 
@@ -30,7 +29,7 @@ const enum SizeStylable {
     BorderRadius = 'round',
     Text = 'text',
     Button = 'btn',
-    PLayBuuton = 'btn-play',
+    PLayButton = 'btn-play',
     Badge = 'badge',
     Countdown = 'countdown',
     Alert = 'alert',
@@ -40,6 +39,8 @@ const enum SizeStylable {
     Uppercase = 'ttu',
     Lowercase = 'ttl',
     NoneTrans = 'ttn',
+    PageHeader = `banner-page`,
+    Modal = `modal`
  }
 
 const getSizeStyleClass = (
