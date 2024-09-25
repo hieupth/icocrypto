@@ -11,9 +11,17 @@ interface ContentProps {
 }
 
 // Generalized component for all content elements
-const ContentComponent =
-    (className: string, Tag: keyof JSX.IntrinsicElements = "div") =>
-    ({ children, color, size, alt, dark }: ContentProps) => {
+const createContentComponent = (
+    className: string,
+    Tag: keyof JSX.IntrinsicElements = "div"
+) => {
+    const ContentComponent: React.FC<ContentProps> = ({
+        children,
+        color,
+        size,
+        alt,
+        dark,
+    }) => {
         const colorClass = getColorStyleClass(Stylable.Text, color, alt, dark);
         const sizeClass = getSizeStyleClass(SizeStylable.Text, size, alt);
         return (
@@ -22,23 +30,28 @@ const ContentComponent =
             </Tag>
         );
     };
+    ContentComponent.displayName = `Content${
+        Tag.charAt(0).toUpperCase() + Tag.slice(1)
+    }`;
+    return ContentComponent;
+};
 
 // Consolidating all content components into a single export
 export const Content = {
-    TextBlock: ContentComponent("nk-block-text"),
-    Head: ContentComponent("section-head text-center wide-auto-sm"),
-    TitleHead: ContentComponent("title title-lg title-dark", "h4"),
-    TitleMd: ContentComponent("title title-md", "h4"),
-    TitleXs: ContentComponent("title title-xs tc-primary", "h6"),
-    TitleLight: ContentComponent("title title-light", "h2"),
-    TitleXsLight: ContentComponent("title-xs title-light", "h6"),
-    TitleS2: ContentComponent("title title-s2", "h2"),
-    TitleS3: ContentComponent("title title-s3", "h2"),
-    Lead: ContentComponent("lead", "p"),
-    Center: ContentComponent("text-center"),
+    TextBlock: createContentComponent("nk-block-text"),
+    Head: createContentComponent("section-head text-center wide-auto-sm"),
+    TitleHead: createContentComponent("title title-lg title-dark", "h4"),
+    TitleMd: createContentComponent("title title-md", "h4"),
+    TitleXs: createContentComponent("title title-xs tc-primary", "h6"),
+    TitleLight: createContentComponent("title title-light", "h2"),
+    TitleXsLight: createContentComponent("title-xs title-light", "h6"),
+    TitleS2: createContentComponent("title title-s2", "h2"),
+    TitleS3: createContentComponent("title title-s3", "h2"),
+    Lead: createContentComponent("lead", "p"),
+    Center: createContentComponent("text-center"),
 };
 
-export const ContentNkBlock = () => (
+export const ContentNkBlock: React.FC = () => (
     <>
         <div className="gap-3x"></div>
         <div className="hr"></div>
@@ -46,7 +59,7 @@ export const ContentNkBlock = () => (
     </>
 );
 
-export const ContentNkBlockE = () => (
+export const ContentNkBlockE: React.FC = () => (
     <>
         <div className="hr mt-0"></div>
         <div className="gap-3x"></div>
@@ -54,8 +67,8 @@ export const ContentNkBlockE = () => (
 );
 
 // List components with color and size support
-export const ContentListDot = ContentComponent("list list-dot", "ul");
-export const ContentListCheck = ContentComponent("list list-check", "ul");
+export const ContentListDot = createContentComponent("list list-dot", "ul");
+export const ContentListCheck = createContentComponent("list list-check", "ul");
 
 // Title component with optional line breaks, color, and size support
 export const ContentTitle: React.FC<ContentProps> = ({
@@ -74,10 +87,10 @@ export const ContentTitle: React.FC<ContentProps> = ({
         )} ${getSizeStyleClass(SizeStylable.Text, size, alt)}`}
     >
         {React.Children.map(children, (child, index) => (
-            <>
+            <React.Fragment key={`fragment-${index}`}>
                 {child}
                 <br key={`br-${index}`} className="d-none d-md-block" />
-            </>
+            </React.Fragment>
         ))}
     </h2>
 );
