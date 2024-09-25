@@ -1,178 +1,112 @@
 import React from "react";
+import { getColorStyleClass, Stylable, ColorStyle } from "@/utils/colorclass";
+import { getSizeStyleClass, SizeStylable, StyledSize } from "@/utils/sizeclass";
 
-interface ListDotProps {
+interface ContentProps {
+    color?: ColorStyle | string;
+    size?: StyledSize | string;
+    alt?: boolean;
+    dark?: boolean;
     children: React.ReactNode;
 }
 
-export const ContentTextBlock = ({ children }: React.PropsWithChildren<{}>) => {
-    return <div className={`nk-block-text`}>{children}</div>;
-};
-export const ContentHead = ({ children }: React.PropsWithChildren<{}>) => {
-    return (
-        <div className={`section-head text-center wide-auto-sm`}>
-            {children}
-        </div>
-    );
-};
-export const ContentTitleHead = ({ children }: React.PropsWithChildren<{}>) => {
-    return <h4 className={`title title-lg title-dark`}>{children}</h4>;
-};
-export const ContentNkBlock = ({ children }: React.PropsWithChildren<{}>) => {
-    return (
-        <>
-            <div className="gap-3x"></div>
-            <div className="hr"></div>
-            <div className="gap-3x"></div>
-        </>
-    );
-};
-export const ContentNkBlockE = ({ children }: React.PropsWithChildren<{}>) => {
-    return (
-        <>
-            <div className="hr mt-0"></div>
-            <div className="gap-3x"></div>
-        </>
-    );
-};
-export const ContentTitleMd = ({ children }: React.PropsWithChildren<{}>) => {
-    return <h4 className={`title title-md`}>{children}</h4>;
-};
-export const ContentTitleXs = ({ children }: React.PropsWithChildren<{}>) => {
-    return <h6 className={`title title-xs tc-primary`}>{children}</h6>;
-};
-export const ContentTitleLight = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return <h2 className={`title title-light`}>{children}</h2>;
-};
-export const ContentTitleXsLight = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return <h6 className={`title-xs title-light`}>{children}</h6>;
-};
-export const ContentTitleS2 = ({ children }: React.PropsWithChildren<{}>) => {
-    return <h2 className={`title title-s2`}>{children}</h2>;
+// Generalized component for all content elements
+const createContentComponent = (
+    className: string,
+    Tag: keyof JSX.IntrinsicElements = "div"
+) => {
+    const ContentComponent: React.FC<ContentProps> = ({
+        children,
+        color,
+        size,
+        alt,
+        dark,
+    }) => {
+        const colorClass = getColorStyleClass(Stylable.Text, color, alt, dark);
+        const sizeClass = getSizeStyleClass(SizeStylable.Text, size, alt);
+        return (
+            <Tag className={`${className} ${colorClass} ${sizeClass}`}>
+                {children}
+            </Tag>
+        );
+    };
+    ContentComponent.displayName = `Content${
+        Tag.charAt(0).toUpperCase() + Tag.slice(1)
+    }`;
+    return ContentComponent;
 };
 
-export const ContentTitleS3 = ({ children }: React.PropsWithChildren<{}>) => {
-    return <h2 className={`title title-s3`}>{children}</h2>;
-};
-export const ContentTitleX1 = ({
-    children,
-    title,
-}: React.PropsWithChildren<{ title: string }>) => {
-    return (
-        <h2 className="title title-xl" title="What and Why">
-            {children}
-        </h2>
-    );
-};
-export const ContentListDot: React.FC<ListDotProps> = ({ children }) => {
-    return <ul className="list list-dot">{children}</ul>;
-};
-export const ContentTitle: React.FC<ListDotProps> = ({ children }) => {
-    return (
-        <h2 className="title">
-            {React.Children.map(children, (child, index) => (
-                <>
-                    {child}
-                    <br key={`br-${index}`} className="d-none d-md-block" />
-                </>
-            ))}
-        </h2>
-    );
-};
-export const ContentListCheck: React.FC<ListDotProps> = ({ children }) => {
-    return <ul className="list list-check">{children}</ul>;
-};
-export const ContentLead = ({ children }: React.PropsWithChildren<{}>) => {
-    return <p className={`lead`}>{children}</p>;
-};
-export const ContentCenter = ({ children }: React.PropsWithChildren<{}>) => {
-    return <div className={`text-center`}>{children}</div>;
+// Consolidating all content components into a single export
+export const Content = {
+    TextBlock: createContentComponent("nk-block-text"),
+    Head: createContentComponent("section-head text-center wide-auto-sm"),
+    TitleHead: createContentComponent("title title-lg title-dark", "h4"),
+    TitleMd: createContentComponent("title title-md", "h4"),
+    TitleXs: createContentComponent("title title-xs tc-primary", "h6"),
+    TitleLight: createContentComponent("title title-light", "h2"),
+    TitleXsLight: createContentComponent("title-xs title-light", "h6"),
+    TitleS2: createContentComponent("title title-s2", "h2"),
+    TitleS3: createContentComponent("title title-s3", "h2"),
+    Lead: createContentComponent("lead", "p"),
+    Center: createContentComponent("text-center"),
 };
 
-export const ContentTextBlockHeadS9 = ({
+export const ContentNkBlock: React.FC = () => (
+    <>
+        <div className="gap-3x"></div>
+        <div className="hr"></div>
+        <div className="gap-3x"></div>
+    </>
+);
+
+export const ContentNkBlockE: React.FC = () => (
+    <>
+        <div className="hr mt-0"></div>
+        <div className="gap-3x"></div>
+    </>
+);
+
+// List components with color and size support
+export const ContentListDot = createContentComponent("list list-dot", "ul");
+export const ContentListCheck = createContentComponent("list list-check", "ul");
+
+// Title component with optional line breaks, color, and size support
+export const ContentTitle: React.FC<ContentProps> = ({
     children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div className={`section-head section-head-s9 wide-auto-sm`}>
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS8 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div
-            className={`section-head section-head-s8 wide-auto-sm text-center`}
-        >
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS7 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div
-            className={`section-head section-head-s7 wide-auto-sm text-center`}
-        >
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS6 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div
-            className={`section-head section-head-s6 wide-auto-sm text-center`}
-        >
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS5 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div
-            className={`section-head section-head-s5 wide-auto-sm text-center`}
-        >
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS4 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
+    color,
+    size,
+    alt,
+    dark,
+}) => (
+    <h2
+        className={`title ${getColorStyleClass(
+            Stylable.Text,
+            color,
+            alt,
+            dark
+        )} ${getSizeStyleClass(SizeStylable.Text, size, alt)}`}
+    >
+        {React.Children.map(children, (child, index) => (
+            <React.Fragment key={`fragment-${index}`}>
+                {child}
+                <br key={`br-${index}`} className="d-none d-md-block" />
+            </React.Fragment>
+        ))}
+    </h2>
+);
+
+// Generalized Section Head component with variant support
+export const ContentTextBlockHead: React.FC<
+    ContentProps & { variant: string }
+> = ({ children, color, size, alt, dark, variant }) => {
     return (
         <div
-            className={`section-head section-head-s4 wide-auto-sm text-center`}
-        >
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS3 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div
-            className={`section-head section-head-s3 wide-auto-sm text-center`}
-        >
-            {children}
-        </div>
-    );
-};
-export const ContentTextBlockHeadS2 = ({
-    children,
-}: React.PropsWithChildren<{}>) => {
-    return (
-        <div
-            className={`section-head section-head-s2 wide-auto-sm text-center`}
+            className={`section-head section-head-${variant} wide-auto-sm text-center ${getColorStyleClass(
+                Stylable.Text,
+                color,
+                alt,
+                dark
+            )} ${getSizeStyleClass(SizeStylable.Text, size, alt)}`}
         >
             {children}
         </div>
