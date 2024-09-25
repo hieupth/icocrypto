@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import CustomButton from "./element-button";
 
 // Define interface for TabItem props
 interface TabItemProps {
@@ -84,7 +85,7 @@ export const TabS2: React.FC<{
     return (
         <div className="row justify-content-center">
             <div className="col-lg-10">
-                <ul className="nav tab-nav tab-nav-btn">
+                <ul className="nav tab-nav tab-nav-btn tab-nav-btn-bdr tab-nav-center pdb-r">
                     {React.Children.map(children, (child) => {
                         const element =
                             child as React.ReactElement<TabItemProps>;
@@ -102,7 +103,7 @@ export const TabS2: React.FC<{
                                     href={`#${element.props.id}`}
                                     data-bs-toggle="tab"
                                 >
-                                    <em className="fas fa-caret-right"></em>
+                                    {/* <em className="fas fa-caret-right"></em> */}
                                     {element.props.title}
                                 </a>
                             </li>

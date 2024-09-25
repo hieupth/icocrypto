@@ -45,7 +45,7 @@ export const BlockFAQ: React.FC<BlockFAQProps> = ({
         variant === "S1"
             ? "S1"
             : variant === "S2"
-            ? "S2"
+            ? "S3"
             : variant === "S3"
             ? "S3"
             : variant === "S4"
