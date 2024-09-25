@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ReactNode, useEffect, useRef } from "react";
 import "./azalea.css";
 import ParticleBackground from "@/components/particlebackground";
+import PageHeader from "@/components/blocks/page-header";
+import CustomButton from "@/components/elements/element-button";
 
 const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
     const navbarRefs = useRef<HTMLElement>(null);
@@ -48,7 +50,7 @@ const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
                             </li>
                         </NavBar>
                     </header>
-                    <main className={`nk-pages tc-light ${styles.main}`}>
+                    <main className={`nk-pages tc-light`}>
                         {children}
                     </main>
                 </div>
@@ -64,7 +66,8 @@ const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
                     />
                 <div className="nk-ovm nk-ovm-repeat nk-ovm-fixed shape-i"
                 style={{
-                    zIndex:"-99"
+                    zIndex:"-99",
+                    height: "100vh"
                 }}
                 >
                     <div className="ovm-line"></div>
