@@ -1,4 +1,3 @@
-import Countdown from "@/components/Countdown";
 import React from 'react';
 
 const Banner: React.FC = () => {
@@ -44,7 +43,7 @@ export default function Element_Countdown() {
                                 <div className="col-lg-6 mgb-l">
                                     <div className="countdown countdown-s3" data-date="2023/04/27" data-min-text="Minutes" data-sec-text="Seconds"></div>
                                 </div>
-                                <Countdown title="" percent="" caption="" subtitle="" endDate="10/01/2024"></Countdown>
+                                {/* <Countdown title="" percent="" caption="" subtitle="" endDate="10/01/2024"></Countdown> */}
 
                                 <div className="col-lg-6 text-center">
                                     <h4 className="title title-sm">Small Countdown</h4>

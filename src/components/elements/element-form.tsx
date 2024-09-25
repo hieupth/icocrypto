@@ -1,178 +1,449 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useCallback,TextareaHTMLAttributes  } from "react"
+import Select from "react-select"; 
+import $ from 'jquery';
+import 'select2'; 
+import 'select2/dist/css/select2.css'; 
 
-// Input Bordered Component
+
+
 interface InputProps {
     name: string;
     label: string;
 }
 
-const InputBordered: React.FC<InputProps> = ({ name, label }) => (
-    <div className="field-item">
-        <label className="field-label">{label}</label>
+export const FormInputBordered: React.FC<InputProps> = ({ name, label }) => {
+    const [isFocused, setIsFocused] = useState(false);
+    const [inputValue, setInputValue] = useState('');
+  
+    const handleFocus = useCallback(() => setIsFocused(true), []);
+    const handleBlur = useCallback(() => setIsFocused(false), []);
+    
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+      setInputValue(e.target.value);
+    }, []);
+  
+    return (
+      <div className="field-item">
+        <label className={`field-label ${isFocused || inputValue ? 'field-label-float' : ''}`}>{label}</label>
         <div className="field-wrap">
-            <input name={name} type="text" className="input-bordered" required />
+          <input
+            name={name}
+            type="text"
+            className="input-bordered"
+            required
+            value={inputValue}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onChange={handleChange}
+          />
         </div>
-        <p>Use <code>.input-bordered</code> class with input element to make it bordered.</p>
-    </div>
-);
+      </div>
+    );
+  };
+  
 
-// Form Select Component
+
+
+
 interface SelectProps {
     name: string;
     label: string;
     options: { value: string; label: string }[];
 }
 
-const FormSelect: React.FC<SelectProps> = ({ name, label, options }) => (
-    <div className="field-item">
-        <label className="field-label">{label}</label>
-        <div className="field-wrap">
-            <select name={name} className=".select2-container.select-bordered .select2-selection" data-select2-theme="bordered" required>
-                <option value="">Please select</option>
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>{option.label}</option>
-                ))}
-            </select>
-        </div>
-        <p>Use <code>.select-bordered</code> for bordered select element styling.</p>
-    </div>
-);
+export const FormSelect: React.FC<SelectProps> = ({ name, label, options }) => {
+    const [isFocused, setIsFocused] = useState(false);
+    const [selectedValue, setSelectedValue] = useState('');
 
-// Text Area Component
-const TextArea: React.FC<InputProps> = ({ name, label }) => (
-    <div className="field-item">
-        <label className="field-label">{label}</label>
-        <div className="field-wrap">
-            <textarea name={name} className="input-bordered input-textarea" required></textarea>
-        </div>
-        <p>Use <code>.input-textarea</code> class for textarea.</p>
-    </div>
-);
+    const handleFocus = useCallback(() => setIsFocused(true), []);
+    const handleBlur = useCallback(() => setIsFocused(false), []);
 
-// Checkbox Component
-const CheckBox: React.FC<{ items: string[] }> = ({ items }) => (
-    <>
-        <ul className="d-flex flex-wrap gutter-30px">
-            {items.map((item, index) => (
-                <li className="mb-3" key={index}>
-                    <div className="field-wrap">
-                        <input className="input-checkbox" id={`cbi-${index}`} name={`cbi[]`} type="checkbox" required />
-                        <label htmlFor={`cbi-${index}`}>{item}</label>
-                    </div>
-                </li>
-            ))}
-        </ul>
-        <p>Use <code>.input-checkbox</code> class for checkbox inputs.</p>
-    </>
-);
-
-// Radio Component
-const Radio: React.FC<{ items: string[] }> = ({ items }) => (
-    <>
-        <ul className="d-flex flex-wrap gutter-30px">
-            {items.map((item, index) => (
-                <li className="mb-3" key={index}>
-                    <div className="field-wrap">
-                        <input className="input-radio" id={`rdi-${index}`} name="rdi" type="radio" required />
-                        <label htmlFor={`rdi-${index}`}>{item}</label>
-                    </div>
-                </li>
-            ))}
-        </ul>
-        <p>Use <code>.input-radio</code> class for radio inputs.</p>
-    </>
-);
-
-// Switch Component
-const Switch: React.FC<{ items: string[] }> = ({ items }) => (
-    <>
-        <ul className="d-flex flex-wrap gutter-30px">
-            {items.map((item, index) => (
-                <li className="mb-3" key={index}>
-                    <div className="field-wrap">
-                        <input className="input-switch" id={`switch-${index}`} name={`switch[]`} type="checkbox" required />
-                        <label htmlFor={`switch-${index}`}>{item}</label>
-                    </div>
-                </li>
-            ))}
-        </ul>
-        <p>Use <code>.input-switch</code> for switch inputs.</p>
-    </>
-);
-
-// Banner Component
-const Banner: React.FC = () => (
-    <div className="header-banner bg-theme-grad">
-        <div className="nk-banner">
-            <div className="banner banner-page">
-                <div className="banner-wrap">
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-xl-6 col-lg-9">
-                                <div className="banner-caption cpn tc-light text-center">
-                                    <div className="cpn-head">
-                                        <h2 className="title ttu">Form</h2>
-                                        <p>We designed a brand-new cool design and lots of features, the latest version of the template supports advanced block base scenarios, and more.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="nk-ovm shape-a-sm"></div>
-        </div>
-    </div>
-);
-
-// Main Form Component
-const Form: React.FC = () => {
-    const selectOptions = [
-        { value: "option_a", label: "Option A" },
-        { value: "option_b", label: "Option B" },
-        { value: "option_c", label: "Option C" },
-        { value: "option_d", label: "Option D" }
-    ];
-
-    const checkBoxItems = ["CheckBox Item 1", "CheckBox Item 2", "CheckBox Item 3"];
-    const radioItems = ["Radio Item 1", "Radio Item 2", "Radio Item 3"];
-    const switchItems = ["Switch Item 1", "Switch Item 2", "Switch Item 3"];
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedValue(e.target.value);
+    }, []);
 
     return (
-        <>
-            {/* <Banner /> */}
-            <main className="nk-pages">
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title title-md">Form Element Bordered</h3>
-                        <form className="form-validate">
-                            <InputBordered name="inputname1" label="Input Element" />
-                            <FormSelect name="option2" label="Select Element" options={selectOptions} />
-                            <TextArea name="textarea2" label="Textarea Element" />
-                            <CheckBox items={checkBoxItems} />
-                            <Radio items={radioItems} />
-                            <Switch items={switchItems} />
-                            <button className="btn btn-grad">Verify</button>
-                        </form>
-                    </div>
-                </section>
+        <div className="field-item">
+            <label className={`field-label ${isFocused || selectedValue ? 'field-label-float' : ''}`}>{label}</label>
+            <div className="field-wrap">
+                <select
+                    name={name}
+                    className="select-bordered" 
+                    value={selectedValue}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    required
+                >
+                    <option value="">Please select</option>
+                    {options.map(option => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    ))}
+                </select>
+            </div>
+        </div>
+    );
+};
+  
 
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title title-md">Form Element Line</h3>
-                        <form className="form-validate">
-                            <InputBordered name="inputname2" label="Input Element (Line)" />
-                            <FormSelect name="option1" label="Select Element (Line)" options={selectOptions} />
-                            <TextArea name="textarea1" label="Textarea Element (Line)" />
-                            <button className="btn btn-grad">Verify</button>
-                        </form>
-                    </div>
-                </section>
-            </main>
-        </>
+
+export const FormSelectWithSearch: React.FC<SelectProps> = ({ name, label, options }) => {
+    const [isFocused, setIsFocused] = useState(false);
+    const [selectedValue, setSelectedValue] = useState('');
+
+    const handleFocus = useCallback(() => setIsFocused(true), []);
+    const handleBlur = useCallback(() => setIsFocused(false), []);
+
+    const handleChange = useCallback((e: JQuery.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedValue(e.target.value);
+    }, []);
+
+    useEffect(() => {
+        $(`.select-${name}`).select2({
+            theme: 'bordered',
+            placeholder: "Please select",
+            allowClear: true,
+            width: '100%'
+        });
+
+
+        return () => {
+            $(`.select-${name}`).select2('destroy');
+        };
+    }, [name, handleChange]);
+
+    return (
+        <div className="field-item">
+            <label className={`field-label ${isFocused || selectedValue ? 'field-label-float' : ''}`}>{label}</label>
+            <div className="field-wrap">
+                <select
+                    name={name}
+                    className={`select select-${name} select-bordered`} 
+                    value={selectedValue}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    required
+                >
+                    <option value="">Please select</option>
+                    {options.map(option => (
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    ))}
+                </select>
+            </div>
+        </div>
     );
 };
 
-export default Form;
+interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+    name: string;
+    label: string;
+}
+
+export const FormTextArea: React.FC<TextAreaProps> = ({ name, label, required, ...rest }) => {
+    return (
+        <div className="field-item">
+            <label className="field-label">{label}</label>
+            <div className="field-wrap">
+                <textarea
+                    name={name}
+                    className="input-bordered input-textarea"
+                    required={required}
+                    {...rest} // Phân phối các props còn lại cho textarea
+                ></textarea>
+            </div>
+        </div>
+    );
+};
+  
+
+
+interface CheckboxItem {
+    id: string;
+    label: string;
+}
+
+interface CheckboxProps {
+    name: string;
+    items: CheckboxItem[];
+    required?: boolean;
+}
+
+export const FormCheckbox: React.FC<CheckboxProps> = ({ name, items, required }) => {
+    return (
+        <ul className="d-flex flex-wrap gutter-30px">
+            {items.map(item => (
+                <li className="mb-3" key={item.id}>
+                    <div className="field-wrap">
+                        <input
+                            className="input-checkbox"
+                            id={item.id}
+                            name={`${name}[]`} 
+                            type="checkbox"
+                            required={required}
+                        />
+                        <label htmlFor={item.id}>{item.label}</label>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
+interface RadioItem {
+    id: string;
+    label: string;
+}
+
+interface RadioProps {
+    name: string;
+    items: RadioItem[];
+    required?: boolean;
+    selectedValue?: string; 
+    onChange: (value: string) => void; 
+}
+
+export const FormRadio: React.FC<RadioProps> = ({ name, items, required, selectedValue, onChange }) => {
+    return (
+        <ul className="d-flex flex-wrap gutter-30px">
+            {items.map(item => (
+                <li className="mb-3" key={item.id}>
+                    <div className="field-wrap">
+                        <input
+                            className="input-radio"
+                            id={item.id}
+                            name={name}
+                            type="radio"
+                            required={required}
+                            checked={selectedValue === item.id} 
+                            onChange={() => onChange(item.id)} 
+                        />
+                        <label htmlFor={item.id}>{item.label}</label>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
+interface SwitchItem {
+    id: string;
+    label: string;
+}
+
+interface SwitchProps {
+    name: string;
+    items: SwitchItem[];
+    onChange: (id: string, checked: boolean) => void; 
+    checkedItems: string[]; 
+}
+
+export const FormSwitch: React.FC<SwitchProps> = ({ name, items, onChange, checkedItems }) => {
+    return (
+        <ul className="d-flex flex-wrap gutter-30px">
+            {items.map(item => (
+                <li className="mb-3" key={item.id}>
+                    <div className="field-wrap">
+                        <input
+                            className="input-switch"
+                            id={item.id}
+                            name={`${name}[]`} 
+                            type="checkbox"
+                            checked={checkedItems.includes(item.id)} 
+                            onChange={(e) => onChange(item.id, e.target.checked)} 
+                        />
+                        <label htmlFor={item.id}>{item.label}</label>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
+interface InputLineProps {
+    name: string;
+    label: string;
+    required?: boolean; 
+}
+
+export const FormInputLine: React.FC<InputLineProps> = ({ name, label, required }) => {
+    const [value, setValue] = useState(''); 
+    const [isFocused, setIsFocused] = useState(false); 
+
+    const handleFocus = () => {
+        setIsFocused(true);
+    };
+
+    const handleBlur = () => {
+        if (value === '') {
+            setIsFocused(false);
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value);
+    };
+
+    const fieldWrapStyle = {
+        position: 'relative',
+    };
+
+    const inputStyle = {
+        width: '100%',
+        padding: '12px 8px',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        transition: 'border-color 0.3s',
+    };
+
+    const inputFocusStyle = {
+        borderColor: '#007bff', 
+    };
+
+    const labelStyle = {
+        position: 'absolute',
+        left: '8px',
+        top: '12px',
+        fontSize: '16px',
+        color: '#999',
+        transition: 'all 0.3s ease',
+    };
+
+    const labelFloatStyle = {
+        top: '-8px',
+        left: '6px',
+        fontSize: '12px', 
+    };
+
+    return (
+        <div className="field-item">
+            <div style={fieldWrapStyle}>
+                <input
+                    name={name}
+                    type="text"
+                    style={{ ...inputStyle, ...(isFocused || value ? inputFocusStyle : {}) }}
+                    id={`input-${name}`} 
+                    required={required}
+                    value={value}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                />
+                <label style={{ ...labelStyle, ...(isFocused || value ? labelFloatStyle : {}) }}>
+                    {label}
+                </label>
+            </div>
+        </div>
+    );
+};
+interface FormSelectLineProps {
+    name: string;
+    options: { value: string; label: string }[]; // Dữ liệu được đưa ra ngoài
+    required?: boolean;
+}
+
+export const FormSelectLine: React.FC<FormSelectLineProps> = ({ name, options, required }) => {
+    const [selectedValue, setSelectedValue] = useState('');
+
+    useEffect(() => {
+        // Khởi tạo Select2
+        $(`select[name="${name}"]`).select2({
+            theme: 'line' // Sử dụng theme "line"
+        });
+
+        // Cleanup Select2 khi component bị unmount
+        return () => {
+            $(`select[name="${name}"]`).select2('destroy');
+        };
+    }, [name]);
+
+    const handleSelect = (value: string) => {
+        setSelectedValue(value);
+    };
+
+    return (
+        <div className="field-item">
+            <div className="field-wrap">
+                <select 
+                    name={name} 
+                    value={selectedValue} 
+                    onChange={(e) => handleSelect(e.target.value)} 
+                    required={required} 
+                    data-select2-theme="line" 
+                >
+                    <option value="">Please select</option>
+                    {options.map(option => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
+        </div>
+    );
+};
+interface FormTextareaLineProps {
+    name: string;
+    label: string; 
+    required?: boolean;
+}
+
+export const FormTextareaLine: React.FC<FormTextareaLineProps> = ({ name, label, required }) => {
+    const [textValue, setTextValue] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setTextValue(e.target.value);
+    };
+
+    return (
+        <div className="field-item">
+            <div className="field-wrap">
+                <textarea
+                    name={name}
+                    id="textarea"
+                    className={`input-line input-textarea ${textValue ? 'filled' : ''}`}
+                    required={required}
+                    onChange={handleChange}
+                ></textarea>
+                <label className={`field-label field-label-line ${textValue ? 'label-float' : ''}`}>
+                    {label} 
+                </label>
+            </div>
+
+            <style jsx>{`
+                .field-wrap {
+                    position: relative;
+                }
+
+                .input-line {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    outline: none;
+                    resize: vertical;
+                }
+
+                .field-label {
+                    position: absolute;
+                    left: 10px;
+                    top: 14px;
+                    transition: 0.2s ease all;
+                    color: #aaa;
+                }
+
+                .label-float {
+                    top: -10px;
+                    left: 10px;
+                    font-size: 12px;
+                    color: white;
+                }
+
+                .input-textarea {
+                    min-height: 100px; 
+                }
+            `}</style>
+        </div>
+    );
+};

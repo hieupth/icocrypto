@@ -1,36 +1,35 @@
+import { ColorStyle, getColorStyleClass, Stylable } from '@/utils/colorclass'; // Đường dẫn phù hợp
+import { getSizeStyleClass, SizeStylable, StyledSize } from '@/utils/sizeclass'; // Đường dẫn của file chứa StyledSize và getSizeStyleClass
 import React from 'react';
 
 // Interface cho Props của CustomText
 interface CustomTextProps {
     children: React.ReactNode; // Nội dung văn bản
-    heading?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; // Loại tiêu đề (có thể có hoặc không)
-    color?: 'danger' | 'success' | 'warning' | 'info' | 'secondary' | 'primary' | 'dark' | 'light' | 'default' | 'lighter' | 'theme'; // Màu sắc văn bản
-    textTransform?: 'tt-n' | 'tt-l' | 'tt-u' | 'tt-c'; // Kiểu chữ: none, lowercase, uppercase, capitalize
+    heading?: StyledSize | string; // Loại tiêu đề (h1-h6 hoặc các kích thước khác từ StyledSize)
+    color?: ColorStyle; // Màu sắc văn bản dựa trên StyledColor
+    size?: StyledSize; // Kích thước văn bản dựa trên StyledSize
+    textTransform?: SizeStylable; // Sử dụng SizeStylable cho textTransform (none, lowercase, uppercase, capitalize)
     className?: string; // Lớp CSS tùy chỉnh nếu có
 }
 
-// Hàm tiện ích để tạo lớp CSS từ màu sắc
-const getTextColorClass = (color?: string) => {
-    return color ? `tc-${color}` : 'tc-dark'; // Mặc định là 'tc-dark' nếu không có màu
-};
-
-// Hàm tiện ích để tạo lớp CSS từ kiểu chữ
-const getTextTransformClass = (transform?: string) => {
-    return transform ? transform : 'tt-n'; // Mặc định là 'tt-n' nếu không có kiểu
-};
-
 // Component CustomText
-const CustomText: React.FC<CustomTextProps> = ({ children, heading, color, textTransform, className = '' }) => {
-    // Tạo lớp CSS tổng hợp cho văn bản
-    const combinedClassName = `${getTextColorClass(color)} ${getTextTransformClass(textTransform)} ${className}`;
+const CustomText: React.FC<CustomTextProps> = ({
+    children,
+    heading,
+    color,
+    size,
+    textTransform = SizeStylable.NoneTrans, // Mặc định là không có biến đổi chữ (ttn)
+    className = ''
+}) => {
+    // Tạo lớp CSS tổng hợp cho văn bản từ colorclass và sizeclass
+    const combinedClassName = `${getColorStyleClass(Stylable.Text, color)} ${getSizeStyleClass(SizeStylable.Text, size)} ${textTransform} ${className}`;
 
     if (heading) {
-        // Nếu có 'heading', sử dụng thẻ tiêu đề tương ứng
-        const HeadingTag = heading; // Sử dụng biến động để xác định loại tiêu đề
+        const HeadingTag = heading as keyof JSX.IntrinsicElements; // Sử dụng trực tiếp thẻ heading được cung cấp
         return <HeadingTag className={combinedClassName}>{children}</HeadingTag>;
     }
 
-    // Nếu không có 'heading', sử dụng thẻ 'span' hoặc 'div' mặc định
+    // Nếu không có `heading`, sử dụng thẻ 'span' mặc định
     return <span className={combinedClassName}>{children}</span>;
 };
 

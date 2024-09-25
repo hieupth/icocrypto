@@ -1,3 +1,4 @@
+'use client'
 import Ikon from "@/components/elements/element-ikon";
 import Modals from "@/components/elements/element-modals";
 import PictureModals from "@/components/elements/element-picture-modals";
@@ -36,7 +37,9 @@ export default function Home() {
       <button onClick={openHandle}>Open modals content <Ikon ico="ikon-bulb"/></button>
         <Modals size="xl" position="center" open={open} onClose={closeHandle}>
           <div className="row">
-              <img src="https://neweralive.na/wp-content/uploads/2024/06/lloyd-sikeba.jpg" className="col-6"/>
+              <Image src="https://neweralive.na/wp-content/uploads/2024/06/lloyd-sikeba.jpg" className="col-6"
+              alt="image" width={500} height={500}
+              />
               <div className="col-6">
                 <h3>Header</h3>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias provident optio aperiam est possimus veritatis, suscipit pariatur laboriosam deserunt aspernatur voluptas, eveniet beatae iure repudiandae aliquid. Debitis dolores vero nisi.</span>
