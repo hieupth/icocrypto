@@ -1,6 +1,6 @@
 import { TabRow } from "../elements/element-tab";
 
-export const FAQDefault: React.FC<{ children: React.ReactNode }> = ({
+export const BlockFAQDefault: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
     return (
@@ -9,7 +9,7 @@ export const FAQDefault: React.FC<{ children: React.ReactNode }> = ({
         </section>
     );
 };
-export const FAQLight: React.FC<{ children: React.ReactNode }> = ({
+export const BlockFAQLight: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
     return (
@@ -18,7 +18,7 @@ export const FAQLight: React.FC<{ children: React.ReactNode }> = ({
         </section>
     );
 };
-export const FAQTheme: React.FC<{ children: React.ReactNode }> = ({
+export const BlockFAQTheme: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
     return (
@@ -27,7 +27,7 @@ export const FAQTheme: React.FC<{ children: React.ReactNode }> = ({
         </section>
     );
 };
-export const FAQThemeDark: React.FC<{ children: React.ReactNode }> = ({
+export const BlockFAQThemeDark: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
     return (
@@ -36,7 +36,7 @@ export const FAQThemeDark: React.FC<{ children: React.ReactNode }> = ({
         </section>
     );
 };
-export const FAQBgimage: React.FC<{ children: React.ReactNode }> = ({
+export const BlockFAQBgimage: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
     return (
