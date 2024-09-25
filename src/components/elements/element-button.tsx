@@ -6,14 +6,15 @@ import React from 'react';
 interface CustomButtonProps {
     text: string;
     variant?: ColorStyle;
-    outline?: boolean;
+    outline?: ColorStyle;
     icon?: string;
     backgroundClass?: Stylable;
+    borderRadius?: SizeStylable;
     badgeText?: string;
     badgeVariant?: ColorStyle;
-    badgeOutline?: boolean;
-    badgeSize?: StyledSize; // Thay đổi kiểu dữ liệu để sử dụng StyledSize
-    size?: StyledSize; // Sử dụng StyledSize
+    badgeOutline?: ColorStyle;
+    badgeSize?: StyledSize;
+    size?: StyledSize; 
     onClick?: () => void;
 }
 
@@ -21,26 +22,36 @@ interface CustomButtonProps {
 const CustomButton: React.FC<CustomButtonProps> = ({
     text,
     variant = ColorStyle.Default,
-    outline = false,
+    outline,
     icon,
     backgroundClass,
+    borderRadius,
     badgeText,
     badgeVariant = ColorStyle.Primary,
-    badgeOutline = false,
+    badgeOutline = ColorStyle.Outline,
     badgeSize,
     size,
     onClick
 }) => {
     // Class của button sử dụng getSizeStyleClass
-    const buttonClass = `${Stylable.Button} ${getColorStyleClass(Stylable.Button, variant, outline)} ${getSizeStyleClass(SizeStylable.Button, size)}`;
+    const buttonClass =
+        `${Stylable.Button}
+        ${getColorStyleClass(Stylable.Button, variant, false)}
+        ${outline ? getColorStyleClass(Stylable.Button, outline) : ''}
+        ${borderRadius ? getSizeStyleClass(SizeStylable.Button, borderRadius) : ''}
+        ${backgroundClass ? backgroundClass : ''}
+        ${getSizeStyleClass(SizeStylable.Button, size)}`;
 
     // Class của badge nếu có, sử dụng getSizeStyleClass cho badgeSize
     const badgeClass = badgeText
-        ? `${Stylable.Badge} ${getColorStyleClass(Stylable.Badge, badgeVariant, badgeOutline)} ${getSizeStyleClass(SizeStylable.Badge, badgeSize)}`
+        ? `${Stylable.Badge}
+        ${getColorStyleClass(Stylable.Badge, badgeVariant)}
+        ${badgeOutline ? getColorStyleClass(Stylable.Badge, badgeOutline) : ''}
+        ${getSizeStyleClass(SizeStylable.Badge, badgeSize)}`
         : '';
 
     return (
-        <a href="#" className={buttonClass} onClick={onClick}>
+        <a href="#" className={buttonClass.trim()} onClick={onClick}>
             {icon && <em className={`icon ${icon}`}></em>}  {/* Hiển thị icon nếu có */}
             <span>{text}</span>
             {badgeText && <span className={badgeClass}>{badgeText}</span>}  {/* Hiển thị badge nếu có */}
