@@ -38,6 +38,7 @@ const createContentComponent = (
 
 // Consolidating all content components into a single export
 export const Content = {
+    Title: createContentComponent("title", "h2"),
     TextBlock: createContentComponent("nk-block-text"),
     Head: createContentComponent("section-head text-center wide-auto-sm"),
     TitleHead: createContentComponent("title title-lg title-dark", "h4"),
@@ -108,6 +109,20 @@ export const ContentTextBlockHead: React.FC<
                 dark
             )} ${getSizeStyleClass(SizeStylable.Text, size, alt)}`}
         >
+            {children}
+        </div>
+    );
+};
+export const ContentTitleX1 = ({
+    children,
+    title,
+    mainTitle,
+}: React.PropsWithChildren<{ title: string; mainTitle: string }>) => {
+    return (
+        <div className="section-head section-head-s2 text-center">
+            <h2 className="title title-xl" title={title}>
+                {mainTitle}
+            </h2>
             {children}
         </div>
     );
