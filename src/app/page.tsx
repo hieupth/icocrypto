@@ -335,9 +335,12 @@ export default function Home() {
       <section className="container">
         {/* OUR TEAM */}
       </section>
-      <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER" children="Our advisors and board members are great part of our team."/>
+      <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER"/>
       <section className="container">
         {/* BOARD MEMBER */}
+        <span style={{width:"100%" ,display:"flex", justifyContent:"center", paddingBottom: 50,}}>
+          Our advisors and board members are great part of our team.
+        </span>
         <div className="container container-xxl">
             <div className="nk-block nk-block-sm">
                 <div className="row">
@@ -573,9 +576,12 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS" children="Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors."/>
+      <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS"/>
       <section className="container">
         {/* BOARD MEMBER */}
+        <span style={{width:"100%" ,display:"flex", justifyContent:"center", paddingBottom: 50,}}>
+          Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.
+        </span>
         <div className="container container-xxl">
           <div className="nk-block">
               <div className="row gutter-vr-50px">
@@ -661,7 +667,7 @@ export default function Home() {
         </div>
 
       </div>
-      <ContentTitleX1 title="UPDATE" mainTitle="FAQS" children="Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch."/>
+      <ContentTitleX1 title="UPDATE" mainTitle="FAQS"/>
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
       </section>
