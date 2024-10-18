@@ -335,37 +335,333 @@ export default function Home() {
       <section className="container">
         {/* OUR TEAM */}
       </section>
-      <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER" />
+      <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER" children="Our advisors and board members are great part of our team."/>
       <section className="container">
         {/* BOARD MEMBER */}
+        <div className="container container-xxl">
+            <div className="nk-block nk-block-sm">
+                <div className="row">
+                    <div className="col-md-4 col-lg-2 col-6">
+                        <div 
+                          className="team team-s2 team-sm-s2 team-odd animated fadeInUp fadeInUp" 
+                          data-animate="fadeInUp" 
+                          data-delay="0.3"
+                          style={{ visibility: "visible", animationDelay: "0.3s" }}
+                          >
+                            
+                            <div className="team-photo team-photo-s2" >
+                                <Image
+                                  src="https://ico.themenio.com/images/azalea/team-c.jpg"
+                                  layout="intrinsic" // Hình ảnh sẽ có kích thước tự động theo nội dung
+                                  width={140} height={150} alt="image of team-c"
+                                />
+                                
+                            </div>
+                            <h5 className="team-name title title-sm">Ron Glabischnig</h5>
+                            <span className="team-position team-position-sm">General manager, Coindexin</span>
+                            <ul className="team-social team-social-s2">
+                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-lg-2 col-6">
+                        <div 
+                          className="team team-s2 team-sm-s2 team-even animated fadeInUp" 
+                          data-animate="fadeInUp" 
+                          data-delay="0.35"
+                          style={{ visibility: "visible", animationDelay: "0.35s" }}
+                          >
+                            <div className="team-photo team-photo-s2">
+                                <Image
+                                  src="https://ico.themenio.com/images/azalea/team-b.jpg"
+                                  width={140} height={130} alt="image of team-b"
+                                />
+                            </div>
+                            <h5 className="team-name title title-sm">Stefan Zakrisson</h5>
+                            <span className="team-position team-position-sm">Legal Advisor, TokenWiz Project</span>
+                            <ul className="team-social team-social-s2">
+                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-lg-2 col-6">
+                        <div 
+                          className="team team-s2 team-sm-s2 team-odd animated fadeInUp" 
+                          data-animate="fadeInUp" 
+                          data-delay="0.4"
+                          style={{ visibility: "visible", animationDelay: "0.4s" }}
+                          >
+                            <div className="team-photo team-photo-s2">
+                                <Image
+                                  src="https://ico.themenio.com/images/azalea/team-a.jpg"
+                                  width={140} height={130} alt="image of team-a"
+                                />
+                            </div>
+                            <h5 className="team-name title title-sm">Moises Teare</h5>
+                            <span className="team-position team-position-sm">Managing Director, ICOCrypto</span>
+                            <ul className="team-social team-social-s2">
+                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-lg-2 col-6">
+                        <div 
+                          className="team team-s2 team-sm-s2 team-even animated fadeInUp" 
+                          data-animate="fadeInUp" 
+                          data-delay="0.45"
+                          style={{ visibility: "visible", animationDelay: "0.35s" }}
+                          >
+                            <div className="team-photo team-photo-s2">
+                                <Image
+                                  src="https://ico.themenio.com/images/azalea/team-d.jpg"
+                                  width={140} height={130} alt="image of team-d"
+                                />
+                            </div>
+                            <h5 className="team-name title title-sm">Michiel Berende</h5>
+                            <span className="team-position team-position-sm">Insurance Lead &amp; Financial Advisor</span>
+                            <ul className="team-social team-social-s2">
+                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-lg-2 col-6">
+                        <div 
+                          className="team team-s2 team-sm-s2 team-odd animated fadeInUp" 
+                          data-animate="fadeInUp" 
+                          data-delay="0.5"
+                          style={{ visibility: "visible", animationDelay: "0.5s" }}
+                          >
+                            <div className="team-photo team-photo-s2">
+                                <Image
+                                  src="https://ico.themenio.com/images/azalea/team-b.jpg"
+                                  width={140} height={130} alt="image of team-b"
+                                />
+                            </div>
+                            <h5 className="team-name title title-sm">Noack Waylon</h5>
+                            <span className="team-position team-position-sm">Ecosystem Manager &amp; DevOps Engineer</span>
+                            <ul className="team-social team-social-s2">
+                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-lg-2 col-6">
+                        <div 
+                          className="team team-s2 team-sm-s2 team-even animated fadeInUp" 
+                          data-animate="fadeInUp" 
+                          data-delay="0.55"
+                          style={{ visibility: "visible", animationDelay: "0.55s" }}
+                          >
+                            <div className="team-photo team-photo-s2">
+                                <Image
+                                  src="https://ico.themenio.com/images/azalea/team-c.jpg"
+                                  width={140} height={130} alt="image of team-c"
+                                />
+                            </div>
+                            <h5 className="team-name title title-sm">Tobias Dalton</h5>
+                            <span className="team-position team-position-sm">Member of the Oparation Board</span>
+                            <ul className="team-social team-social-s2">
+                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* <!-- Block @s --> */}
+            
+        </div>
       </section>
       <div className="nk-block block-partners" style={{
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
         <ul className="has-carousel partner-list justify-content-center animated fadeInUp" data-items="7" data-items-mobile="2" data-auto="true" data-loop="true" data-animate="fadeInUp" data-delay="0.75" style={{ visibility: "visible", animationDelay: "0.75s" }}>
+          <li className="partner-logo">
+            <Image
+              src="https://ico.themenio.com/images/partners/a-light.png"
+              width={111} height={30} alt="image of a-light"
+            />
+          </li>
+          <li className="partner-logo">
+            <Image
+              src="https://ico.themenio.com/images/partners/b-light.png"
+              width={111} height={30} alt="image of b-light" 
+            />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/c-light.png"
+                width={111} height={30} alt="image of c-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/d-light.png"
+                width={111} height={30} alt="image of d-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/e-light.png"
+                width={111} height={30} alt="image of e-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/f-light.png"
+                width={111} height={30} alt="image of f-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/g-light.png"
+                width={111} height={30} alt="image of g-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+              src="https://ico.themenio.com/images/partners/a-light.png"
+              width={111} height={30} alt="image of a-light"
+            />
+          </li>
+          <li className="partner-logo">
+            <Image
+              src="https://ico.themenio.com/images/partners/b-light.png"
+              width={111} height={30} alt="image of b-light" 
+            />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/c-light.png"
+                width={111} height={30} alt="image of c-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/d-light.png"
+                width={111} height={30} alt="image of d-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/e-light.png"
+                width={111} height={30} alt="image of e-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/f-light.png"
+                width={111} height={30} alt="image of f-light" 
+              />
+          </li>
+          <li className="partner-logo">
+            <Image
+                src="https://ico.themenio.com/images/partners/g-light.png"
+                width={111} height={30} alt="image of g-light" 
+              />
+          </li>
         </ul>
       </div>
-      <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS" />
+      <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS" children="Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors."/>
       <section className="container">
         {/* BOARD MEMBER */}
+        <div className="container container-xxl">
+          <div className="nk-block">
+              <div className="row gutter-vr-50px">
+                  <div className="col-sm-6 col-lg-3">
+                      <div className="doc animated fadeInUp" data-animate="fadeInUp" data-delay="0.3" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                          <div className="doc-photo doc-shape doc-shape-a">
+                              <Image
+                                src="https://ico.themenio.com/images/azalea/doc-a.jpg"
+                                width={175} height={236} alt="image of doc-a" 
+                              />
+                          </div>
+                          <div className="doc-text">
+                              <h5 className="doc-title title-sm">White Paper <small>(2022)</small></h5>
+                              <a className="doc-download" href="#"><em className="ti ti-import"></em></a>
+                              <div className="doc-lang">ENGLISH</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-6 col-lg-3">
+                      <div className="doc animated fadeInUp" data-animate="fadeInUp" data-delay="0.4" style={{ visibility: "visible", animationDelay: "0.4s" }}>
+                          <div className="doc-photo doc-shape doc-shape-b">
+                              {/* <img src="images/azalea/doc-b.jpg" alt=""> */}
+                              <Image
+                                src="https://ico.themenio.com/images/azalea/doc-b.jpg"
+                                width={175} height={236} alt="image of doc-a" 
+                              />
+                          </div>
+                          <div className="doc-text">
+                              <h5 className="doc-title title-sm">Two Pager <small>(2022)</small></h5>
+                              <a className="doc-download" href="#"><em className="ti ti-import"></em></a>
+                              <div className="doc-lang">ENGLISH</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-6 col-lg-3">
+                      <div className="doc animated fadeInUp" data-animate="fadeInUp" data-delay="0.5" style={{ visibility: "visible", animationDelay: "0.5s" }}>
+                          <div className="doc-photo doc-shape doc-shape-c">
+                              {/* <img src="images/azalea/doc-c.jpg" alt=""> */}
+                              <Image
+                                src="https://ico.themenio.com/images/azalea/doc-c.jpg"
+                                width={175} height={236} alt="image of doc-a" 
+                              />
+                          </div>
+                          <div className="doc-text">
+                              <h5 className="doc-title title-sm">One Pager <small>(2022)</small></h5>
+                              <a className="doc-download" href="#"><em className="ti ti-import"></em></a>
+                              <div className="doc-lang">ENGLISH</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-6 col-lg-3">
+                      <div className="doc animated fadeInUp" data-animate="fadeInUp" data-delay="0.6" style={{ visibility: "visible", animationDelay: "0.6s" }}>
+                          <div className="doc-photo doc-shape doc-shape-d">
+                              {/* <img src="images/azalea/doc-d.jpg" alt=""> */}
+                              <Image
+                                src="https://ico.themenio.com/images/azalea/doc-d.jpg"
+                                width={175} height={236} alt="image of doc-a" 
+                              />
+                          </div>
+                          <div className="doc-text">
+                              <h5 className="doc-title title-sm">Presentation <small>(2022)</small></h5>
+                              <a className="doc-download" href="#"><em className="ti ti-import"></em></a>
+                              <div className="doc-lang">ENGLISH</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
       </section>
       <div className="row">
         <div className="col-6">
         <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
       <section className="container">
-        {/* BOARD MEMBER */}
+        {/* IN PRESS */}
       </section>
         </div>
         <div className="col-6">
         <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
       <section className="container">
-        {/* BOARD MEMBER */}
+        {/* NEWS */}
       </section>
         </div>
 
       </div>
-      <ContentTitleX1 title="UPDATE" mainTitle="FAQS" />
+      <ContentTitleX1 title="UPDATE" mainTitle="FAQS" children="Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch."/>
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
       </section>
