@@ -15,7 +15,6 @@ export const BlockOurPartner: React.FC<BlockOurPartnerProps> = ({ partners }) =>
         <div className="nk-block block-partners" style={{
             display: "flex", alignItems: "center", flexDirection: "column"
         }}>
-            <CustomText heading="h4">OUR PARTNERS</CustomText>
             <ul className="has-carousel partner-list justify-content-center animated fadeInUp" data-items="7" data-items-mobile="2" data-auto="true" data-loop="true" data-animate="fadeInUp" data-delay="0.75" style={{ visibility: "visible", animationDelay: "0.75s" }}>
                 {partners.map((partner, index) => (
                     <li key={index} className="partner-logo">

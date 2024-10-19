@@ -662,9 +662,8 @@ export default function Home() {
       <div className="nk-block block-partners" style={{
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
-        <ul className="has-carousel partner-list justify-content-center animated fadeInUp" data-items="7" data-items-mobile="2" data-auto="true" data-loop="true" data-animate="fadeInUp" data-delay="0.75" style={{ visibility: "visible", animationDelay: "0.75s" }}>
+        <CustomText heading="h4">OUR PARTNERS</CustomText>
         <BlockOurPartner partners={partners}/>
-        </ul>
       </div>
       <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS">Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
       <section className="container">
