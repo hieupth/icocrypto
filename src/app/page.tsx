@@ -256,10 +256,149 @@ export default function Home() {
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
       <section className="container">
         {/* PLATFORM */}
+        <div className="container container-xxl">
+            <div className="nk-block">
+              <div className="row justify-content-center">
+                <div className="col-xl-6 col-lg-8">
+                  <ul className="nav tab-nav tab-nav-btn-bdr-s2 justify-content-center justify-content-sm-between pb-4 pb-sm-5">
+                    <li><a className="active" data-bs-toggle="tab" href="#tab-1-1">FOR Participators</a></li>
+                    <li className="tab-nav-sap d-none d-sm-block"></li>
+                    <li><a data-bs-toggle="tab" href="#tab-1-2">For Traders</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="tab-content">
+                {['tab-1-1', 'tab-1-2'].map((id, index) => (
+                  <div className={`tab-pane fade${index === 0 ? ' show active' : ''}`} id={id} key={id}>
+                    <div className="row align-items-center justify-content-between gutter-vr-40px">
+                      <div className="col-lg-6 order-lg-last">
+                        <div className="nk-block-img nk-block-ca">
+                          <div className="nk-circle-animation nk-df-center fast"></div>
+                          <div
+                            className="shadow rounded"
+                            style={{ position: "relative", 
+                              display: "flex", 
+                              justifyContent: "center", 
+                              alignItems: "center", 
+                              height: "auto"}}
+                          >
+                            <Image
+                              src="https://ico.themenio.com/images/app-screens/sc-medium-a.png"
+                              alt="image sc-medium-a"
+                              width={450}
+                              height={450}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-lg-5">
+                        <div className="nk-block-text mgb-m30">
+                          <h2 className="title title-md">A Open Platform for our Participators</h2>
+                          <p>Each participator can choose the trader and to sign a contract.</p>
+                          {[
+                            { icon: 'ikon-bulb', text: 'User have full access to trading consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+                            { icon: 'ikon-paricle', text: 'Our multi-cryptocurrency exchange will uis aute irure dolor in reprehenderit in voluptate velit uuntur magni dolores esse cillum.' },
+                            { icon: 'ikon-bulb-2', text: 'Users will be able to take quis nostrum exercitationem ullam corporis susci pitlabo riosam, nisi ut aliquid ex ea commodie.' },
+                            { icon: 'ikon-document-2', text: 'Sign a smart-contract to allow our trader’s access for live trading corporis cryptocurrency susci pitlabo riosam, nisi ut.' }
+                          ].map((feature, i) => (
+                            <div className="feature feature-inline feature-middle" key={i}>
+                              <div className="feature-icon feature-icon-md">
+                                <em className={`icon icon-md icon-grd ikon ${feature.icon}`}></em>
+                              </div>
+                              <div className="feature-text">
+                                <p>{feature.text}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
       </section>
-      <ContentTitleX1 title="MVP APPS" mainTitle="MVP" />
+      <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
       <section className="container">
         {/* MVP */}
+        <div className="container container-xxl">
+          <div className="nk-block">
+            <div className="row align-items-center justify-content-center justify-content-xl-between gutter-vr-30px">
+              <div className="col-xxl-6 col-xl-6 col-lg-8">
+                <div className="nk-block-img nk-block-plx animated" data-animate="fadeInUp" data-delay="0.3" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                  <Image 
+                    className="shadow rounded" 
+                    src="https://ico.themenio.com/images/app-screens/sc-medium-b.png" 
+                    alt="" width={500} height={300} />
+                  <Image 
+                    className="nk-block-img-plx plx-screen shadow rounded" 
+                    src="https://ico.themenio.com/images/app-screens/sc-small-d.jpg" 
+                    alt="" width={500} height={300} />
+                  <Image 
+                    className="nk-block-img-plx plx-circle plx-circle-s1" 
+                    src="https://ico.themenio.com/images/gfx/circle-a.png" 
+                    alt="" width={100} height={100} />
+                  <Image 
+                    className="nk-block-img-plx plx-polygon plx-polygon-s1" 
+                    src="https://ico.themenio.com/images/gfx/polygon-a.png" 
+                    alt="" width={100} height={100} />
+                  <Image 
+                    className="nk-block-img-plx plx-triangle plx-triangle-s1" 
+                    src="https://ico.themenio.com/images/gfx/triangle-a.png" 
+                    alt="" width={100} height={100} />
+                </div>
+              </div>
+              <div className="col-xxl-5 col-xl-6 col-lg-8">
+                <div className="nk-block-text">
+                  <div className="feature feature-inline animated" data-animate="fadeInUp" data-delay="0.4" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                    <div className="feature-icon feature-icon-md">
+                      <em className="icon icon-xs icon-circle fas fa-check"></em>
+                    </div>
+                    <div className="feature-text">
+                      <p>Powered by DAP, NEX lets you easily trade crypto-currencies &amp; other digital.</p>
+                    </div>
+                  </div>
+                  <div className="feature feature-inline animated" data-animate="fadeInUp" data-delay="0.5" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                    <div className="feature-icon feature-icon-md">
+                      <em className="icon icon-xs icon-circle fas fa-check"></em>
+                    </div>
+                    <div className="feature-text">
+                      <p>User have full access to trading consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                  </div>
+                  <div className="feature feature-inline animated" data-animate="fadeInUp" data-delay="0.6" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                    <div className="feature-icon feature-icon-md">
+                      <em className="icon icon-xs icon-circle fas fa-check"></em>
+                    </div>
+                    <div className="feature-text">
+                      <p>Our multi-cryptocurrency exchange will uis aute irure dolor in reprehenderit in voluptate velit uuntur magni dolores esse cillum.</p>
+                    </div>
+                  </div>
+                  <div className="feature feature-inline animated" data-animate="fadeInUp" data-delay="0.7" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                    <div className="feature-icon feature-icon-md">
+                      <em className="icon icon-xs icon-circle fas fa-check"></em>
+                    </div>
+                    <div className="feature-text">
+                      <p>Traders able to trade with voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+                    </div>
+                  </div>
+                  <div className="feature feature-inline animated" data-animate="fadeInUp" data-delay="0.8" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                    <div className="feature-icon feature-icon-md">
+                      <em className="icon icon-xs icon-circle fas fa-check"></em>
+                    </div>
+                    <div className="feature-text">
+                      <p>Users will be able to take quis nostrum exercitationem ullam corporis susci pitlabo riosam, nisi ut aliquid ex ea commodi consequatur.</p>
+                    </div>
+                  </div>
+                  <div className="text-center text-sm-start animated" data-animate="fadeInUp" data-delay="0.9" style={{ visibility: "visible", animationDelay: "0.3s" }}>
+                    <a href="#" className="btn btn-round btn-primary">Try Demo Free</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <ContentTitleX1 title="TOKEN DETAILS" mainTitle="TOKENS" />
       <section className="container">
@@ -273,7 +412,7 @@ export default function Home() {
       <section className="container">
         {/* OUR TEAM */}
       </section>
-      <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER" children="Our advisors and board members are great part of our team."/>
+      <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER">Our advisors and board members are great part of our team.</ContentTitleX1> 
       <section className="container">
         {/* BOARD MEMBER */}
         <BlockBoardMember members={boardMember}/>
@@ -369,7 +508,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS" children="Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors."/>
+      <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS">Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
       <section className="container">
         {/* BOARD MEMBER */}
         <div className="container container-xxl">
@@ -457,7 +596,7 @@ export default function Home() {
         </div>
 
       </div>
-      <ContentTitleX1 title="UPDATE" mainTitle="FAQS" children="Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch."/>
+      <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
       </section>
