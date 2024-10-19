@@ -16,8 +16,78 @@ import {
 import Image from "next/image";
 import CustomText from "@/components/elements/element-typography";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
+import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 
 export default function Home() {
+
+  const boardMember = [
+    {
+      name: "Ron Glabischnig",
+      position: "General manager, Coindexin",
+      imageUrl: "https://ico.themenio.com/images/azalea/team-c.jpg",
+      delay: "0.3",
+      socialLinks: [
+        { icon: "fab fa-facebook-f", url: "#"},
+        { icon: 'fab fa-linkedin-in', url: '#' },
+        { icon: 'fab fa-twitter', url: '#' }
+      ]
+    },
+    {
+      name: "Stefan Zakrisson",
+      position: "Legal Advisor, TokenWiz Project",
+      imageUrl: "https://ico.themenio.com/images/azalea/team-b.jpg",
+      delay: "0.35",
+      socialLinks: [
+        { icon: "fab fa-facebook-f", url: "#"},
+        { icon: 'fab fa-linkedin-in', url: '#' },
+        { icon: 'fab fa-twitter', url: '#' }
+      ]
+    },
+    {
+      name: "Moises Teare",
+      position: "Managing Director, ICOCrypto",
+      imageUrl: "https://ico.themenio.com/images/azalea/team-a.jpg",
+      delay: "0.4",
+      socialLinks: [
+        { icon: "fab fa-facebook-f", url: "#"},
+        { icon: 'fab fa-linkedin-in', url: '#' },
+        { icon: 'fab fa-twitter', url: '#' }
+      ]
+    },
+    {
+      name: "Michiel Berende",
+      position: "Insurance Lead &amp; Financial Advisor",
+      imageUrl: "https://ico.themenio.com/images/azalea/team-d.jpg",
+      delay: "0.35",
+      socialLinks: [
+        { icon: "fab fa-facebook-f", url: "#"},
+        { icon: 'fab fa-linkedin-in', url: '#' },
+        { icon: 'fab fa-twitter', url: '#' }
+      ]
+    },
+    {
+      name: "Noack Waylon",
+      position: "Ecosystem Manager &amp; DevOps Engineer",
+      imageUrl: "https://ico.themenio.com/images/azalea/team-b.jpg",
+      delay: "0.5",
+      socialLinks: [
+        { icon: "fab fa-facebook-f", url: "#"},
+        { icon: 'fab fa-linkedin-in', url: '#' },
+        { icon: 'fab fa-twitter', url: '#' }
+      ]
+    },
+    {
+      name: "Tobias Dalton",
+      position: "Member of the Oparation Board",
+      imageUrl: "https://ico.themenio.com/images/azalea/team-c.jpg",
+      delay: "0.55",
+      socialLinks: [
+        { icon: "fab fa-facebook-f", url: "#"},
+        { icon: 'fab fa-linkedin-in', url: '#' },
+        { icon: 'fab fa-twitter', url: '#' }
+      ]
+    }
+  ]
 
   const faqTabs = [
     {
@@ -338,149 +408,7 @@ export default function Home() {
       <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER" children="Our advisors and board members are great part of our team."/>
       <section className="container">
         {/* BOARD MEMBER */}
-        <div className="container container-xxl">
-            <div className="nk-block nk-block-sm">
-                <div className="row">
-                    <div className="col-md-4 col-lg-2 col-6">
-                        <div 
-                          className="team team-s2 team-sm-s2 team-odd animated fadeInUp fadeInUp" 
-                          data-animate="fadeInUp" 
-                          data-delay="0.3"
-                          style={{ visibility: "visible", animationDelay: "0.3s" }}
-                          >
-                            
-                            <div className="team-photo team-photo-s2" >
-                                <Image
-                                  src="https://ico.themenio.com/images/azalea/team-c.jpg"
-                                  layout="intrinsic" // Hình ảnh sẽ có kích thước tự động theo nội dung
-                                  width={140} height={150} alt="image of team-c"
-                                />
-                                
-                            </div>
-                            <h5 className="team-name title title-sm">Ron Glabischnig</h5>
-                            <span className="team-position team-position-sm">General manager, Coindexin</span>
-                            <ul className="team-social team-social-s2">
-                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
-                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
-                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-4 col-lg-2 col-6">
-                        <div 
-                          className="team team-s2 team-sm-s2 team-even animated fadeInUp" 
-                          data-animate="fadeInUp" 
-                          data-delay="0.35"
-                          style={{ visibility: "visible", animationDelay: "0.35s" }}
-                          >
-                            <div className="team-photo team-photo-s2">
-                                <Image
-                                  src="https://ico.themenio.com/images/azalea/team-b.jpg"
-                                  width={140} height={130} alt="image of team-b"
-                                />
-                            </div>
-                            <h5 className="team-name title title-sm">Stefan Zakrisson</h5>
-                            <span className="team-position team-position-sm">Legal Advisor, TokenWiz Project</span>
-                            <ul className="team-social team-social-s2">
-                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
-                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
-                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-4 col-lg-2 col-6">
-                        <div 
-                          className="team team-s2 team-sm-s2 team-odd animated fadeInUp" 
-                          data-animate="fadeInUp" 
-                          data-delay="0.4"
-                          style={{ visibility: "visible", animationDelay: "0.4s" }}
-                          >
-                            <div className="team-photo team-photo-s2">
-                                <Image
-                                  src="https://ico.themenio.com/images/azalea/team-a.jpg"
-                                  width={140} height={130} alt="image of team-a"
-                                />
-                            </div>
-                            <h5 className="team-name title title-sm">Moises Teare</h5>
-                            <span className="team-position team-position-sm">Managing Director, ICOCrypto</span>
-                            <ul className="team-social team-social-s2">
-                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
-                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
-                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-4 col-lg-2 col-6">
-                        <div 
-                          className="team team-s2 team-sm-s2 team-even animated fadeInUp" 
-                          data-animate="fadeInUp" 
-                          data-delay="0.45"
-                          style={{ visibility: "visible", animationDelay: "0.35s" }}
-                          >
-                            <div className="team-photo team-photo-s2">
-                                <Image
-                                  src="https://ico.themenio.com/images/azalea/team-d.jpg"
-                                  width={140} height={130} alt="image of team-d"
-                                />
-                            </div>
-                            <h5 className="team-name title title-sm">Michiel Berende</h5>
-                            <span className="team-position team-position-sm">Insurance Lead &amp; Financial Advisor</span>
-                            <ul className="team-social team-social-s2">
-                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
-                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
-                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-4 col-lg-2 col-6">
-                        <div 
-                          className="team team-s2 team-sm-s2 team-odd animated fadeInUp" 
-                          data-animate="fadeInUp" 
-                          data-delay="0.5"
-                          style={{ visibility: "visible", animationDelay: "0.5s" }}
-                          >
-                            <div className="team-photo team-photo-s2">
-                                <Image
-                                  src="https://ico.themenio.com/images/azalea/team-b.jpg"
-                                  width={140} height={130} alt="image of team-b"
-                                />
-                            </div>
-                            <h5 className="team-name title title-sm">Noack Waylon</h5>
-                            <span className="team-position team-position-sm">Ecosystem Manager &amp; DevOps Engineer</span>
-                            <ul className="team-social team-social-s2">
-                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
-                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
-                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-4 col-lg-2 col-6">
-                        <div 
-                          className="team team-s2 team-sm-s2 team-even animated fadeInUp" 
-                          data-animate="fadeInUp" 
-                          data-delay="0.55"
-                          style={{ visibility: "visible", animationDelay: "0.55s" }}
-                          >
-                            <div className="team-photo team-photo-s2">
-                                <Image
-                                  src="https://ico.themenio.com/images/azalea/team-c.jpg"
-                                  width={140} height={130} alt="image of team-c"
-                                />
-                            </div>
-                            <h5 className="team-name title title-sm">Tobias Dalton</h5>
-                            <span className="team-position team-position-sm">Member of the Oparation Board</span>
-                            <ul className="team-social team-social-s2">
-                                <li><a href="#"><em className="fab fa-facebook-f"></em></a></li>
-                                <li><a href="#"><em className="fab fa-linkedin-in"></em></a></li>
-                                <li><a href="#"><em className="fab fa-twitter"></em></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <!-- Block @s --> */}
-            
-        </div>
+        <BlockBoardMember members={boardMember}/>
       </section>
       <div className="nk-block block-partners" style={{
         display: "flex", alignItems: "center", flexDirection: "column"
