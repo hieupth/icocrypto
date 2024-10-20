@@ -104,7 +104,7 @@ const NavBar = ({activate, children}: Readonly<{activate: string, children: Reac
   };
 
   return (
-    <NavbarBootstrap fixed='top' expand='lg' className='header-main'>
+    <NavbarBootstrap fixed='top' expand='lg' className='header-main' style={{zIndex:999}}>
       <Container className='container-xxl'>
         <div className='header-wrap'>
           <NavBrand logo={common.logo.src} text={common.logo.text}></NavBrand>
