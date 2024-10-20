@@ -11,6 +11,7 @@ import { SizeStylable, StyledSize } from "@/utils/sizeclass";
 
 export const BlockAbout: React.FC = ({}) =>{
     return (
+      <div className="container container-xxl">
         <div className="row">
           <div className="col-6">
             <ContentTitle>
@@ -58,5 +59,6 @@ export const BlockAbout: React.FC = ({}) =>{
             />
           </div>
         </div>
+      </div>  
     )
 }
