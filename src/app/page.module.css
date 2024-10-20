@@ -228,3 +228,9 @@
     transform: rotate(0deg);
   }
 }
+.partner-logo {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
