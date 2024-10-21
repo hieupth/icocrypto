@@ -20,15 +20,15 @@ const settingPartners = {
     autoplaySpeed: 5000,
     arrows: false,
     slidesToShow: 7,
-    slidesToScroll: 3,
+    slidesToScroll: 4,
 };
 
 export const BlockOurPartner: React.FC<BlockOurPartnerProps> = ({ partners }) => {
     return (
-        <div className="nk-block block-partners">
+        <div className="nk-block block-partners p-1">
             <Slider {...settingPartners}>
                 {partners.map((partner, index) => (
-                    <div key={index} className="partner-logo">
+                    <div key={index} className="partner-logo p-5">
                         <Image
                             src={partner.image}
                             width={111}
