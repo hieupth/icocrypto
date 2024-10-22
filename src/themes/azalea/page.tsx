@@ -25,7 +25,22 @@ import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 
 export default function Home() {
-
+  const aboutContent = {
+      contentTitle: 'We build fully Decentralized Marketplace that Augments Access to Blockchain Technologies',
+      content: `We have developed a state-of-the-art marketplace where you can 
+              securely and reliably buy and sell any items. The fastest and most
+              flexible asset platform in existence. It will include easy
+              cryptocurrency payments integration and a digital arbitration
+              system. Our aim is to integrate all companies, employees, and
+              business assets into a unified blockchain ecosystem, making
+              business truly efficient, transparent, and reliable.`,
+      buttonLabel: 'White Paper',
+      buttonIcon: 'ti-arrow-down',
+      linkLabel: 'See the Ecosystems',
+      link: '#ecosystems',
+      imageUrl: 'https://ico.themenio.com/images/azalea/gfx-e.png',
+      imageAlt: 'image of gfx-e',
+    }
   const membersData = [
     {
       name: 'Ron Glabischnig',
@@ -94,7 +109,6 @@ export default function Home() {
       ],
     }
   ];
-
   const faqTabs = [
     {
         id: "tab1",
@@ -286,7 +300,7 @@ export default function Home() {
         </div>
       </section>
       <ContentTitleX1 title="WHAT AND WHY" mainTitle="ABOUT" />
-      <BlockAbout/>
+      <BlockAbout aboutContent={aboutContent}/>
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
       <BlockEcosystems/>
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
