@@ -23,6 +23,7 @@ import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
 import BlockPlatform from "@/components/blocks/block-platform";
 import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
+import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
 
 export default function Home() {
   const aboutContent = {
@@ -41,6 +42,50 @@ export default function Home() {
       imageUrl: 'https://ico.themenio.com/images/azalea/gfx-e.png',
       imageAlt: 'image of gfx-e',
     }
+  const roadmapContent = [
+    {
+      id: 0,
+      year: 'Q1 2022',
+      date: 'Jan - Apr 2022',
+      text: 'Creation of a decentralize martketplace to neural network adjacent coefficients.',
+      state: 2
+    },
+    {
+      id: 1,
+      year: 'Q2 2022',
+      date: 'Jul - Aug 2022',
+      text: 'Start of the ICO Crypto Platform Development and Introduction of advertiser auctions',
+      state: 1
+    },
+    {
+      id: 2,
+      year: 'Q3 2022',
+      date: 'Sep - Oct 2022',
+      text: 'Start Private Token Sale Round to our contributors.',
+      state: 0
+    },
+    {
+      id: 3,
+      year: 'Q4 2022',
+      date: 'Nov - Dec 2022',
+      text: 'Launch of the mobile Best versions of the Publisher application and Press Tour.',
+      state: 0
+    },
+    {
+      id: 4,
+      year: 'Q1 2022',
+      date: 'Jan - Apr 2022',
+      text: 'Release of the initial versions of operational applications and smart contracts.',
+      state: 0
+    },
+    {
+      id: 5,
+      year: 'Q2 2022',
+      date: 'Jul - Aug 2022',
+      text: 'Creation of a decentralize martketplace to neural network adjacent coefficients.',
+      state: 0
+    }
+  ]  
   const membersData = [
     {
       name: 'Ron Glabischnig',
@@ -314,6 +359,7 @@ export default function Home() {
       <ContentTitleX1 title="TIMELINE" mainTitle="ROADMAP">ICO Crypto is developing a global data-driven platform for the world. Powered by blockchain and smart contracts.</ContentTitleX1>
       <section className="container">
         {/* ROADMAP */}
+        <BlockRoadMap roadmapList={roadmapContent} /> 
       </section>
       <ContentTitleX1 title="CORE TEAM" mainTitle="OUR TEAM" />
       <section className="container">
