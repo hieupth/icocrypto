@@ -119,7 +119,7 @@ export const TabS2: React.FC<{
                         return element.props ? (
                             <div
                                 key={element.props.id}
-                                className={`tab-pane fade ${
+                                className={`tab-pane fade d-flex flex-column align-items-center ${
                                     activeTab === element.props.id
                                         ? "show active"
                                         : ""

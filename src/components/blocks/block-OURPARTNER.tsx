@@ -1,5 +1,7 @@
 import Image from "next/image";
-import CustomText from "@/components/elements/element-typography";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface OurPartner {
     image: string;
@@ -10,23 +12,32 @@ interface BlockOurPartnerProps {
     partners: OurPartner[];
 }
 
+const settingPartners = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+    slidesToShow: 7,
+    slidesToScroll: 4,
+};
+
 export const BlockOurPartner: React.FC<BlockOurPartnerProps> = ({ partners }) => {
     return (
-        <div className="nk-block block-partners" style={{
-            display: "flex", alignItems: "center", flexDirection: "column"
-        }}>
-            <ul className="has-carousel partner-list justify-content-center animated fadeInUp" data-items="7" data-items-mobile="2" data-auto="true" data-loop="true" data-animate="fadeInUp" data-delay="0.75" style={{ visibility: "visible", animationDelay: "0.75s" }}>
+        <div className="nk-block block-partners p-1">
+            <Slider {...settingPartners}>
                 {partners.map((partner, index) => (
-                    <li key={index} className="partner-logo">
+                    <div key={index} className="partner-logo p-5">
                         <Image
                             src={partner.image}
                             width={111}
                             height={30}
                             alt={partner.alt}
                         />
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </Slider>
         </div>
     );
 };
