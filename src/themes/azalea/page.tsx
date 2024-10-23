@@ -23,9 +23,69 @@ import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
 import BlockPlatform from "@/components/blocks/block-platform";
 import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
+import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
 
 export default function Home() {
-
+  const aboutContent = {
+      contentTitle: 'We build fully Decentralized Marketplace that Augments Access to Blockchain Technologies',
+      content: `We have developed a state-of-the-art marketplace where you can 
+              securely and reliably buy and sell any items. The fastest and most
+              flexible asset platform in existence. It will include easy
+              cryptocurrency payments integration and a digital arbitration
+              system. Our aim is to integrate all companies, employees, and
+              business assets into a unified blockchain ecosystem, making
+              business truly efficient, transparent, and reliable.`,
+      buttonLabel: 'White Paper',
+      buttonIcon: 'ti-arrow-down',
+      linkLabel: 'See the Ecosystems',
+      link: '#ecosystems',
+      imageUrl: 'https://ico.themenio.com/images/azalea/gfx-e.png',
+      imageAlt: 'image of gfx-e',
+    }
+  const roadmapContent = [
+    {
+      id: 0,
+      year: 'Q1 2022',
+      date: 'Jan - Apr 2022',
+      text: 'Creation of a decentralize martketplace to neural network adjacent coefficients.',
+      state: 2
+    },
+    {
+      id: 1,
+      year: 'Q2 2022',
+      date: 'Jul - Aug 2022',
+      text: 'Start of the ICO Crypto Platform Development and Introduction of advertiser auctions',
+      state: 1
+    },
+    {
+      id: 2,
+      year: 'Q3 2022',
+      date: 'Sep - Oct 2022',
+      text: 'Start Private Token Sale Round to our contributors.',
+      state: 0
+    },
+    {
+      id: 3,
+      year: 'Q4 2022',
+      date: 'Nov - Dec 2022',
+      text: 'Launch of the mobile Best versions of the Publisher application and Press Tour.',
+      state: 0
+    },
+    {
+      id: 4,
+      year: 'Q1 2022',
+      date: 'Jan - Apr 2022',
+      text: 'Release of the initial versions of operational applications and smart contracts.',
+      state: 0
+    },
+    {
+      id: 5,
+      year: 'Q2 2022',
+      date: 'Jul - Aug 2022',
+      text: 'Creation of a decentralize martketplace to neural network adjacent coefficients.',
+      state: 0
+    }
+  ]  
   const membersData = [
     {
       name: 'Ron Glabischnig',
@@ -94,7 +154,6 @@ export default function Home() {
       ],
     }
   ];
-
   const faqTabs = [
     {
         id: "tab1",
@@ -286,7 +345,7 @@ export default function Home() {
         </div>
       </section>
       <ContentTitleX1 title="WHAT AND WHY" mainTitle="ABOUT" />
-      <BlockAbout/>
+      <BlockAbout aboutContent={aboutContent}/>
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
       <BlockEcosystems/>
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
@@ -300,6 +359,7 @@ export default function Home() {
       <ContentTitleX1 title="TIMELINE" mainTitle="ROADMAP">ICO Crypto is developing a global data-driven platform for the world. Powered by blockchain and smart contracts.</ContentTitleX1>
       <section className="container">
         {/* ROADMAP */}
+        <BlockRoadMap roadmapList={roadmapContent} /> 
       </section>
       <ContentTitleX1 title="CORE TEAM" mainTitle="OUR TEAM" />
       <section className="container">
