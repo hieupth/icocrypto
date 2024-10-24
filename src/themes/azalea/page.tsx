@@ -24,6 +24,7 @@ import BlockPlatform from "@/components/blocks/block-platform";
 import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
+import { BlockContactUs } from "@/components/blocks/block-CONTACT-US"
 
 export default function Home() {
   const aboutContent = {
@@ -213,6 +214,26 @@ export default function Home() {
     { image: "https://ico.themenio.com/images/partners/f-light.png", alt: "image of f-light" },
     { image: "https://ico.themenio.com/images/partners/g-light.png", alt: "image of g-light" },
   ];
+  const contactContent = [
+    {
+      contact_main: [
+        { icon: 'fas fa-phone', text: '+44 0123 4567' },
+        { icon: 'fas fa-envelope', text: 'info@company.com' },
+        { icon: 'fas fa-paper-plane', text: 'Join us on Telegram' }
+      ]
+    },
+    {
+      contact_media: [
+        { icon: 'fab fa-twitter' , url: '#' },
+        { icon: 'fab fa-medium-m' , url: '#' },
+        { icon: 'fab fa-facebook-f' , url: '#' },
+        { icon: 'fab fa-youtube' , url: '#' },
+        { icon: 'fab fa-bitcoin' , url: '#' },
+        { icon: 'fab fa-github' , url: '#' },
+      ]
+    },
+    { description: 'We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.'}
+  ]
   return (
     <>
       <PageHeader title="WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE">
@@ -396,6 +417,9 @@ export default function Home() {
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
+      </section>
+      <section className="container">
+        <BlockContactUs contentList={contactContent}/>
       </section>
     </>
   );
