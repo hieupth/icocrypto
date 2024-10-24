@@ -15,7 +15,6 @@ interface roadmapProp{
 }
 
 export const BlockRoadMap: React.FC<roadmapProp> = ({roadmapList}) => {
-    console.log('roadmap List: ', roadmapList)
     let sliderRef = useRef<Slider | null>(null); 
     const next = () => {
         sliderRef.current?.slickNext(); 
