@@ -14,7 +14,7 @@ interface ContactMedia{
 interface ContactContent {
     contact_main?: ContactMain[];
     contact_media?: ContactMedia[];
-    description: string
+    description?: string
   }
   
   interface BlockContactUsProps {
