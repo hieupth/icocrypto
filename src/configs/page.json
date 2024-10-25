@@ -1,0 +1,23 @@
+{
+    "theme": "azalea",
+    "contents": {
+        "banner": {
+            "title": "WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE",
+            "description": "The first decentralized Marketplace which simplifies and standardizes data with blockchain technology. We provide user-friendly, efficient, and secure crypto solutions utilizing blockchain technology.",
+            "buttons": [
+                {
+                    "text": "PRIVATE SALE",
+                    "variant": "primary",
+                    "borderRadius": true,
+                    "outline": false
+                },
+                {
+                    "text": "PRIVATE TOKEN",
+                    "variant": "primary",
+                    "borderRadius": true,
+                    "outline": true
+                }
+            ]
+        }
+    }
+}

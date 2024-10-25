@@ -1,6 +1,6 @@
 "use client";
 
-import PageHeader from "@/components/blocks/page-header";
+import PageHeader from "@/components/blocks/block-banner";
 import CustomButton from "@/components/elements/element-button";
 import Countdown from "@/components/elements/element-countdown";
 import ProgressBar from "@/components/elements/element-progess-bar";
