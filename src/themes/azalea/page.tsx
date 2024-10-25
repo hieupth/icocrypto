@@ -18,6 +18,9 @@ import CustomText from "@/components/elements/element-typography";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
 import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
+import { BlockInPress } from '@/components/blocks/block-INPRESS';
+import { BlockNews } from '@/components/blocks/block-NEWS';
+import Footer from "@/components/blocks/block-footer"
 
 export default function Home() {
 
@@ -79,6 +82,67 @@ export default function Home() {
     { image: "https://ico.themenio.com/images/partners/e-light.png", alt: "image of e-light" },
     { image: "https://ico.themenio.com/images/partners/f-light.png", alt: "image of f-light" },
     { image: "https://ico.themenio.com/images/partners/g-light.png", alt: "image of g-light" },
+  ];
+  const inPressItems = [
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/d-light.png",
+        alt: "Partner D",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/e-light.png",
+        alt: "Partner E",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/f-light.png",
+        alt: "Partner F",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+  ];
+  const newsItems = [
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New York, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",  
+    },
+    {
+        title: "Blockchain Global Summit 2022",
+        location: "California, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+    },
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New York, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",
+    },
+    {
+      title: "Blockchain Global Summit 2022",
+      location: "California, United State",
+      imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+  
+    },
   ];
   return (
     <>
@@ -675,12 +739,14 @@ export default function Home() {
         <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
       <section className="container">
         {/* IN PRESS */}
+        <BlockInPress inPressItems={inPressItems} />
       </section>
         </div>
         <div className="col-6">
         <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
       <section className="container">
         {/* NEWS */}
+        <BlockNews newsItems={newsItems} />
       </section>
         </div>
 
@@ -689,6 +755,7 @@ export default function Home() {
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
       </section>
+      <Footer />
     </>
   );
 }
