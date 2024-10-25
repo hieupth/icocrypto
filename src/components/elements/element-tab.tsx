@@ -116,7 +116,7 @@ export const TabS2: React.FC<{
                     {React.Children.map(children, (child) => {
                         const element =
                             child as React.ReactElement<TabItemProps>;
-                        return element.props ? (
+                        return activeTab === element.props.id ? (
                             <div
                                 key={element.props.id}
                                 className={`tab-pane fade d-flex flex-column align-items-center ${

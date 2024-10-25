@@ -15,6 +15,7 @@ import {
 } from "@/components/elements/element-content";
 import Image from "next/image";
 import CustomText from "@/components/elements/element-typography";
+import ProcessBar  from "@/components/elements/element-process-bar";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
 import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
@@ -24,6 +25,7 @@ import BlockPlatform from "@/components/blocks/block-platform";
 import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
+import { BlockContactUs } from "@/components/blocks/block-CONTACT-US"
 
 export default function Home() {
   const aboutContent = {
@@ -213,6 +215,38 @@ export default function Home() {
     { image: "https://ico.themenio.com/images/partners/f-light.png", alt: "image of f-light" },
     { image: "https://ico.themenio.com/images/partners/g-light.png", alt: "image of g-light" },
   ];
+  const contactContent = [
+    {
+      contact_main: [
+        { icon: 'fas fa-phone', text: '+44 0123 4567' },
+        { icon: 'fas fa-envelope', text: 'info@company.com' },
+        { icon: 'fas fa-paper-plane', text: 'Join us on Telegram' }
+      ]
+    },
+    {
+      contact_media: [
+        { icon: 'fab fa-twitter' , url: '#' },
+        { icon: 'fab fa-medium-m' , url: '#' },
+        { icon: 'fab fa-facebook-f' , url: '#' },
+        { icon: 'fab fa-youtube' , url: '#' },
+        { icon: 'fab fa-bitcoin' , url: '#' },
+        { icon: 'fab fa-github' , url: '#' },
+      ]
+    },
+    { description: 'We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.'}
+  ]
+  const processBar = {
+    processPoint: [
+      { title: 'Soft Cap', percent: 25 },
+      { title: 'Crowdsale', percent: 55 },
+      { title: 'Hard Cap', percent: 85 }
+    ],
+    raised: '1,1250',
+    target: '150,000',
+    currency: 'Tokens',
+    status: { title: 'CURRENT BONUS', percent: 20, bonusTitle: 'Contributor can receive'
+    }
+  }
   return (
     <>
       <PageHeader title="WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE">
@@ -250,15 +284,10 @@ export default function Home() {
         }}
       >
         <div className="row">
-          <div className="col-6">
-            <ProgressBar
-              title="Test"
-              percentage={20}
-              color={ColorStyle.Primary}
-              size={StyledSize.Sm}
-            />
+          <div className="col-9"> 
+            <ProcessBar {...processBar}/>
           </div>
-          <div className="col-6">
+          <div className="col-3">
             <Countdown
               title="Test"
               percent="20"
@@ -268,6 +297,7 @@ export default function Home() {
             />
           </div>
         </div>
+
         <div
           className="row"
           style={{
@@ -396,6 +426,9 @@ export default function Home() {
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
+      </section>
+      <section className="container">
+        <BlockContactUs contentList={contactContent}/>
       </section>
     </>
   );

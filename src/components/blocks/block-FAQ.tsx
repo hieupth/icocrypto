@@ -53,7 +53,7 @@ export const BlockFAQ: React.FC<BlockFAQProps> = ({
             : "S1";
 
     return (
-        <section className={`section ${styleClass} ${colorClass} ${darkClass}`}>
+        <section className={`mgy-x ${styleClass} ${colorClass} ${darkClass}`}>
             <TabComponent>
                 {tabs.map((tab) => (
                     <TabItem key={tab.id} id={tab.id} title={tab.title}>
