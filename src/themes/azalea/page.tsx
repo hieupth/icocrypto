@@ -235,6 +235,27 @@ export default function Home() {
     },
     { description: 'We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.'}
   ]
+  const ecosystemContent = {
+    contents: [
+      {
+        id: 1, title: 'ONE MARKETPLACE',
+        description: `One International Marketplace that combines online store and services around the world. Buy any goods or services with our tokens.` 
+      },
+      {
+        id: 2, title: 'Transparency and Trust',
+        description: `One International Marketplace that combines online store and services around the world. Buy any goods or services with our tokens.`,
+      },
+      {
+        id: 3, title: 'Blockchain Based Profiles',
+        description: `One International Marketplace that combines online store and services around the world. Buy any goods or services with our tokens.`,
+      },
+      {
+        id: 4, title: 'PAYMENT FLEXIBILITY',
+        description: `One International Marketplace that combines online store and services around the world. Buy any goods or services with our tokens.`,
+      }
+    ],
+    imageBackground: 'https://ico.themenio.com/images/globe-particle.png'
+  }
   const processBar = {
     processPoint: [
       { title: 'Soft Cap', percent: 25 },
@@ -377,7 +398,7 @@ export default function Home() {
       <ContentTitleX1 title="WHAT AND WHY" mainTitle="ABOUT" />
       <BlockAbout aboutContent={aboutContent}/>
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
-      <BlockEcosystems/>
+      <BlockEcosystems {...ecosystemContent}/>
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
       <BlockPlatform/>
       <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
