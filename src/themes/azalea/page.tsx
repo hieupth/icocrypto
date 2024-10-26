@@ -26,6 +26,9 @@ import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
 import { BlockContactUs } from "@/components/blocks/block-CONTACT-US"
+import { BlockInPress } from "@/components/blocks/block-INPRESS";
+import { BlockNews } from "@/components/blocks/block-NEWS";
+import Footer from "@/components/blocks/block-footer";
 
 export default function Home() {
   const aboutContent = {
@@ -247,6 +250,67 @@ export default function Home() {
     status: { title: 'CURRENT BONUS', percent: 20, bonusTitle: 'Contributor can receive'
     }
   }
+  const inPressItems = [
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/d-light.png",
+        alt: "Partner D",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/e-light.png",
+        alt: "Partner E",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/f-light.png",
+        alt: "Partner F",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+  ];
+  const newsItems = [
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New Youk, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",  
+    },
+    {
+        title: "Blockchain Global Summit 2022",
+        location: "California, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+    },
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New Youk, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",
+    },
+    {
+      title: "Blockchain Global Summit 2022",
+      location: "California, United State",
+      imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+  
+    },
+  ];
   return (
     <>
       <PageHeader title="WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE">
@@ -413,15 +477,16 @@ export default function Home() {
         <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
       <section className="container">
         {/* IN PRESS */}
+        <BlockInPress inPressItems={inPressItems} />
       </section>
         </div>
         <div className="col-6">
         <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
       <section className="container">
         {/* NEWS */}
+        <BlockNews newsItems={newsItems} />
       </section>
-        </div>
-
+      </div>
       </div>
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
@@ -430,6 +495,7 @@ export default function Home() {
       <section className="container">
         <BlockContactUs contentList={contactContent}/>
       </section>
+      <Footer /> 
     </>
   );
 }
