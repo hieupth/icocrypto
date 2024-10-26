@@ -23,8 +23,20 @@ interface about{
 export const BlockAbout: React.FC<{aboutContent: about}> = ({aboutContent}) =>{
     return (
       <div className="container container-xxl">
-        <div className="row">
-          <div className="col-6">
+        <div className="row justify-content-between align-items-center">
+          <div
+            className="col-lg-6 order-lg-last"
+          >
+            <div className="gfx py-4 animated" data-animate="fadeInUp" data-delay="0.2" style={{ visibility: "visible", animationDelay: "0.2s" }}>
+              <Image
+                src= {aboutContent.imageUrl}
+                alt={aboutContent.imageAlt}
+                width={500} height={500}
+              />
+            </div>
+          </div>
+
+          <div className="col-lg-5">
             <ContentTitle>
              {aboutContent.contentTitle}
             </ContentTitle>
@@ -50,17 +62,6 @@ export const BlockAbout: React.FC<{aboutContent: about}> = ({aboutContent}) =>{
                 </a>
               </p>
             </div>
-          </div>
-
-          <div
-            className="col-6"
-            style={{ position: "relative", height: "400px" }}
-          >
-            <Image
-              src= {aboutContent.imageUrl}
-              alt={aboutContent.imageAlt}
-              width={500} height={500}
-            />
           </div>
         </div>
       </div>  
