@@ -217,14 +217,14 @@ export default function Home() {
   ];
   const contactContent = [
     {
-      contact_main: [
+      mainDetails: [
         { icon: 'fas fa-phone', text: '+44 0123 4567' },
         { icon: 'fas fa-envelope', text: 'info@company.com' },
         { icon: 'fas fa-paper-plane', text: 'Join us on Telegram' }
       ]
     },
     {
-      contact_media: [
+      socialLinks: [
         { icon: 'fab fa-twitter' , url: '#' },
         { icon: 'fab fa-medium-m' , url: '#' },
         { icon: 'fab fa-facebook-f' , url: '#' },
@@ -233,7 +233,13 @@ export default function Home() {
         { icon: 'fab fa-github' , url: '#' },
       ]
     },
-    { description: 'We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.'}
+    { 
+      description:{
+        text: 'We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.',
+        backgroundImage: 'https://ico.themenio.com/assets/images/dot-c-azalea.png',
+        altText: 'image of dot-c-azalea'
+      }
+    }
   ]
   const ecosystemContent = {
     contents: [
