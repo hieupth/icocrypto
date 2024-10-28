@@ -19,16 +19,132 @@ import ProcessBar  from "@/components/elements/element-process-bar";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
 import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
-import { BlockAbout } from "@/components/blocks/block-ABOUT";
-import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
-import BlockPlatform from "@/components/blocks/block-platform";
-import BlockMVP from "@/components/blocks/block-MVP";
-import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
-import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
-import { BlockContactUs } from "@/components/blocks/block-CONTACT-US"
-import Page from '@/configs/page.json'
+import { BlockInPress } from '@/components/blocks/block-INPRESS';
+import { BlockNews } from '@/components/blocks/block-NEWS';
+import Footer from "@/components/blocks/block-footer"
 
 export default function Home() {
+
+  const faqTabs = [
+    {
+        id: "tab1",
+        title: "General Questions",
+        faqs: [
+            { title: "What is ICO Crypto?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
+            { title: "What cryptocurrencies can I use to purchase?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
+            { title: "How can I participate in the ICO Token sale?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
+            { title: "How do I benefit from the ICO Token?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
+        ],
+    },
+    {
+        id: "tab2",
+        title: "Technical Support",
+        faqs: [
+            { title: "How to reset my password?", content: "Click on 'Forgot Password' and follow the instructions." },
+            { title: "How to contact support?", content: "You can reach us via our support email." },
+        ],
+    },
+  ];
+  const documents = [
+    {
+      title: "White Paper",
+      year: 2022,
+      image: "https://ico.themenio.com/images/azalea/doc-a.jpg",
+      lang: "ENGLISH",
+      downloadLink: "#",
+    },
+    {
+      title: "Two Pager",
+      year: 2022,
+      image: "https://ico.themenio.com/images/azalea/doc-b.jpg",
+      lang: "ENGLISH",
+      downloadLink: "#",
+    },
+    {
+      title: "One Pager",
+      year: 2022,
+      image: "https://ico.themenio.com/images/azalea/doc-c.jpg",
+      lang: "ENGLISH",
+      downloadLink: "#",
+    },
+    {
+      title: 'Presentation',
+      year: 2022,
+      image: "https://ico.themenio.com/images/azalea/doc-d.jpg",
+      lang: "ENGLISH",
+      downloadLink: "#",
+    },
+  ];
+  const partners = [
+    { image: "https://ico.themenio.com/images/partners/a-light.png", alt: "image of a-light" },
+    { image: "https://ico.themenio.com/images/partners/b-light.png", alt: "image of b-light" },
+    { image: "https://ico.themenio.com/images/partners/c-light.png", alt: "image of c-light" },
+    { image: "https://ico.themenio.com/images/partners/d-light.png", alt: "image of d-light" },
+    { image: "https://ico.themenio.com/images/partners/e-light.png", alt: "image of e-light" },
+    { image: "https://ico.themenio.com/images/partners/f-light.png", alt: "image of f-light" },
+    { image: "https://ico.themenio.com/images/partners/g-light.png", alt: "image of g-light" },
+  ];
+  const inPressItems = [
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/d-light.png",
+        alt: "Partner D",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/e-light.png",
+        alt: "Partner E",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/f-light.png",
+        alt: "Partner F",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+  ];
+  const newsItems = [
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New York, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",  
+    },
+    {
+        title: "Blockchain Global Summit 2022",
+        location: "California, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+    },
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New York, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",
+    },
+    {
+      title: "Blockchain Global Summit 2022",
+      location: "California, United State",
+      imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+  
+    },
+  ];
   return (
     <>
       <PageHeader title={Page.contents.banner.title}>
@@ -208,12 +324,14 @@ export default function Home() {
         <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
       <section className="container">
         {/* IN PRESS */}
+        <BlockInPress inPressItems={inPressItems} />
       </section>
         </div>
         <div className="col-6">
         <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
       <section className="container">
         {/* NEWS */}
+        <BlockNews newsItems={newsItems} />
       </section>
         </div>
 
@@ -225,6 +343,7 @@ export default function Home() {
       <section className="container">
         <BlockContactUs contentList={Page.contents.contact}/>
       </section>
+      <Footer />
     </>
   );
 }
