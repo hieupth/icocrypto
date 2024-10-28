@@ -329,22 +329,23 @@ export default function Home() {
         {/* BOARD MEMBER */}
         <BlockDocument documents={page.contents.documents} color="primary" style="custom-style" dark={true} />
       </section>
-      <div className="row">
-        <div className="col-6">
-        <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
-      <section className="container">
-        {/* IN PRESS */}
-        <BlockInPress inPressItems={inPressItems} />
-      </section>
+      <div className="container">
+        <div className="row">
+          <div className="col-6">
+            <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
+            <section className="container">
+              {/* IN PRESS */}
+              <BlockInPress inPressItems={inPressItems} />
+            </section>
+          </div>
+          <div className="col-6">
+            <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
+            <section className="container">
+              {/* NEWS */}
+              <BlockNews newsItems={newsItems} />
+            </section>
+          </div>
         </div>
-        <div className="col-6">
-        <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
-      <section className="container">
-        {/* NEWS */}
-        <BlockNews newsItems={newsItems} />
-      </section>
-        </div>
-
       </div>
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
