@@ -23,6 +23,16 @@ import { BlockInPress } from '@/components/blocks/block-INPRESS';
 import { BlockNews } from '@/components/blocks/block-NEWS';
 import Footer from "@/components/blocks/block-footer"
 
+import { BlockContactUs } from "@/components/blocks/block-CONTACT-US";
+import { BlockAbout } from "@/components/blocks/block-ABOUT";
+import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
+import BlockPlatform from "@/components/blocks/block-platform";
+import BlockMVP from "@/components/blocks/block-MVP";
+import { BlockRoadMap } from "@/components/blocks/block-ROADMAP";
+import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
+
+import page from "@/configs/page.json"
+
 export default function Home() {
 
   const faqTabs = [
@@ -147,9 +157,9 @@ export default function Home() {
   ];
   return (
     <>
-      <PageHeader title={Page.contents.banner.title}>
+      <PageHeader title={page.contents.banner.title}>
         <span>
-          {Page.contents.banner.description}
+          {page.contents.banner.description}
         </span>
         <div
           style={{
@@ -286,9 +296,9 @@ export default function Home() {
         </div>
       </section>
       <ContentTitleX1 title="WHAT AND WHY" mainTitle="ABOUT" />
-      <BlockAbout aboutContent={Page.contents.about}/>
+      <BlockAbout aboutContent={page.contents.about}/>
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
-      <BlockEcosystems {...Page.contents.ecosystems}/>
+      <BlockEcosystems {...page.contents.ecosystems}/>
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
       <BlockPlatform/>
       <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
@@ -300,24 +310,24 @@ export default function Home() {
       <ContentTitleX1 title="TIMELINE" mainTitle="ROADMAP">ICO Crypto is developing a global data-driven platform for the world. Powered by blockchain and smart contracts.</ContentTitleX1>
       <section className="container">
         {/* ROADMAP */}
-        <BlockRoadMap roadmapList={Page.contents.roadmap} /> 
+        <BlockRoadMap roadmapList={page.contents.roadmap} /> 
       </section>
       <ContentTitleX1 title="CORE TEAM" mainTitle="OUR TEAM" />
       <section className="container">
         {/* OUR TEAM */}
       </section>
       <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER">Our advisors and board members are great part of our team.</ContentTitleX1> 
-      <BlockBoardMember members={Page.contents.member}/>
+      <BlockBoardMember members={page.contents.member}/>
       <div className="nk-block block-partners" style={{
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
-        <BlockOurPartner partners={Page.contents.partners}/>
+        <BlockOurPartner partners={page.contents.partners}/>
       </div>
       <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS">Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
       <section className="container">
         {/* BOARD MEMBER */}
-        <BlockDocument documents={Page.contents.documents} color="primary" style="custom-style" dark={true} />
+        <BlockDocument documents={page.contents.documents} color="primary" style="custom-style" dark={true} />
       </section>
       <div className="row">
         <div className="col-6">
@@ -338,10 +348,10 @@ export default function Home() {
       </div>
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
-        <BlockFAQ tabs={Page.contents.faqTabs} variant="S2"/>
+        <BlockFAQ tabs={page.contents.faqTabs} variant="S2"/>
       </section>
       <section className="container">
-        <BlockContactUs contentList={Page.contents.contact}/>
+        <BlockContactUs contentList={page.contents.contact}/>
       </section>
       <Footer />
     </>
