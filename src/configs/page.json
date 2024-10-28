@@ -192,6 +192,66 @@
                 "downloadLink": "#"
             }
         ],
+        "inpress":[
+            {
+                "image": "https://ico.themenio.com/images/partners/a-light.png",
+                "alt": "Partner A"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/b-light.png",
+                "alt": "Partner B"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/c-light.png",
+                "alt": "Partner C"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/d-light.png",
+                "alt": "Partner D"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/e-light.png",
+                "alt": "Partner E"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/f-light.png",
+                "alt": "Partner F"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/a-light.png",
+                "alt": "Partner A"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/b-light.png",
+                "alt": "Partner B"
+            },
+            {
+                "image": "https://ico.themenio.com/images/partners/c-light.png",
+                "alt": "Partner C"
+            }
+        ],
+        "news":[
+            {
+                "title": "Fintech G20 Global Summit 2022",
+                "location": "New York, United State",
+                "imageUrl": "https://ico.themenio.com/images/azalea/news-hr-a.jpg"
+            },
+            {
+                "title": "Blockchain Global Summit 2022",
+                "location": "California, United State",
+                "imageUrl": "https://ico.themenio.com/images/azalea/news-hr-b.jpg"
+            },
+            {
+                "title": "Fintech G20 Global Summit 2022",
+                "location": "New York, United State",
+                "imageUrl": "https://ico.themenio.com/images/azalea/news-hr-a.jpg"
+            },
+            {
+                "title": "Blockchain Global Summit 2022",
+                "location": "California, United State",
+                "imageUrl": "https://ico.themenio.com/images/azalea/news-hr-b.jpg"
+            }
+        ],
         "partners":[
             { "image": "https://ico.themenio.com/images/partners/a-light.png", "alt": "image of a-light" },
             { "image": "https://ico.themenio.com/images/partners/b-light.png", "alt": "image of b-light" },
