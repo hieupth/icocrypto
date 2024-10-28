@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { ReactNode, useEffect, useRef } from "react";
 import "./azalea.css";
 import ParticleBackground from "@/components/particlebackground";
-import PageHeader from "@/components/blocks/page-header";
+import PageHeader from "@/components/blocks/block-banner";
 import CustomButton from "@/components/elements/element-button";
 
 const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {

@@ -41,14 +41,6 @@ const Countdown: React.FC<CountdownProps> = ({ title, percent, caption, subtitle
 
   return (
     <div className="row justify-content-around gutter-vr-30px">
-      <div className="col-sm-4 col-md-6 col-lg-4 col-xl-5">
-        <div className="status-info">
-          <h6 className="title title-xxs tc-default status-title ttu">{title}</h6>
-          <h3 className="fz-3 fw-3 status-percent">{percent}</h3>
-          <div className="fz-8">{caption}</div>
-        </div>
-      </div>
-      <div className="col-sm-8 col-md-6 col-lg-7 col-xl-7">
         <div className="status-countdown float-sm-end">
           <h6 className="title title-xxs tc-default status-title ttu">{subtitle}</h6>
           <div className="countdown justify-content-center justify-content-sm-start countdown-s3 countdown-s3-alt" data-date={endDate}>
@@ -70,7 +62,6 @@ const Countdown: React.FC<CountdownProps> = ({ title, percent, caption, subtitle
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };
