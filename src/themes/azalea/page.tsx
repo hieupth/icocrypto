@@ -5,12 +5,8 @@ import CustomButton from "@/components/elements/element-button";
 import Countdown from "@/components/elements/element-countdown";
 import ProgressBar from "@/components/elements/element-progess-bar";
 import { ColorStyle } from "@/utils/colorclass";
-import { SizeStylable, StyledSize } from "@/utils/sizeclass";
-import styles from "@/app/page.module.css";
+import { SizeStylable } from "@/utils/sizeclass";
 import {
-  Content,
-  ContentNkBlock,
-  ContentTitle,
   ContentTitleX1,
 } from "@/components/elements/element-content";
 import CustomText from "@/components/elements/element-typography";
@@ -30,11 +26,9 @@ import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockTokens } from "@/components/blocks/block-TOKEN";
 import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
-import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
-import { BlockContactUs } from "@/components/blocks/block-CONTACT-US"
-import { BlockInPress } from "@/components/blocks/block-INPRESS";
-import { BlockNews } from "@/components/blocks/block-NEWS";
-import Footer from "@/components/blocks/block-footer";
+import { BlockRoadMap } from "@/components/blocks/block-ROADMAP"
+
+import page from '@/configs/page.json'
 
 export default function Home() {
   const aboutContent = {
@@ -53,50 +47,7 @@ export default function Home() {
       imageUrl: 'https://ico.themenio.com/images/azalea/gfx-e.png',
       imageAlt: 'image of gfx-e',
     }
-  const roadmapContent = [
-    {
-      id: 0,
-      year: 'Q1 2022',
-      date: 'Jan - Apr 2022',
-      text: 'Creation of a decentralize martketplace to neural network adjacent coefficients.',
-      state: 2
-    },
-    {
-      id: 1,
-      year: 'Q2 2022',
-      date: 'Jul - Aug 2022',
-      text: 'Start of the ICO Crypto Platform Development and Introduction of advertiser auctions',
-      state: 1
-    },
-    {
-      id: 2,
-      year: 'Q3 2022',
-      date: 'Sep - Oct 2022',
-      text: 'Start Private Token Sale Round to our contributors.',
-      state: 0
-    },
-    {
-      id: 3,
-      year: 'Q4 2022',
-      date: 'Nov - Dec 2022',
-      text: 'Launch of the mobile Best versions of the Publisher application and Press Tour.',
-      state: 0
-    },
-    {
-      id: 4,
-      year: 'Q1 2022',
-      date: 'Jan - Apr 2022',
-      text: 'Release of the initial versions of operational applications and smart contracts.',
-      state: 0
-    },
-    {
-      id: 5,
-      year: 'Q2 2022',
-      date: 'Jul - Aug 2022',
-      text: 'Creation of a decentralize martketplace to neural network adjacent coefficients.',
-      state: 0
-    }
-  ]  
+ 
   const membersData = [
     {
       name: 'Ron Glabischnig',
@@ -165,26 +116,7 @@ export default function Home() {
       ],
     }
   ];
-  const faqTabs = [
-    {
-        id: "tab1",
-        title: "General Questions",
-        faqs: [
-            { title: "What is ICO Crypto?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-            { title: "What cryptocurrencies can I use to purchase?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-            { title: "How can I participate in the ICO Token sale?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-            { title: "How do I benefit from the ICO Token?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-        ],
-    },
-    {
-        id: "tab2",
-        title: "Technical Support",
-        faqs: [
-            { title: "How to reset my password?", content: "Click on 'Forgot Password' and follow the instructions." },
-            { title: "How to contact support?", content: "You can reach us via our support email." },
-        ],
-    },
-  ];
+  
   const documents = [
     {
       title: "White Paper",
@@ -215,47 +147,7 @@ export default function Home() {
       downloadLink: "#",
     },
   ];
-  const partners = [
-    { image: "https://ico.themenio.com/images/partners/a-light.png", alt: "image of a-light" },
-    { image: "https://ico.themenio.com/images/partners/b-light.png", alt: "image of b-light" },
-    { image: "https://ico.themenio.com/images/partners/c-light.png", alt: "image of c-light" },
-    { image: "https://ico.themenio.com/images/partners/d-light.png", alt: "image of d-light" },
-    { image: "https://ico.themenio.com/images/partners/e-light.png", alt: "image of e-light" },
-    { image: "https://ico.themenio.com/images/partners/f-light.png", alt: "image of f-light" },
-    { image: "https://ico.themenio.com/images/partners/g-light.png", alt: "image of g-light" },
-  ];
-  const contactContent = [
-    {
-      contact_main: [
-        { icon: 'fas fa-phone', text: '+44 0123 4567' },
-        { icon: 'fas fa-envelope', text: 'info@company.com' },
-        { icon: 'fas fa-paper-plane', text: 'Join us on Telegram' }
-      ]
-    },
-    {
-      contact_media: [
-        { icon: 'fab fa-twitter' , url: '#' },
-        { icon: 'fab fa-medium-m' , url: '#' },
-        { icon: 'fab fa-facebook-f' , url: '#' },
-        { icon: 'fab fa-youtube' , url: '#' },
-        { icon: 'fab fa-bitcoin' , url: '#' },
-        { icon: 'fab fa-github' , url: '#' },
-      ]
-    },
-    { description: 'We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.'}
-  ]
-  const processBar = {
-    processPoint: [
-      { title: 'Soft Cap', percent: 25 },
-      { title: 'Crowdsale', percent: 55 },
-      { title: 'Hard Cap', percent: 85 }
-    ],
-    raised: '1,1250',
-    target: '150,000',
-    currency: 'Tokens',
-    status: { title: 'CURRENT BONUS', percent: 20, bonusTitle: 'Contributor can receive'
-    }
-  }
+ 
   const inPressItems = [
     {
         image: "https://ico.themenio.com/images/partners/a-light.png",
@@ -576,7 +468,7 @@ const members = [
       <BlockAbout aboutContent={aboutContent}/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
-      <BlockEcosystems/>
+      <BlockEcosystems contents={page.contents.ecosystems.contents} imageBackground={page.contents.ecosystems.imageBackground}/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
       <BlockPlatform/>
