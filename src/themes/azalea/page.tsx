@@ -23,6 +23,8 @@ import { BlockAbout } from "@/components/blocks/block-ABOUT";
 import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
 import BlockPlatform from "@/components/blocks/block-platform";
 import BlockMVP from "@/components/blocks/block-MVP";
+import { BlockTokens } from "@/components/blocks/block-TOKEN";
+import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP" 
 import { BlockContactUs } from "@/components/blocks/block-CONTACT-US"
@@ -291,7 +293,7 @@ export default function Home() {
   const newsItems = [
     {
         title: "Fintech G20 Global Summit 2022",
-        location: "New Youk, United State",
+        location: "New York, United State",
         imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",  
     },
     {
@@ -301,7 +303,7 @@ export default function Home() {
     },
     {
         title: "Fintech G20 Global Summit 2022",
-        location: "New Youk, United State",
+        location: "New York, United State",
         imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",
     },
     {
@@ -311,6 +313,120 @@ export default function Home() {
   
     },
   ];
+  const mvpItems = [
+    {
+      className: "shadow rounded img-fluid",
+      src: "https://ico.themenio.com/images/app-screens/sc-medium-b.png",
+      alt: "image sc-medium-b",
+      width: 500,
+      height: 300
+  },
+  {
+      className: "nk-block-img-plx plx-screen shadow rounded img-fluid",
+      src: "https://ico.themenio.com/images/app-screens/sc-small-d.jpg",
+      alt: "image sc-small-d",
+      width: 500,
+      height: 300
+  },
+  {   
+      className: "nk-block-img-plx plx-circle plx-circle-s1 img-fluid",
+      src: "https://ico.themenio.com/images/gfx/circle-a.png",
+      alt: "image circle-a",
+      width: 100,
+      height: 100
+  },
+  {
+      className: "nk-block-img-plx plx-polygon plx-polygon-s1 img-fluid",
+      src: "https://ico.themenio.com/images/gfx/polygon-a.png",
+      alt: "image polygon-a",
+      width: 100,
+      height: 100
+  },
+  {
+      className: "nk-block-img-plx plx-triangle plx-triangle-s1 img-fluid",
+      src: "https://ico.themenio.com/images/gfx/triangle-a.png",
+      alt: "triangle-a",
+      width: 100,
+      height: 100
+  }
+];
+const chartData = [
+  { label: "Public Sale", title: "Tokens alocate for Public Sale", subtitle: "(Lockup)", amount: 45, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Private Sale", title: "Tokens alocate for Private Sale", subtitle: "(1 month lockup for half bonus)", amount: 25, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Reserve Fund", title: "Reserve Fund", subtitle: "(6 months lockup)", amount: 8, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Team & Founder", title: "Team & Founder", subtitle: "(3 months lockup)", amount: 12, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Bounty & Events", title: "Bounty & Events", subtitle: "(1 month lockup)", amount: 6, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Advisors & Partners", title: "Advisors & Partners", subtitle: "(6 months lockup)", amount: 4, color: "#1f2e4d", colorHover: "#f42f54" },
+];
+const tokenInfo = [
+  { title: "Start Time", description: "15 Sep, 2022", colorClass: "color-1", delay: "0.7" },
+  { title: "Token Symbol", description: "ICOX", colorClass: "color-1", delay: "0.7" },
+  { title: "End Time", description: "30 Nov, 2022", colorClass: "color-2", delay: "0.75" },
+  { title: "Tokens Offered", description: "15.0 M", colorClass: "color-2", delay: "0.75" },
+  { title: "Soft Cap", description: "1.5 K", colorClass: "color-3", delay: "0.8" },
+  { title: "Soft Cap", description: "1.5 K", colorClass: "color-3", delay: "0.8" },
+  { title: "Crowdsale", description: "10.5 M", colorClass: "color-4", delay: "0.8" },
+  { title: "Crowdsale", description: "10.5 M", colorClass: "color-4", delay: "0.8" },
+  { title: "Hard Cap", description: "12.0 M", colorClass: "color-5", delay: "0.9" },
+  { title: "Hard Cap", description: "12.0 M", colorClass: "color-5", delay: "0.9" },
+];
+const members = [
+  {
+      image: "https://ico.themenio.com/images/azalea/team-a.jpg",
+      name: "Louis Baker",
+      position: "CEO & Lead Blockchain",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [
+          { title: "BLOCKCHAIN", percentage: 85 },
+          { title: "DECENTRALIZATION", percentage: 68 },
+      ],
+  },
+  {
+      image: "https://ico.themenio.com/images/azalea/team-b.jpg",
+      name: "Stefan Harary",
+      position: "CTO & Senior Developer",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [],
+  },
+  {
+      image: "https://ico.themenio.com/images/azalea/team-c.jpg",
+      name: "Moises Teare",
+      position: "Blockchain App Developer",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [],
+  },
+  {
+      image: "https://ico.themenio.com/images/azalea/team-d.jpg",
+      name: "Louis Baker",
+      position: "CEO & Lead Blockchain",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [],
+  },
+];
   return (
     <>
       <PageHeader title="WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE">
@@ -437,41 +553,61 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </section> 
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="WHAT AND WHY" mainTitle="ABOUT" />
       <BlockAbout aboutContent={aboutContent}/>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
       <BlockEcosystems/>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
       <BlockPlatform/>
+      <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
-      <BlockMVP/>
+      <BlockMVP items={mvpItems} />
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="TOKEN DETAILS" mainTitle="TOKENS">Breakdown of our Token Recipients.</ContentTitleX1>
       <section className="container">
         {/* TOKENS */}
+        <BlockTokens
+                    chartData={chartData}
+                    tokenInfo={tokenInfo}
+                    canvasId="token-distribution"
+                    color="light"
+                    style="custom-style"
+                    dark={false}
+                />
       </section>
+      <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title="TIMELINE" mainTitle="ROADMAP">ICO Crypto is developing a global data-driven platform for the world. Powered by blockchain and smart contracts.</ContentTitleX1>
       <section className="container">
         {/* ROADMAP */}
         <BlockRoadMap roadmapList={roadmapContent} /> 
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="CORE TEAM" mainTitle="OUR TEAM" />
       <section className="container">
         {/* OUR TEAM */}
+        <BlockOurTeam members={members} />
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER">Our advisors and board members are great part of our team.</ContentTitleX1> 
       <BlockBoardMember members={membersData}/>
+      <div style={{ marginBottom: "100px" }}/> 
       <div className="nk-block block-partners" style={{
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
         <BlockOurPartner partners={partners}/>
       </div>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS">Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
       <section className="container">
         {/* BOARD MEMBER */}
         <BlockDocument documents={documents} color="primary" style="custom-style" dark={true} />
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <div className="row">
         <div className="col-6">
         <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
@@ -488,13 +624,16 @@ export default function Home() {
       </section>
       </div>
       </div>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
         <BlockFAQ tabs={faqTabs} variant="S2"/>
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <section className="container">
         <BlockContactUs contentList={contactContent}/>
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <Footer /> 
     </>
   );
