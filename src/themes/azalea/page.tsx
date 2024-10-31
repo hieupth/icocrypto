@@ -13,12 +13,16 @@ import {
   ContentTitle,
   ContentTitleX1,
 } from "@/components/elements/element-content";
-import Image from "next/image";
 import CustomText from "@/components/elements/element-typography";
 import ProcessBar  from "@/components/elements/element-process-bar";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
 import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
+import { BlockInPress } from '@/components/blocks/block-INPRESS';
+import { BlockNews } from '@/components/blocks/block-NEWS';
+import Footer from "@/components/blocks/block-footer"
+
+import { BlockContactUs } from "@/components/blocks/block-CONTACT-US";
 import { BlockAbout } from "@/components/blocks/block-ABOUT";
 import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
 import BlockPlatform from "@/components/blocks/block-platform";
@@ -429,11 +433,9 @@ const members = [
 ];
   return (
     <>
-      <PageHeader title="WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE">
+      <PageHeader title={page.contents.banner.title}>
         <span>
-          The first decentralized Marketplace which simplifies and standardizes
-          data with blockchain technology. We provide user-friendly, efficient,
-          and secure crypto solutions utilizing blockchain technology.
+          {page.contents.banner.description}
         </span>
         <div
           style={{
@@ -465,7 +467,22 @@ const members = [
       >
         <div className="row">
           <div className="col-9"> 
-            <ProcessBar {...processBar}/>
+          <ProcessBar
+            processPoint={[
+              { title: 'Soft Cap', percent: 25 },
+              { title: 'Crowdsale', percent: 55 },
+              { title: 'Hard Cap', percent: 85 }
+            ]}
+            progressPoint={30}
+            raised="1,1250"
+            target="150,000"
+            currency="Tokens"
+            status={{
+            title: 'CURRENT BONUS',
+            percent: 20,
+            bonusTitle: 'Contributor can receive'
+           }}
+          />
           </div>
           <div className="col-3">
             <Countdown
@@ -583,7 +600,7 @@ const members = [
       <ContentTitleX1 title="TIMELINE" mainTitle="ROADMAP">ICO Crypto is developing a global data-driven platform for the world. Powered by blockchain and smart contracts.</ContentTitleX1>
       <section className="container">
         {/* ROADMAP */}
-        <BlockRoadMap roadmapList={roadmapContent} /> 
+        <BlockRoadMap roadmapList={page.contents.roadmap} /> 
       </section>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="CORE TEAM" mainTitle="OUR TEAM" />
@@ -599,7 +616,7 @@ const members = [
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
-        <BlockOurPartner partners={partners}/>
+        <BlockOurPartner partners={page.contents.partners}/>
       </div>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS">Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
@@ -627,11 +644,11 @@ const members = [
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
-        <BlockFAQ tabs={faqTabs} variant="S2"/>
+        <BlockFAQ tabs={page.contents.faqTabs} variant="S2"/>
       </section>
       <div style={{ marginBottom: "100px" }}/> 
       <section className="container">
-        <BlockContactUs contentList={contactContent}/>
+        <BlockContactUs contentList={page.contents.contact}/>
       </section>
       <div style={{ marginBottom: "100px" }}/> 
       <Footer /> 

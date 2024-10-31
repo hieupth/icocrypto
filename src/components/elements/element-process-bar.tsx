@@ -16,6 +16,7 @@ interface Status{
 
 interface ProgressBarProps {
     processPoint: ProcessPoint[],
+    progressPoint: number,
     raised: string,
     target: string,
     currency: string,
@@ -27,6 +28,7 @@ interface ProgressBarProps {
 // Component ProcessBar
 const ProcessBar: React.FC<ProgressBarProps> = ({
     processPoint,
+    progressPoint,
     raised,
     target,
     currency,
@@ -43,7 +45,7 @@ const ProcessBar: React.FC<ProgressBarProps> = ({
                       <li className="text-end">Target - <span>{target} {currency}</span></li>
                   </ul>
                   <div className="progress-bar progress-bar-xs">
-                      <div className="progress-percent progress-percent-s2" data-percent="30" style={{paddingLeft:"30%"}} ></div>
+                      <div className="progress-percent progress-percent-s2" data-percent={progressPoint} style={{paddingLeft:`${progressPoint}%`}} ></div>
                       {processPoint.map((point,index)=>(
                         <div className="progress-point" data-point={point.percent} style={{marginLeft:`${point.percent}%`}} key={index}>{point.title}</div>
                       ))}

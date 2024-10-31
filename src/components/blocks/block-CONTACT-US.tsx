@@ -1,27 +1,33 @@
 import { useState } from "react";
 import Image from "next/image"
 
-interface ContactMain{
-    icon: string,
-    text: string
+interface ContactDetail {
+    icon: string;
+    text: string;
 }
 
-interface ContactMedia{
-    icon: string,
-    url: string
+interface ContactLink {
+    icon: string;
+    url: string;
 }
 
-interface ContactContent {
-    contact_main?: ContactMain[];
-    contact_media?: ContactMedia[];
-    description?: string
-  }
+interface ContactDescription {
+    text: string;
+    backgroundImage: string; 
+    altText: string; 
+}
+
+interface ContactInfo {
+    mainDetails?: ContactDetail[];
+    socialLinks?: ContactLink[];
+    description?: ContactDescription;
+}
   
-  interface BlockContactUsProps {
-    contentList: ContactContent[]; 
-  }
+interface ContactUsBlockProps {
+    contentList: ContactInfo[];
+}
 
-export const BlockContactUs: React.FC<BlockContactUsProps> = ({contentList}) =>{
+export const BlockContactUs: React.FC<ContactUsBlockProps> = ({contentList}) =>{
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactMessage, setContactMessage] = useState('');
@@ -29,7 +35,6 @@ export const BlockContactUs: React.FC<BlockContactUsProps> = ({contentList}) =>{
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
       };
-
     return (
         <div className="nk-block nk-block-about">
         <div className="row justify-content-between align-items-center gutter-vr-50px">
@@ -38,7 +43,7 @@ export const BlockContactUs: React.FC<BlockContactUsProps> = ({contentList}) =>{
                 <div className="nk-block-text-head">
                 <h2 className="title title-lg ttu animated" data-animate="fadeInUp" data-delay="0.7" style={{ visibility: "visible", animationDelay: "0.7s" }}>Contact Us</h2>
                 <p className="animated" data-animate="fadeInUp" data-delay="0.8" style={{ visibility: "visible", animationDelay: "0.8s" }}>
-                    {contentList[2].description}
+                    {contentList[2]?.description?.text}
                 </p>
                 </div>
                 <form className="nk-form-submit" onSubmit={handleSubmit}>
@@ -100,7 +105,7 @@ export const BlockContactUs: React.FC<BlockContactUsProps> = ({contentList}) =>{
             <div className="col-lg-5 text-center order-lg-first">
                 <div className="nk-block-contact nk-block-contact-s1 animated" data-animate="fadeInUp" data-delay="0.1" style={{ visibility: "visible", animationDelay: "0.1s" }}>
                     <ul className="contact-list">
-                        {contentList[0].contact_main?.map((main,index)=>(
+                        {contentList[0].mainDetails?.map((main,index)=>(
                           <li className="animated" data-animate="fadeInUp" data-delay="0.2" style={{ visibility: "visible", animationDelay: "0.2s" }} key={index}>
                             <em className={`contact-icon ${main.icon}`}></em>
                             <div className="contact-text">
@@ -111,13 +116,13 @@ export const BlockContactUs: React.FC<BlockContactUsProps> = ({contentList}) =>{
                     </ul>
                     <div className="nk-circle-animation nk-df-center white small"></div>{/* <!-- .circle-animation --> */}
                     <Image
-                        src="https://ico.themenio.com/assets/images/dot-c-azalea.png"
-                        alt= 'image of dot-c-azalea'
+                        src={contentList[2]?.description?.backgroundImage ?? ''} 
+                        alt={contentList[2]?.description?.altText ?? ''}
                         fill={true} style={{zIndex:0}}
                     />
                 </div>
                 <ul className="social-links social-links-s2 justify-content-center animated" data-animate="fadeInUp" data-delay="0.6" style={{ visibility: "visible", animationDelay: "0.6s" }}>
-                    {contentList[1].contact_media?.map((media,index)=>(
+                    {contentList[1].socialLinks?.map((media,index)=>(
                         <li key={index}><a href={media.url}><em className={media.icon}></em></a></li>
                     ))}     
                 </ul>
