@@ -18,34 +18,26 @@ interface TabData {
   };
 }
 
-const BlockPlatform = ({ tabsPlatform }: { tabsPlatform: TabData[] }) => {
+interface BlockPlatformProps {
+  tabs: TabData[];
+}
+
+const BlockPlatform: React.FC<BlockPlatformProps> = ({ tabs }) => {
   return (
-    <section className="block-platform container container-xxl">
+    <div className="container container-xxl">
       <div className="nk-block">
         <div className="row justify-content-center">
           <div className="col-xl-6 col-lg-8">
             <ul className="nav tab-nav tab-nav-btn-bdr-s2 justify-content-center justify-content-sm-between pb-4 pb-sm-5">
-              {tabsPlatform.map((tab, index) => (
-                <li key={tab.id}>
-                  <a
-                    className={index === 0 ? "active" : ""}
-                    data-bs-toggle="tab"
-                    href={`#${tab.id}`}
-                  >
-                    {index === 0 ? "FOR Participators" : "For Traders"}
-                  </a>
-                </li>
-              ))}
+              <li><a className="active" data-bs-toggle="tab" href="#tab-1-1">FOR Participators</a></li>
+              <li className="tab-nav-sap d-none d-sm-block"></li>
+              <li><a data-bs-toggle="tab" href="#tab-1-2">For Traders</a></li>
             </ul>
           </div>
         </div>
         <div className="tab-content">
-          {tabsPlatform.map((tab, index) => (
-            <div
-              key={tab.id}
-              className={`tab-pane fade${index === 0 ? ' show active' : ''}`}
-              id={tab.id}
-            >
+          {tabs.map((tab, index) => (
+            <div className={`tab-pane fade${index === 0 ? ' show active' : ''}`} id={tab.id} key={tab.id}>
               <div className="row align-items-center justify-content-between gutter-vr-40px">
                 <div className="col-lg-6 order-lg-last">
                   <div className="nk-block-img nk-block-ca">
@@ -84,7 +76,7 @@ const BlockPlatform = ({ tabsPlatform }: { tabsPlatform: TabData[] }) => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -610,7 +610,7 @@ const tabsPlatform = [
       <BlockEcosystems/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
-      <BlockPlatform tabsPlatform={tabsPlatform} />
+      <BlockPlatform tabs = {tabsPlatform} />
       <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
       <BlockMVP items={mvpItems} />
