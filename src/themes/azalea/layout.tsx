@@ -50,7 +50,7 @@ const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
                             </li>
                         </NavBar>
                     </header>
-                    <main className={`nk-pages tc-light`}>
+                    <main className='nk-pages tc-light' style={{zIndex: 2}}>
                         {children}
                     </main>
                 </div>
@@ -63,13 +63,8 @@ const AzaleaLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
                     lineColor="255, 255, 255"
                     lineOpacity={0.02}
                     linksDistance={200}
-                    />
-                <div className="nk-ovm nk-ovm-repeat nk-ovm-fixed shape-i"
-                style={{
-                    zIndex:"-99",
-                    height: "100vh"
-                }}
-                >
+                />
+                <div className="nk-ovm nk-ovm-repeat nk-ovm-fixed shape-i">
                     <div className="ovm-line"></div>
                 </div>
             </Body>
