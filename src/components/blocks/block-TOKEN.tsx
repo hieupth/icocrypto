@@ -50,9 +50,9 @@ export const BlockTokens: React.FC<BlockTokensProps> = ({
         <section className={`section ${styleClass} ${colorClass} ${darkClass}`}>
             <div className="container container-xxl">
                 <div className="nk-block">
-                    <div className="row align-items-center">
+                    <div className="row align-items-center mx-5">
                         <div className="col-lg-6 mb-6 order-1 order-lg-2">
-                            <div className="animated" data-animate="fadeInUp" data-delay="0.3" style={{ visibility: "visible" }}>
+                            <div className="animated" data-animate="fadeInUp" data-delay="0.3">
                                 <DoughnutChart
                                     chartId={canvasId}
                                     chartData={doughnutChartData}
@@ -94,10 +94,19 @@ export const BlockTokens: React.FC<BlockTokensProps> = ({
                         </div>
                     </div>
                     <div className="token-info-s2 mt-5">
-                        <div className="row gutter-vr-50px gx-5">
+                        <div className="row gutter-vr-50px mx-5">
                             {tokenInfo.map((info, index) => (
-                                <div className="col-12 col-lg-auto py-5 pr-5 pl-0" key={index}>
-                                    <div className={`token-info-item ${info.colorClass} animated`} data-animate="fadeInUp" data-delay={info.delay} style={{ visibility: "visible" }}>
+                                <div className="col-12 col-lg-auto d-flex justify-content-center" key={index}>
+                                    <div
+                                        className={`token-info-item ${info.colorClass} animated d-flex flex-column justify-content-center align-items-center p-3`}
+                                        data-animate="fadeInUp"
+                                        data-delay={info.delay}
+                                        style={{
+                                            width: "230px",  
+                                            height: "60px", 
+                                            visibility: "visible"
+                                        }}
+                                    >
                                         <div className="token-info-title">{info.title}</div>
                                         <h4 className="token-info-des">{info.description}</h4>
                                     </div>
