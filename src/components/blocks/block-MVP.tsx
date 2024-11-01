@@ -1,6 +1,18 @@
 import Image from "next/image";
 
-const BlockMVP = () => {
+interface MVPItem {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    className?: string; 
+}
+
+interface BlockMVPProps {
+    items: MVPItem[];
+}
+
+export const BlockMVP: React.FC<BlockMVPProps> = ({ items }) => {
   return (
     <section className="container">
       {/* MVP */}
@@ -14,41 +26,16 @@ const BlockMVP = () => {
                 data-delay="0.3"
                 style={{ visibility: "visible", animationDelay: "0.3s" }}
               >
-                <Image
-                  className="shadow rounded"
-                  src="https://ico.themenio.com/images/app-screens/sc-medium-b.png"
-                  alt="image sc-medium-b"
-                  width={500}
-                  height={300}
-                />
-                <Image
-                  className="nk-block-img-plx plx-screen shadow rounded"
-                  src="https://ico.themenio.com/images/app-screens/sc-small-d.jpg"
-                  alt="image sc-small-d"
-                  width={500}
-                  height={300}
-                />
-                <Image
-                  className="nk-block-img-plx plx-circle plx-circle-s1"
-                  src="https://ico.themenio.com/images/gfx/circle-a.png"
-                  alt="image circle-a"
-                  width={100}
-                  height={100}
-                />
-                <Image
-                  className="nk-block-img-plx plx-polygon plx-polygon-s1"
-                  src="https://ico.themenio.com/images/gfx/polygon-a.png"
-                  alt="image polygon-a"
-                  width={100}
-                  height={100}
-                />
-                <Image
-                  className="nk-block-img-plx plx-triangle plx-triangle-s1"
-                  src="https://ico.themenio.com/images/gfx/triangle-a.png"
-                  alt="triangle-a"
-                  width={100}
-                  height={100}
-                />
+                {items.map((image, index) => (
+                  <Image
+                    key={index}
+                    className={image.className}
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                  />
+                ))}
               </div>
             </div>
             <div className="col-xxl-5 col-xl-6 col-lg-8">

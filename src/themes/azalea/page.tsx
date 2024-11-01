@@ -1,31 +1,53 @@
 "use client";
 
-import PageHeader from "@/components/blocks/page-header";
+import PageHeader from "@/components/blocks/block-banner";
 import CustomButton from "@/components/elements/element-button";
 import Countdown from "@/components/elements/element-countdown";
 import ProgressBar from "@/components/elements/element-progess-bar";
 import { ColorStyle } from "@/utils/colorclass";
-import { SizeStylable, StyledSize } from "@/utils/sizeclass";
-import styles from "@/app/page.module.css";
+import { SizeStylable } from "@/utils/sizeclass";
 import {
-  Content,
-  ContentNkBlock,
-  ContentTitle,
   ContentTitleX1,
 } from "@/components/elements/element-content";
-import Image from "next/image";
 import CustomText from "@/components/elements/element-typography";
+import ProcessBar  from "@/components/elements/element-process-bar";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
 import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
+import { BlockInPress } from '@/components/blocks/block-INPRESS';
+import { BlockNews } from '@/components/blocks/block-NEWS';
+import Footer from "@/components/blocks/block-footer"
+
+import { BlockContactUs } from "@/components/blocks/block-CONTACT-US";
 import { BlockAbout } from "@/components/blocks/block-ABOUT";
 import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
 import BlockPlatform from "@/components/blocks/block-platform";
 import BlockMVP from "@/components/blocks/block-MVP";
+import { BlockTokens } from "@/components/blocks/block-TOKEN";
+import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
+import { BlockRoadMap } from "@/components/blocks/block-ROADMAP"
+
+import page from '@/configs/page.json'
 
 export default function Home() {
-
+  const aboutContent = {
+      contentTitle: 'We build fully Decentralized Marketplace that Augments Access to Blockchain Technologies',
+      content: `We have developed a state-of-the-art marketplace where you can 
+              securely and reliably buy and sell any items. The fastest and most
+              flexible asset platform in existence. It will include easy
+              cryptocurrency payments integration and a digital arbitration
+              system. Our aim is to integrate all companies, employees, and
+              business assets into a unified blockchain ecosystem, making
+              business truly efficient, transparent, and reliable.`,
+      buttonLabel: 'White Paper',
+      buttonIcon: 'ti-arrow-down',
+      linkLabel: 'See the Ecosystems',
+      link: '#ecosystems',
+      imageUrl: 'https://ico.themenio.com/images/azalea/gfx-e.png',
+      imageAlt: 'image of gfx-e',
+    }
+ 
   const membersData = [
     {
       name: 'Ron Glabischnig',
@@ -94,27 +116,7 @@ export default function Home() {
       ],
     }
   ];
-
-  const faqTabs = [
-    {
-        id: "tab1",
-        title: "General Questions",
-        faqs: [
-            { title: "What is ICO Crypto?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-            { title: "What cryptocurrencies can I use to purchase?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-            { title: "How can I participate in the ICO Token sale?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-            { title: "How do I benefit from the ICO Token?", content: "Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa." },
-        ],
-    },
-    {
-        id: "tab2",
-        title: "Technical Support",
-        faqs: [
-            { title: "How to reset my password?", content: "Click on 'Forgot Password' and follow the instructions." },
-            { title: "How to contact support?", content: "You can reach us via our support email." },
-        ],
-    },
-  ];
+  
   const documents = [
     {
       title: "White Paper",
@@ -145,22 +147,218 @@ export default function Home() {
       downloadLink: "#",
     },
   ];
-  const partners = [
-    { image: "https://ico.themenio.com/images/partners/a-light.png", alt: "image of a-light" },
-    { image: "https://ico.themenio.com/images/partners/b-light.png", alt: "image of b-light" },
-    { image: "https://ico.themenio.com/images/partners/c-light.png", alt: "image of c-light" },
-    { image: "https://ico.themenio.com/images/partners/d-light.png", alt: "image of d-light" },
-    { image: "https://ico.themenio.com/images/partners/e-light.png", alt: "image of e-light" },
-    { image: "https://ico.themenio.com/images/partners/f-light.png", alt: "image of f-light" },
-    { image: "https://ico.themenio.com/images/partners/g-light.png", alt: "image of g-light" },
+ 
+  const inPressItems = [
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/d-light.png",
+        alt: "Partner D",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/e-light.png",
+        alt: "Partner E",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/f-light.png",
+        alt: "Partner F",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/a-light.png",
+        alt: "Partner A",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/b-light.png",
+        alt: "Partner B",
+    },
+    {
+        image: "https://ico.themenio.com/images/partners/c-light.png",
+        alt: "Partner C",
+    },
   ];
+  const newsItems = [
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New York, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",  
+    },
+    {
+        title: "Blockchain Global Summit 2022",
+        location: "California, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+    },
+    {
+        title: "Fintech G20 Global Summit 2022",
+        location: "New York, United State",
+        imageUrl: "https://ico.themenio.com/images/azalea/news-hr-a.jpg",
+    },
+    {
+      title: "Blockchain Global Summit 2022",
+      location: "California, United State",
+      imageUrl: "https://ico.themenio.com/images/azalea/news-hr-b.jpg",
+  
+    },
+  ];
+  const mvpItems = [
+    {
+      className: "shadow rounded img-fluid",
+      src: "https://ico.themenio.com/images/app-screens/sc-medium-b.png",
+      alt: "image sc-medium-b",
+      width: 500,
+      height: 300
+  },
+  {
+      className: "nk-block-img-plx plx-screen shadow rounded img-fluid",
+      src: "https://ico.themenio.com/images/app-screens/sc-small-d.jpg",
+      alt: "image sc-small-d",
+      width: 500,
+      height: 300
+  },
+  {   
+      className: "nk-block-img-plx plx-circle plx-circle-s1 img-fluid",
+      src: "https://ico.themenio.com/images/gfx/circle-a.png",
+      alt: "image circle-a",
+      width: 100,
+      height: 100
+  },
+  {
+      className: "nk-block-img-plx plx-polygon plx-polygon-s1 img-fluid",
+      src: "https://ico.themenio.com/images/gfx/polygon-a.png",
+      alt: "image polygon-a",
+      width: 100,
+      height: 100
+  },
+  {
+      className: "nk-block-img-plx plx-triangle plx-triangle-s1 img-fluid",
+      src: "https://ico.themenio.com/images/gfx/triangle-a.png",
+      alt: "triangle-a",
+      width: 100,
+      height: 100
+  }
+];
+const chartData = [
+  { label: "Public Sale", title: "Tokens alocate for Public Sale", subtitle: "(Lockup)", amount: 45, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Private Sale", title: "Tokens alocate for Private Sale", subtitle: "(1 month lockup for half bonus)", amount: 25, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Reserve Fund", title: "Reserve Fund", subtitle: "(6 months lockup)", amount: 8, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Team & Founder", title: "Team & Founder", subtitle: "(3 months lockup)", amount: 12, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Bounty & Events", title: "Bounty & Events", subtitle: "(1 month lockup)", amount: 6, color: "#1f2e4d", colorHover: "#f42f54" },
+  { label: "Advisors & Partners", title: "Advisors & Partners", subtitle: "(6 months lockup)", amount: 4, color: "#1f2e4d", colorHover: "#f42f54" },
+];
+const tokenInfo = [
+  { title: "Start Time", description: "15 Sep, 2022", colorClass: "color-1", delay: "0.7" },
+  { title: "Token Symbol", description: "ICOX", colorClass: "color-1", delay: "0.7" },
+  { title: "End Time", description: "30 Nov, 2022", colorClass: "color-2", delay: "0.75" },
+  { title: "Tokens Offered", description: "15.0 M", colorClass: "color-2", delay: "0.75" },
+  { title: "Soft Cap", description: "1.5 K", colorClass: "color-3", delay: "0.8" },
+  { title: "Soft Cap", description: "1.5 K", colorClass: "color-3", delay: "0.8" },
+  { title: "Crowdsale", description: "10.5 M", colorClass: "color-4", delay: "0.8" },
+  { title: "Crowdsale", description: "10.5 M", colorClass: "color-4", delay: "0.8" },
+  { title: "Hard Cap", description: "12.0 M", colorClass: "color-5", delay: "0.9" },
+  { title: "Hard Cap", description: "12.0 M", colorClass: "color-5", delay: "0.9" },
+];
+const members = [
+  {
+      image: "https://ico.themenio.com/images/azalea/team-a.jpg",
+      name: "Louis Baker",
+      position: "CEO & Lead Blockchain",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [
+          { title: "BLOCKCHAIN", percentage: 85 },
+          { title: "DECENTRALIZATION", percentage: 68 },
+      ],
+  },
+  {
+      image: "https://ico.themenio.com/images/azalea/team-b.jpg",
+      name: "Stefan Harary",
+      position: "CTO & Senior Developer",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [],
+  },
+  {
+      image: "https://ico.themenio.com/images/azalea/team-c.jpg",
+      name: "Moises Teare",
+      position: "Blockchain App Developer",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [],
+  },
+  {
+      image: "https://ico.themenio.com/images/azalea/team-d.jpg",
+      name: "Louis Baker",
+      position: "CEO & Lead Blockchain",
+      socialLinks: {
+          facebook: "#",
+          linkedin: "#",
+          twitter: "#",
+      },
+      description1: "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+      description2: "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.",
+      progress: [],
+  },
+];
+const tabsPlatform = [
+  {
+    id: "tab-1-1",
+    title: "A Open Platform for our Participators",
+    description: "Each participator can choose the trader and to sign a contract.",
+    features: [
+      { icon: "ikon-bulb", text: "User have full access to trading consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+      { icon: "ikon-paricle", text: "Our multi-cryptocurrency exchange will uis aute irure dolor in reprehenderit in voluptate velit uuntur magni dolores esse cillum." },
+      { icon: "ikon-bulb-2", text: "Users will be able to take quis nostrum exercitationem ullam corporis susci pitlabo riosam, nisi ut aliquid ex ea commodie." },
+      { icon: "ikon-document-2", text: "Sign a smart-contract to allow our trader’s access for live trading corporis cryptocurrency susci pitlabo riosam, nisi ut." }
+    ],
+    image: {
+      src: "https://ico.themenio.com/images/app-screens/sc-medium-a.png",
+      alt: "A Open Platform for Participators",
+      width: 450,
+      height: 450
+    }
+  },
+  {
+    id: "tab-1-2",
+    title: "For Traders",
+    description: "Some description here for traders...",
+    features: [], 
+    image: {
+      src: "https://ico.themenio.com/images/app-screens/sc-medium-b.png",
+      alt: "For Traders",
+      width: 450,
+      height: 450
+    }
+  }
+];
   return (
     <>
-      <PageHeader title="WORLD FIRST DECENTRALIZED MARKETPLACE WITH BLOCKCHAIN INFRASTRUCTURE">
+      <PageHeader title={page.contents.banner.title}>
         <span>
-          The first decentralized Marketplace which simplifies and standardizes
-          data with blockchain technology. We provide user-friendly, efficient,
-          and secure crypto solutions utilizing blockchain technology.
+          {page.contents.banner.description}
         </span>
         <div
           style={{
@@ -191,15 +389,25 @@ export default function Home() {
         }}
       >
         <div className="row">
-          <div className="col-6">
-            <ProgressBar
-              title="Test"
-              percentage={20}
-              color={ColorStyle.Primary}
-              size={StyledSize.Sm}
-            />
+          <div className="col-9"> 
+          <ProcessBar
+            processPoint={[
+              { title: 'Soft Cap', percent: 25 },
+              { title: 'Crowdsale', percent: 55 },
+              { title: 'Hard Cap', percent: 85 }
+            ]}
+            progressPoint={30}
+            raised="1,1250"
+            target="150,000"
+            currency="Tokens"
+            status={{
+            title: 'CURRENT BONUS',
+            percent: 20,
+            bonusTitle: 'Contributor can receive'
+           }}
+          />
           </div>
-          <div className="col-6">
+          <div className="col-3">
             <Countdown
               title="Test"
               percent="20"
@@ -209,6 +417,7 @@ export default function Home() {
             />
           </div>
         </div>
+
         <div
           className="row"
           style={{
@@ -284,59 +493,88 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </section> 
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="WHAT AND WHY" mainTitle="ABOUT" />
-      <BlockAbout/>
+      <BlockAbout aboutContent={aboutContent}/>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="CORE ECOSYSTEMS" mainTitle="ECOSYSTEMS" />
-      <BlockEcosystems/>
+      <BlockEcosystems contents={page.contents.ecosystems.contents} imageBackground={page.contents.ecosystems.imageBackground}/>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
-      <BlockPlatform/>
+      <BlockPlatform tabs = {tabsPlatform} />
+      <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
-      <BlockMVP/>
+      <BlockMVP items={mvpItems} />
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="TOKEN DETAILS" mainTitle="TOKENS">Breakdown of our Token Recipients.</ContentTitleX1>
       <section className="container">
         {/* TOKENS */}
+        <BlockTokens
+                    chartData={chartData}
+                    tokenInfo={tokenInfo}
+                    canvasId="token-distribution"
+                    color="light"
+                    style="custom-style"
+                    dark={false}
+                />
       </section>
+      <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title="TIMELINE" mainTitle="ROADMAP">ICO Crypto is developing a global data-driven platform for the world. Powered by blockchain and smart contracts.</ContentTitleX1>
       <section className="container">
         {/* ROADMAP */}
+        <BlockRoadMap roadmapList={page.contents.roadmap} /> 
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="CORE TEAM" mainTitle="OUR TEAM" />
       <section className="container">
         {/* OUR TEAM */}
+        <BlockOurTeam members={members} />
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ADVISORS" mainTitle="BOARD MEMBER">Our advisors and board members are great part of our team.</ContentTitleX1> 
       <BlockBoardMember members={membersData}/>
+      <div style={{ marginBottom: "100px" }}/> 
       <div className="nk-block block-partners" style={{
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
-        <BlockOurPartner partners={partners}/>
+        <BlockOurPartner partners={page.contents.partners}/>
       </div>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="DOWNLOADS" mainTitle="DOCUMENTS">Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
       <section className="container">
         {/* BOARD MEMBER */}
         <BlockDocument documents={documents} color="primary" style="custom-style" dark={true} />
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
       <div className="row">
         <div className="col-6">
         <ContentTitleX1 title="PRESS" mainTitle="IN PRESS" />
       <section className="container">
         {/* IN PRESS */}
+        <BlockInPress inPressItems={inPressItems} />
       </section>
         </div>
         <div className="col-6">
         <ContentTitleX1 title="UPDATE" mainTitle="NEWS" />
       <section className="container">
         {/* NEWS */}
+        <BlockNews newsItems={newsItems} />
       </section>
-        </div>
-
       </div>
+      </div>
+      <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="UPDATE" mainTitle="FAQS">Below we’ve provided a bit of ICO, ICO Token, cryptocurrencies, and few others. If you have any other questions, please get in touch.</ContentTitleX1> 
       <section className="container">
-        <BlockFAQ tabs={faqTabs} variant="S2"/>
+        <BlockFAQ tabs={page.contents.faqTabs} variant="S2"/>
       </section>
+      <div style={{ marginBottom: "100px" }}/> 
+      <section className="container">
+        <BlockContactUs contentList={page.contents.contact}/>
+      </section>
+      <div style={{ marginBottom: "100px" }}/> 
+      <Footer /> 
     </>
   );
 }

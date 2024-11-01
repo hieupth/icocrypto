@@ -1,16 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
 
 interface DoughnutChartProps {
-    chartId: string; 
+    chartId: string;
     chartData: Array<{
-        color: string; 
-        title: string; 
+        color: string;
+        title: string;
         amount: number;
+        colorHover: string;
     }>;
-    showInfo?: boolean; 
+    showInfo?: boolean;
 }
 
 const DoughnutChart: React.FC<DoughnutChartProps> = ({ chartId, chartData, showInfo = false }) => {
@@ -23,6 +24,7 @@ const DoughnutChart: React.FC<DoughnutChartProps> = ({ chartId, chartData, showI
                 datasets: [{
                     data: chartData.map(item => item.amount),
                     backgroundColor: chartData.map(item => item.color),
+                    hoverBackgroundColor: chartData.map(item => item.colorHover),
                 }]
             };
 
@@ -32,44 +34,61 @@ const DoughnutChart: React.FC<DoughnutChartProps> = ({ chartId, chartData, showI
                     type: 'doughnut',
                     data: data,
                     options: {
+                        cutout: '0%',
                         responsive: true,
                         plugins: {
-                            legend: {
-                                display: showInfo, 
-                                position: 'bottom',
-                            },
+                            legend: { display: false },
                             tooltip: {
+                                backgroundColor: 'transparent',
+                                titleColor: '#fff',
+                                bodyColor: '#fff',
+                                displayColors: false,
+                                bodyFont: { size: 16, weight: 'bold' },
                                 callbacks: {
                                     label: (tooltipItem) => {
                                         const index = tooltipItem.dataIndex;
                                         const amount = chartData[index].amount;
-                                        return `${chartData[index].title}: ${amount}`;
+                                        return `${amount}%`;
                                     }
                                 }
+                            }
+                        },
+                        elements: {
+                            arc: {
+                                borderColor: 'rgba(0, 0, 0, 0.3)',
+                                borderWidth: 1,
+                                borderAlign: 'inner',
+                            }
+                        },
+                        onHover: (event, elements) => {
+                            const canvasId = chartId;
+                            const canvasElement = document.querySelector(`[data-canvas="${canvasId}"]`);
+
+                            if (elements.length) {
+                                const index = elements[0].index;
+
+                                const items = canvasElement?.querySelectorAll('li');
+                                items?.forEach(item => item.classList.remove('active'));
+
+                                items && items[index].classList.add('active');
+                            } else {
+                                const items = canvasElement?.querySelectorAll('li');
+                                items?.forEach(item => item.classList.remove('active'));
                             }
                         }
                     }
                 });
 
                 return () => {
-                    myDoughnutChart.destroy(); 
+                    myDoughnutChart.destroy();
                 };
             }
         }
     }, [chartData, showInfo]);
 
     return (
-        <div>
-            <canvas id={chartId} ref={chartRef} className="chart-canvas"></canvas>
-            {showInfo && (
-                <ul className="chart-data" data-canvas={chartId} data-canvas-type="doughnut">
-                    {chartData.map((item, index) => (
-                        <li key={index} data-color={item.color} data-title={item.title} data-amount={item.amount}></li>
-                    ))}
-                </ul>
-            )}
-        </div>
+        <canvas id={chartId} ref={chartRef} className="chart-canvas" style={{ visibility: 'visible' }}></canvas>
     );
 };
 
-export default DoughnutChart
+export default memo(DoughnutChart);

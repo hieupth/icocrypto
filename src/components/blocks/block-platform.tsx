@@ -1,28 +1,28 @@
 import Image from "next/image";
 
-const BlockPlatform = () => {
-  const tabs = [
-    {
-      id: "tab-1-1",
-      title: "A Open Platform for our Participators",
-      description: "Each participator can choose the trader and to sign a contract.",
-      features: [
-        { icon: "ikon-bulb", text: "User have full access to trading consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-        { icon: "ikon-paricle", text: "Our multi-cryptocurrency exchange will uis aute irure dolor in reprehenderit in voluptate velit uuntur magni dolores esse cillum." },
-        { icon: "ikon-bulb-2", text: "Users will be able to take quis nostrum exercitationem ullam corporis susci pitlabo riosam, nisi ut aliquid ex ea commodie." },
-        { icon: "ikon-document-2", text: "Sign a smart-contract to allow our trader’s access for live trading corporis cryptocurrency susci pitlabo riosam, nisi ut." }
-      ],
-      image: "https://ico.themenio.com/images/app-screens/sc-medium-a.png"
-    },
-    {
-      id: "tab-1-2",
-      title: "For Traders",
-      description: "Some description here for traders...",
-      features: [], // Add features for the traders tab here
-      image: "https://ico.themenio.com/images/app-screens/sc-medium-b.png" // Replace with appropriate image
-    }
-  ];
+interface FeatureData {
+  icon: string;
+  text: string;
+}
 
+interface TabData {
+  id: string;
+  title: string;
+  description: string;
+  features: FeatureData[];
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+}
+
+interface BlockPlatformProps {
+  tabs: TabData[];
+}
+
+const BlockPlatform: React.FC<BlockPlatformProps> = ({ tabs }) => {
   return (
     <div className="container container-xxl">
       <div className="nk-block">
@@ -47,10 +47,10 @@ const BlockPlatform = () => {
                       style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center", height: "auto" }}
                     >
                       <Image
-                        src={tab.image}
-                        alt={tab.id}
-                        width={450}
-                        height={450}
+                        src={tab.image.src}
+                        alt={tab.image.alt}
+                        width={tab.image.width}
+                        height={tab.image.height}
                       />
                     </div>
                   </div>
