@@ -431,6 +431,37 @@ const members = [
       progress: [],
   },
 ];
+const tabsPlatform = [
+  {
+    id: "tab-1-1",
+    title: "A Open Platform for our Participators",
+    description: "Each participator can choose the trader and to sign a contract.",
+    features: [
+      { icon: "ikon-bulb", text: "User have full access to trading consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+      { icon: "ikon-paricle", text: "Our multi-cryptocurrency exchange will uis aute irure dolor in reprehenderit in voluptate velit uuntur magni dolores esse cillum." },
+      { icon: "ikon-bulb-2", text: "Users will be able to take quis nostrum exercitationem ullam corporis susci pitlabo riosam, nisi ut aliquid ex ea commodie." },
+      { icon: "ikon-document-2", text: "Sign a smart-contract to allow our trader’s access for live trading corporis cryptocurrency susci pitlabo riosam, nisi ut." }
+    ],
+    image: {
+      src: "https://ico.themenio.com/images/app-screens/sc-medium-a.png",
+      alt: "A Open Platform for Participators",
+      width: 450,
+      height: 450
+    }
+  },
+  {
+    id: "tab-1-2",
+    title: "For Traders",
+    description: "Some description here for traders...",
+    features: [], 
+    image: {
+      src: "https://ico.themenio.com/images/app-screens/sc-medium-b.png",
+      alt: "For Traders",
+      width: 450,
+      height: 450
+    }
+  }
+];
   return (
     <>
       <PageHeader title={page.contents.banner.title}>
@@ -579,7 +610,7 @@ const members = [
       <BlockEcosystems/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title="ICOX PRODUCTS" mainTitle="PLATFORM" />
-      <BlockPlatform/>
+      <BlockPlatform tabsPlatform={tabsPlatform} />
       <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title="MVP APPS" mainTitle="MVP">Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
       <BlockMVP items={mvpItems} />
