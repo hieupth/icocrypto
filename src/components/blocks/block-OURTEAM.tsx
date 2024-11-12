@@ -55,10 +55,10 @@ const settingMembers = {
 };
 
 interface BlockOurTeamProps {
-    members: MemberDetail[];
+    ourteamMember: MemberDetail[];
 }
 
-export const BlockOurTeam: React.FC<BlockOurTeamProps> = ({ members }) => {
+export const BlockOurTeam: React.FC<BlockOurTeamProps> = ({ ourteamMember }) => {
     const [selectedMemberIndex, setSelectedMemberIndex] = useState<number | null>(null);
     const sliderRef = useRef<Slider | null>(null); 
 
@@ -82,7 +82,7 @@ export const BlockOurTeam: React.FC<BlockOurTeamProps> = ({ members }) => {
         <>
             <div className="nk-block block-team">
                 <Slider ref={sliderRef} {...settingMembers}>
-                    {members.map((member, index) => (
+                    {ourteamMember.map((member, index) => (
                         <div className="team-member-container" key={member.name}>
                             <div className="team-member" onClick={() => handleClick(index)} style={{ cursor: "pointer", marginRight: '50px', marginLeft: '50px', marginTop: index % 2 === 0 ? '60px' : '0' }}>
                                 <div className="team-photo animated fadeInUp">
@@ -141,31 +141,31 @@ export const BlockOurTeam: React.FC<BlockOurTeamProps> = ({ members }) => {
                         <div className="team-popup-content">
                             <div className="team-popup-left">
                                 <Image
-                                    src={members[selectedMemberIndex].image}
+                                    src={ourteamMember[selectedMemberIndex].image}
                                     width={500}
                                     height={500}
-                                    alt={`Detailed photo of ${members[selectedMemberIndex].name}`}
+                                    alt={`Detailed photo of ${ourteamMember[selectedMemberIndex].name}`}
                                 />
                             </div>
                             <div className="team-popup-right">
-                                <h3 className="team-name title title-lg">{members[selectedMemberIndex].name}</h3>
-                                <p className="team-position">{members[selectedMemberIndex].position}</p>
+                                <h3 className="team-name title title-lg">{ourteamMember[selectedMemberIndex].name}</h3>
+                                <p className="team-position">{ourteamMember[selectedMemberIndex].position}</p>
                                 <div className="team-socials d-flex">
-                                    {members[selectedMemberIndex].socialLinks.facebook && (
-                                        <a href={members[selectedMemberIndex].socialLinks.facebook}>
+                                    {ourteamMember[selectedMemberIndex].socialLinks.facebook && (
+                                        <a href={ourteamMember[selectedMemberIndex].socialLinks.facebook}>
                                             <i className="fab fa-facebook-f me-3"></i>
                                         </a>
                                     )}
-                                    {members[selectedMemberIndex].socialLinks.linkedin && (
-                                        <a href={members[selectedMemberIndex].socialLinks.linkedin}>
+                                    {ourteamMember[selectedMemberIndex].socialLinks.linkedin && (
+                                        <a href={ourteamMember[selectedMemberIndex].socialLinks.linkedin}>
                                             <i className="fab fa-linkedin-in me-3"></i>
                                         </a>
                                     )}
                                 </div>
-                                <p className="team-description">{members[selectedMemberIndex].description1}</p>
-                                <p className="team-description">{members[selectedMemberIndex].description2}</p>
+                                <p className="team-description">{ourteamMember[selectedMemberIndex].description1}</p>
+                                <p className="team-description">{ourteamMember[selectedMemberIndex].description2}</p>
                                 <div className="progress-list">
-                                    {members[selectedMemberIndex].progress.map((skill) => (
+                                    {ourteamMember[selectedMemberIndex].progress.map((skill) => (
                                         <div className="progress-wrap" key={skill.title}>
                                             <div className="progress-title">
                                                 {skill.title} <span className="progress-amount">{skill.percentage}%</span>
