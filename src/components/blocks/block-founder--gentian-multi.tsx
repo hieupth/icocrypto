@@ -6,9 +6,9 @@ interface FounderProps {
     imageAlt: string,
     name: string,
     role: string,
-    subtitle: string;
-    title: string;
-    description: string;
+    subtitle: string,
+    title: string,
+    description: string,
 }
 
 const Founder = ({
