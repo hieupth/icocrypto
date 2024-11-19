@@ -2,21 +2,19 @@ import React from "react";
 import Image from "next/image";
 
 interface adminDashboardProps {
-    imageSrc: string;
-    imageAlt: string;
-    title: string;
-    subtitle: string;
-    description: string;
-    features: string[];
+    adminData: {
+        imageSrc: string;
+        imageAlt: string;
+        title: string;
+        subtitle: string;
+        description: string;
+        features: string[];    
+    }
 }
 
+
 const AdminDashboard = ({
-    imageSrc,
-    imageAlt,
-    title,
-    subtitle,
-    description,
-    features,
+    adminData
 }: adminDashboardProps) => {
   return (
     <>
@@ -25,19 +23,19 @@ const AdminDashboard = ({
                 <div className="col-lg-7 order-lg-last">
                     <div className="nk-block-img edge-r1 pb-4 pb-lg-0 animated" data-animate="fadeInUp" data-delay=".1" style={{ visibility: "visible", animationDelay: "0.1s" }}>
                         <Image 
-                            src={imageSrc}
-                            alt={imageAlt}
+                            src={adminData.imageSrc}
+                            alt={adminData.imageAlt}
                             fill={true}
                          />
                     </div>
                 </div>
                 <div className="col-lg-5">
                     <div className="nk-block-text">
-                        <h6 className="title title-xs tc-primary animated" data-animate="fadeInUp" data-delay=".1" style={{ visibility: "visible", animationDelay: "0.1s" }}>{title}</h6>
-                        <h2 className="title animated" data-animate="fadeInUp" data-delay=".2" style={{ visibility: "visible", animationDelay: "0.2s" }}>{subtitle}</h2>
-                        <p className="animated" data-animate="fadeInUp" data-delay=".3" style={{ visibility: "visible", animationDelay: "0.3s" }}>{description}</p>
+                        <h6 className="title title-xs tc-primary animated" data-animate="fadeInUp" data-delay=".1" style={{ visibility: "visible", animationDelay: "0.1s" }}>{adminData.title}</h6>
+                        <h2 className="title animated" data-animate="fadeInUp" data-delay=".2" style={{ visibility: "visible", animationDelay: "0.2s" }}>{adminData.subtitle}</h2>
+                        <p className="animated" data-animate="fadeInUp" data-delay=".3" style={{ visibility: "visible", animationDelay: "0.3s" }}>{adminData.description}</p>
                         <ul className="list list-check animated" data-animate="fadeInUp" data-delay=".4" style={{ visibility: "visible", animationDelay: "0.4s" }}>
-                            {features.map((feature, index) =>(
+                            {adminData.features.map((feature, index) =>(
                                  <li key={index}>{feature}</li>
                             ))}
                         </ul>
@@ -52,8 +50,8 @@ const AdminDashboard = ({
 export default AdminDashboard;
 
 /* props
-    adminDashboard: {
-        imageSrc: "images/app-screens/laptop-a.png",
+    const adminDashboardData= {
+        imageSrc: "https://ico.themenio.com/images/app-screens/laptop-a.png",
         imageAlt: "app",
         title: "Ico Admin Dashboard",
         subtitle: "Introducing Complete Admin Dashboard",
