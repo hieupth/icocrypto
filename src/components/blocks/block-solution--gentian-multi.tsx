@@ -8,15 +8,15 @@ interface solution{
 }
 
 interface SolutionProps {
-    solutions: solution[]
+    solutionData: solution[]
 }
 
-const Solution: React.FC<SolutionProps> = ({solutions}) => {
+const Solution: React.FC<SolutionProps> = ({solutionData}) => {
   return (
     <>
         <div className="nk-block nk-block-features-s3">
             <div className="row gutter-vr-40px justify-content-center">
-                {solutions.map((solution, index) => (
+                {solutionData.map((solution, index) => (
                     <div
                         key={index}
                         className="col-lg-6 col-md-10"
