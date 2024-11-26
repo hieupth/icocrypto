@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[384],{384:function(n,e,u){u.r(e),u.d(e,{default:function(){return r}});var t=u(7437);function r(){return(0,t.jsx)("div",{children:"Gentian"})}u(2265)}}]);
