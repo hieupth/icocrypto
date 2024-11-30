@@ -42,7 +42,7 @@ interface featureContent {
     variant: VariantType;
 }
 
-export const Feature: React.FC<featureContent> = ({
+export const FeaturePanels: React.FC<featureContent> = ({
     featureContent,
     color = "default", 
     style = "",
