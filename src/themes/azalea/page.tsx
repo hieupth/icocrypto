@@ -179,7 +179,8 @@ export default function Home() {
       <BlockEcosystems contents={page.contents.ecosystems.contents} imageBackground={page.contents.ecosystems.imageBackground}/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.platform.title} mainTitle={page.contents.platform.mainTitle} />
-      <BlockPlatform tabs = {page.contents.platform.tabsPlatform} />
+      {/*  PLATFORM */}
+      <FeaturePanels featureContent={page.contents.platform} variant="S21"/>
       <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title={page.contents.mvp.title} mainTitle={page.contents.mvp.mainTitle}>Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
       <BlockMVP items={page.contents.mvp.items} />
