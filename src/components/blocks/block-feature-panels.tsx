@@ -1,5 +1,5 @@
 import { ColorStyle, Stylable } from "@/utils/colorclass";
-import { FeatureS1, FeatureS4, FeatureS20, FeatureS21 } from "@/components/elements/element-featurePanels";
+import { FeatureS1, FeatureS4, FeatureS20, FeatureS21, FeatureS22 } from "@/components/elements/element-featurePanels";
 
 interface featureS1 {
     title: string;
@@ -51,9 +51,21 @@ interface featureS21{
     }[]
 }
 
-type FeatureContentType = featureS1 | featureS4 | featureS20 | featureS21;
-type VariantType = "S1" | "S4" | "S20" | "S21"
+interface featureS22 {
+    title: string,
+    mainTitle: string,
+    items: {
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+      className?: string; 
+    }[]
+  }
 
+  type FeatureContentType = featureS1 | featureS4 | featureS20 | featureS21 | featureS22;
+  type VariantType = "S1" | "S4" | "S20" | "S21" | "S22"
+  
 interface featureContent {
     featureContent?: FeatureContentType,
     color?: ColorStyle;
@@ -78,6 +90,7 @@ export const FeaturePanels: React.FC<featureContent> = ({
                 {variant === "S4"  && <FeatureS4 FeatureContent={featureContent as featureS4} />} 
                 {variant === "S20" && <FeatureS20 FeatureContent={featureContent as featureS20} />} 
                 {variant === "S21" && <FeatureS21 FeatureContent={featureContent as featureS21} />} 
+                {variant === "S22" && <FeatureS22 FeatureContent={featureContent as featureS22} />} \
         </section>
     );
 };

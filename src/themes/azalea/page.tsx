@@ -20,8 +20,6 @@ import { Footer } from "@/components/blocks/block-footer"
 
 import { FeaturePanels } from "@/components/blocks/block-feature-panels";
 import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
-import BlockPlatform from "@/components/blocks/block-platform";
-import BlockMVP from "@/components/blocks/block-MVP";
 import { BlockTokens } from "@/components/blocks/block-TOKEN";
 import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
@@ -183,7 +181,8 @@ export default function Home() {
       <FeaturePanels featureContent={page.contents.platform} variant="S21"/>
       <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title={page.contents.mvp.title} mainTitle={page.contents.mvp.mainTitle}>Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
-      <BlockMVP items={page.contents.mvp.items} />
+      {/* MVP */}
+      <FeaturePanels featureContent={page.contents.mvp} variant="S22"/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.token.title} mainTitle={page.contents.token.mainTitle}>Breakdown of our Token Recipients.</ContentTitleX1>
       <section className="container">
