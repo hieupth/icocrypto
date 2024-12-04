@@ -1,6 +1,5 @@
 import { ColorStyle, Stylable } from "@/utils/colorclass";
-import { FeatureBoxS1 } from "@/components/elements/element-featureBoxs" 
-
+import { FeatureBoxS1, FeatureBoxS16 } from "@/components/elements/element-featureBoxs" 
 
 interface featureBoxS1 {
     items: {
@@ -10,8 +9,17 @@ interface featureBoxS1 {
       }[]
 }
 
-type FeatureContentType = featureBoxS1;
-type VariantType = "S1" 
+interface featureBoxS16{
+    imageBackground: string,
+    contents: {
+        id: number,
+        title: string,
+        description: string 
+  }[]
+}
+
+type FeatureContentType = featureBoxS1 | featureBoxS16;
+type VariantType = `featureBoxS${number}` | `featureCardS${number}`;
 
 interface BlockContactProps {
     featureContent: FeatureContentType,
@@ -33,7 +41,13 @@ export const BlockFeatureCards: React.FC<BlockContactProps> = ({
     const colorClass = color ? color : "default";
     return (
         <section className={`${styleClass} ${colorClass} ${darkClass}`}>
-            {variant === "S1"  && <FeatureBoxS1 FeatureBoxContent={featureContent as featureBoxS1} />}
+            {variant === "featureBoxS1"  && <FeatureBoxS1 FeatureBoxContent={featureContent as featureBoxS1} />}
+            {variant === "featureBoxS16"  && <FeatureBoxS16 FeatureBoxContent={featureContent as featureBoxS16} />}
         </section>
     );
 };
+
+/*
+    featureBoxS16 => "ecosystem block" - azalea 
+    featureBoxS1  => "about block" - gentian multi 
+*/
