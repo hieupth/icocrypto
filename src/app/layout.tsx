@@ -1,20 +1,30 @@
-import type { Metadata } from "next";
-import defaultConfig from "@/configs/default.json"
-import AzaleaLayout from "@/themes/azalea/layout";
-import GentianLayout from "@/themes/gentian/layout";
+'use client'
+import page from '@/configs/page.json';
+import { Suspense, useEffect, useState } from "react";
 
 
-export const metadata: Metadata = {
-  title: defaultConfig.title,
-  description: defaultConfig.description,
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = page.theme;
+  const [Layout, setLayout] = useState<React.ComponentType<{ children: React.ReactNode }> | null>(null);
+
+  useEffect(()=>{
+    import(`@/themes/${theme}/layout`)
+    .then((module)=>{
+      setLayout(() => module.default)
+    })
+    .catch((error) => {
+      console.error("Failed to load theme:", error);
+    });
+  },[theme])  
+
   return (
-    <GentianLayout>{children}</GentianLayout>
+    <Suspense fallback={<div>Loading...</div>}>
+        {Layout ? <Layout>{children}</Layout> : <div>Theme not loaded.</div>}
+    </Suspense>
   );
 }
