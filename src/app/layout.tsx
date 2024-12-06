@@ -1,8 +1,12 @@
-'use client'
 import page from '@/configs/page.json';
-import { Suspense, useEffect, useState } from "react";
+import type { Metadata } from "next";
+import DynamicLayout from '@/app/dynamicLayout';
+import defaultConfig from "@/configs/default.json";
 
-
+export const metadata: Metadata = {
+  title: defaultConfig.title,
+  description: defaultConfig.description,
+};
 
 export default function RootLayout({
   children,
@@ -10,21 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const theme = page.theme;
-  const [Layout, setLayout] = useState<React.ComponentType<{ children: React.ReactNode }> | null>(null);
-
-  useEffect(()=>{
-    import(`@/themes/${theme}/layout`)
-    .then((module)=>{
-      setLayout(() => module.default)
-    })
-    .catch((error) => {
-      console.error("Failed to load theme:", error);
-    });
-  },[theme])  
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-        {Layout ? <Layout>{children}</Layout> : <div>Theme not loaded.</div>}
-    </Suspense>
+    <html>
+      <body>
+        <DynamicLayout theme={theme}>
+          {children}
+        </DynamicLayout>    
+      </body>
+    </html>
   );
 }
