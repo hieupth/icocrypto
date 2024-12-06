@@ -253,7 +253,7 @@ export default function Home() {
         <BlockContact contactContent={page.contents.contact} variant="S6"/>
       </section>
       <div style={{ marginBottom: "100px" }}/> 
-      <Footer FooterContent={page.contents.footer} variant="S1"/> 
+      <Footer FooterContent={page.contents.footer} variant="S8"/> 
     </>
   );
 }
