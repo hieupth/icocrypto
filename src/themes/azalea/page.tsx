@@ -19,12 +19,12 @@ import { BlockNews } from '@/components/blocks/block-NEWS';
 import { Footer } from "@/components/blocks/block-footer"
 
 import { FeaturePanels } from "@/components/blocks/block-feature-panels";
-import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
 import { BlockTokens } from "@/components/blocks/block-TOKEN";
 import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP"
 import { BlockContact } from "@/components/blocks/block-contact";
+import { BlockFeatureCards } from "@/components/blocks/block-feature-cards";
 
 import page from '@/configs/page.json'
 
@@ -174,7 +174,7 @@ export default function Home() {
       <FeaturePanels featureContent={page.contents.about} variant="S20"/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.ecosystems.title} mainTitle={page.contents.ecosystems.mainTitle} />
-      <BlockEcosystems contents={page.contents.ecosystems.contents} imageBackground={page.contents.ecosystems.imageBackground}/>
+      <BlockFeatureCards featureContent={page.contents.ecosystems} variant="featureBoxS16"/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.platform.title} mainTitle={page.contents.platform.mainTitle} />
       {/*  PLATFORM */}
@@ -253,7 +253,7 @@ export default function Home() {
         <BlockContact contactContent={page.contents.contact} variant="S6"/>
       </section>
       <div style={{ marginBottom: "100px" }}/> 
-      <Footer FooterContent={page.contents.footer} variant="S1"/> 
+      <Footer FooterContent={page.contents.footer} variant="S8"/> 
     </>
   );
 }

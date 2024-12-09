@@ -1,8 +1,7 @@
+import page from '@/configs/page.json';
 import type { Metadata } from "next";
-import defaultConfig from "@/configs/default.json"
-import AzaleaLayout from "@/themes/azalea/layout";
-import GentianLayout from "@/themes/gentian/layout";
-
+import DynamicLayout from '@/app/dynamicLayout';
+import defaultConfig from "@/configs/default.json";
 
 export const metadata: Metadata = {
   title: defaultConfig.title,
@@ -14,7 +13,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = page.theme;
+
   return (
-    <GentianLayout>{children}</GentianLayout>
+    <html>
+      <body>
+        <DynamicLayout theme={theme}>
+          {children}
+        </DynamicLayout>    
+      </body>
+    </html>
   );
 }
