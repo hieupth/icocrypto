@@ -1,34 +1,29 @@
-import { ReactNode, useEffect, useState } from "react"
-import { isMobile, isTouch, getUserAgent } from "@/utils/browser"
+import { ReactNode, useEffect, useState, ComponentProps } from "react"
+import { getMobile, getTouch, getUserAgent } from "@/utils/browser"
 
+
+interface BodyProps extends ComponentProps<'body'> {
+  children?: ReactNode
+}
 
 export default function Body({ 
-  extraClasses, 
-  children 
-} : Readonly<{ 
-  extraClasses?: string, 
-  children?: ReactNode 
-}>) {
-  
-  const [_isTouch, setTouch] = useState(false);
-  const [_isMobile, setMobile] = useState(false);
-  const [_userAgent, setUserAgent] = useState("");
+  children,
+  ...props
+} : BodyProps)
+{
+  const _cls = 'nk-body body-wider mode-onepage';
+  const [_hasTouch, setTouch] = useState('');
+  const [_hasMobile, setMobile] = useState('');
+  const [_userAgent, setUserAgent] = useState('');
 
   useEffect(() => {
-    setTouch(isTouch());
-    setMobile(isMobile());
-    setUserAgent(getUserAgent());
+    setTouch(getTouch());
+    setMobile(getMobile());
+    setUserAgent(getUserAgent().toLowerCase());
   });
 
   return (
-    <body 
-      className={
-        `nk-body body-wider mode-onepage
-        ${_userAgent.toLowerCase()}
-        ${_isMobile ? "as-mobile" : ""} 
-        ${_isTouch ? "has-touch" : "no-touch"} 
-        ${extraClasses ? extraClasses : ""} `}
-    >
+    <body className={`${_cls} ${_userAgent} ${_hasTouch} ${_hasMobile} ${props.className}`} {...props}>
       {children}
     </body>
   );
