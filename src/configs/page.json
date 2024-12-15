@@ -1,5 +1,5 @@
 {
-    "theme": "azalea",
+    "theme": "gentian",
     "contents": {
         "banners": {
             "S1": {
@@ -560,32 +560,29 @@
             { "image": "https://ico.themenio.com/images/partners/f-light.png", "alt": "image of f-light" },
             { "image": "https://ico.themenio.com/images/partners/g-light.png", "alt": "image of g-light" }
         ],
-        "contact":[
-            {
-                "mainDetails": [
+        "contact":{  
+            "contact": [
                 { "icon": "fas fa-phone", "text": "+44 0123 4567" },
                 { "icon": "fas fa-envelope", "text": "info@company.com" },
                 { "icon": "fas fa-paper-plane", "text": "Join us on Telegram" }
-                ]
-            },
-            {
-                "socialLinks": [
+            ],    
+            "links": [
                 { "icon": "fab fa-twitter", "url": "#" },
                 { "icon": "fab fa-medium-m", "url": "#" },
                 { "icon": "fab fa-facebook-f", "url": "#" },
                 { "icon": "fab fa-youtube", "url": "#" },
                 { "icon": "fab fa-bitcoin", "url": "#" },
                 { "icon": "fab fa-github", "url": "#" }
-                ]
-            },
-            {
-                "description": {
+            ],
+            "infor": {
+                "title": "Contact Us",
+                "subTitle": "test subtitle",    
                 "text": "We are always open and we welcome any questions you have for our team. If you wish to get in touch, please fill out the form below.",
                 "backgroundImage": "https://ico.themenio.com/assets/images/dot-c-azalea.png",
-                "altText": "image of dot-c-azalea"
-                }
+                "altText": "image of dot-c-azalea",
+                "labelSubmitButton": "Submit"
             }
-        ],
+        },
         "faqTabs":{
             "title": "UPDATE",
             "mainTitle": "FAQS",
@@ -627,6 +624,48 @@
                 ]
                 }
             ]
-        }
+        },
+        "footer": {
+            "logoSrc": "https://ico.themenio.com/images/logo-full-white.png",
+            "logoAlt": "logo",
+            "socialLinkList": [],
+            "copyrightText": "Copyright © 2022 ICO.",
+            "templateBy": "Softnio",
+            "templateLink": "https://softnio.com/",
+            "handcraftedBy": "IO",
+            "handcraftedLink": "#",
+            "privacyPolicyLink": "#",
+            "termsOfSalesLink": "#",
+            "columns": [
+              {
+                "title": "COMPANY",
+                "items": [
+                  { "title": "About Us", "link": "#" },
+                  { "title": "Meet Our Team", "link": "#" },
+                  { "title": "Advisors", "link": "#" },
+                  { "title": "Insights", "link": "#" }
+                ]
+              },
+              {
+                "title": "Legal",
+                "items": [
+                  { "title": "Terms & Conditions", "link": "#" },
+                  { "title": "Privacy Policy", "link": "#" },
+                  { "title": "Terms of Sales", "link": "#" },
+                  { "title": "Whitepaper", "link": "#" }
+                ]
+              },
+              {
+                "title": "Quick Links",
+                "items": [
+                  { "title": "Ecosystems", "link": "#" },
+                  { "title": "Roadmaps", "link": "#" },
+                  { "title": "Faqs", "link": "#" },
+                  { "title": "Login", "link": "#" }
+                ]
+              }
+            ],
+            "buttonIcon": ""
+          }          
     }
 }
