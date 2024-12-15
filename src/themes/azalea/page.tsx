@@ -13,7 +13,7 @@ import CustomText from "@/components/elements/element-typography";
 import ProcessBar  from "@/components/elements/element-process-bar";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
-import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
+import BlockPartners from "@/components/blocks/block-OURPARTNER";
 import { BlockInPress } from '@/components/blocks/block-INPRESS';
 import { BlockNews } from '@/components/blocks/block-NEWS';
 import { Footer } from "@/components/blocks/block-footer"
@@ -23,6 +23,7 @@ import { BlockTokens } from "@/components/blocks/block-TOKEN";
 import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP"
+import BlockBanner from "@/components/blocks/block-banner";
 import { BlockContact } from "@/components/blocks/block-contact";
 import { BlockFeatureCards } from "@/components/blocks/block-feature-cards";
 
@@ -31,33 +32,7 @@ import page from '@/configs/page.json'
 export default function Home() {
  return (
     <>
-      <PageHeader title={page.contents.banner.title}>
-        <span>
-          {page.contents.banner.description}
-        </span>
-        <div
-          style={{
-            justifyContent: "center",
-            display: "flex",
-            gap: "20px",
-            marginTop: "5%",
-          }}
-        >
-          <CustomButton
-            variant={ColorStyle.Primary}
-            borderRadius={SizeStylable.BorderRadius}
-          >
-            Private Sale
-          </CustomButton>
-          <CustomButton
-            outline={ColorStyle.Outline}
-            variant={ColorStyle.Primary}
-            borderRadius={SizeStylable.BorderRadius}
-          >
-            Private Token
-          </CustomButton>
-        </div>
-      </PageHeader>
+      <BlockBanner variant="S1" dark={true} />
       <section
         style={{
           padding: "2% 10%",
@@ -216,7 +191,7 @@ export default function Home() {
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
-        <BlockOurPartner partners={page.contents.partners}/>
+        <BlockPartners variant="S1" />
       </div>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.documents.title} mainTitle={page.contents.documents.mainTitle}>Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
