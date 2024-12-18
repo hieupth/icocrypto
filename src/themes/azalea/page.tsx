@@ -13,53 +13,26 @@ import CustomText from "@/components/elements/element-typography";
 import ProcessBar  from "@/components/elements/element-process-bar";
 import { BlockFAQ } from "@/components/blocks/block-FAQ";
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
-import { BlockOurPartner } from "@/components/blocks/block-OURPARTNER";
+import BlockPartners from "@/components/blocks/block-OURPARTNER";
 import { BlockInPress } from '@/components/blocks/block-INPRESS';
 import { BlockNews } from '@/components/blocks/block-NEWS';
-import Footer from "@/components/blocks/block-footer"
+import { Footer } from "@/components/blocks/block-footer"
 
-import { BlockContactUs } from "@/components/blocks/block-CONTACT-US";
-import { BlockAbout } from "@/components/blocks/block-ABOUT";
-import { BlockEcosystems } from "@/components/blocks/block-ECOSYSTEMS";
-import BlockPlatform from "@/components/blocks/block-platform";
-import BlockMVP from "@/components/blocks/block-MVP";
+import { FeaturePanels } from "@/components/blocks/block-feature-panels";
 import { BlockTokens } from "@/components/blocks/block-TOKEN";
 import { BlockOurTeam } from "@/components/blocks/block-OURTEAM";
 import { BlockBoardMember } from "@/components/blocks/block-BOARD-MEMBER";
 import { BlockRoadMap } from "@/components/blocks/block-ROADMAP"
+import BlockBanner from "@/components/blocks/block-banner";
+import { BlockContact } from "@/components/blocks/block-contact";
+import { BlockFeatureCards } from "@/components/blocks/block-feature-cards";
 
 import page from '@/configs/page.json'
 
 export default function Home() {
  return (
     <>
-      <PageHeader title={page.contents.banner.title}>
-        <span>
-          {page.contents.banner.description}
-        </span>
-        <div
-          style={{
-            justifyContent: "center",
-            display: "flex",
-            gap: "20px",
-            marginTop: "5%",
-          }}
-        >
-          <CustomButton
-            variant={ColorStyle.Primary}
-            borderRadius={SizeStylable.BorderRadius}
-          >
-            Private Sale
-          </CustomButton>
-          <CustomButton
-            outline={ColorStyle.Outline}
-            variant={ColorStyle.Primary}
-            borderRadius={SizeStylable.BorderRadius}
-          >
-            Private Token
-          </CustomButton>
-        </div>
-      </PageHeader>
+      <BlockBanner variant="S1" dark={true} />
       <section
         style={{
           padding: "2% 10%",
@@ -173,16 +146,18 @@ export default function Home() {
       </section> 
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.about.title} mainTitle={page.contents.about.mainTitle} />
-      <BlockAbout aboutContent={page.contents.about}/>
+      <FeaturePanels featureContent={page.contents.about} variant="S20"/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.ecosystems.title} mainTitle={page.contents.ecosystems.mainTitle} />
-      <BlockEcosystems contents={page.contents.ecosystems.contents} imageBackground={page.contents.ecosystems.imageBackground}/>
+      <BlockFeatureCards featureContent={page.contents.ecosystems} variant="featureBoxS16"/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.platform.title} mainTitle={page.contents.platform.mainTitle} />
-      <BlockPlatform tabs = {page.contents.platform.tabsPlatform} />
+      {/*  PLATFORM */}
+      <FeaturePanels featureContent={page.contents.platform} variant="S21"/>
       <div style={{ marginBottom: "100px" }}/>
       <ContentTitleX1 title={page.contents.mvp.title} mainTitle={page.contents.mvp.mainTitle}>Our project is based on an existing cryptocurrency exchange.</ContentTitleX1>
-      <BlockMVP items={page.contents.mvp.items} />
+      {/* MVP */}
+      <FeaturePanels featureContent={page.contents.mvp} variant="S22"/>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.token.title} mainTitle={page.contents.token.mainTitle}>Breakdown of our Token Recipients.</ContentTitleX1>
       <section className="container">
@@ -216,7 +191,7 @@ export default function Home() {
         display: "flex", alignItems: "center", flexDirection: "column"
       }}>
         <CustomText heading="h4">OUR PARTNERS</CustomText>
-        <BlockOurPartner partners={page.contents.partners}/>
+        <BlockPartners variant="S1" />
       </div>
       <div style={{ marginBottom: "100px" }}/> 
       <ContentTitleX1 title={page.contents.documents.title} mainTitle={page.contents.documents.mainTitle}>Download the whitepaper and learn about ICO Token, the unique ICO Crypto approach and the team/advisors.</ContentTitleX1> 
@@ -250,10 +225,10 @@ export default function Home() {
       </section>
       <div style={{ marginBottom: "100px" }}/> 
       <section className="container">
-        <BlockContactUs contentList={page.contents.contact}/>
+        <BlockContact contactContent={page.contents.contact} variant="S6"/>
       </section>
       <div style={{ marginBottom: "100px" }}/> 
-      <Footer /> 
+      <Footer FooterContent={page.contents.footer} variant="S8"/> 
     </>
   );
 }
