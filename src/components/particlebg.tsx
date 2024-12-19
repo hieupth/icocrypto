@@ -20,7 +20,8 @@ interface ParticleBackgroundProps {
   linksDistance?: number;
 }
 
-const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
+
+export default function ParticleBG({
   count = 100,
   color = '#ffffff',
   maxRadius = 3,
@@ -29,7 +30,8 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
   lineColor = '255, 255, 255',
   lineOpacity = 0.1,
   linksDistance = 150,
-}) => {
+}: ParticleBackgroundProps) 
+{
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const particlesRef = useRef<Particle[]>([]);
 
@@ -95,23 +97,18 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     updateParticles(canvas);
     particlesRef.current.forEach((particle) => drawParticle(ctx, particle));
     drawLinks(ctx);
-
     requestAnimationFrame(animate);
   };
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -130,8 +127,7 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
 
   return (
     <canvas
-      ref={canvasRef}
-      style={{
+      ref={canvasRef} style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -141,6 +137,4 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
       }}
     />
   );
-};
-
-export default ParticleBackground;
+}

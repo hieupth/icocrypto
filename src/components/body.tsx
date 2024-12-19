@@ -11,7 +11,6 @@ export default function Body({
   ...props
 } : BodyProps)
 {
-  const _cls = 'nk-body body-wider mode-onepage';
   const [_hasTouch, setTouch] = useState('');
   const [_hasMobile, setMobile] = useState('');
   const [_userAgent, setUserAgent] = useState('');
@@ -23,7 +22,7 @@ export default function Body({
   });
 
   return (
-    <body className={`${_cls} ${_userAgent} ${_hasTouch} ${_hasMobile} ${props.className}`} {...props}>
+    <body className={`${_userAgent} ${_hasTouch} ${_hasMobile} ${props.className}`} {...props}>
       {children}
     </body>
   );
