@@ -5,14 +5,14 @@
  * @param ecls element classname will be combined. Example: btn-primary
  * @returns 
  */
-export const genclassname = (
+export function genclassname(
   e?: string,
   cls?: string,
   ecls?: Array<string>
-) => {
+) {
   return [
     e ? e : '',
     cls ? cls : '',
-    ecls?.map((x) => {return e ? `${e}-${x}` : x})
+    ecls?.map((x) => {return e ? `${e}-${x}` : x}).join(' ')
   ].join(' ').trim()
 }
