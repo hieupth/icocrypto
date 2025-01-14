@@ -11,9 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({
-  azalea
+  azalea,
+  gentian
 }: {
-  azalea?: ReactNode
+  azalea: ReactNode,
+  gentian: ReactNode
 }) {  
   return (
     <>{azalea}</>
