@@ -1,6 +1,7 @@
 name: GitHub Pages deploy
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -29,5 +30,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: public # The branch the action should deploy to.
-          folder: out # The folder the action should deploy to.
+          branch: public
+          folder: out
