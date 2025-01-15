@@ -44,10 +44,36 @@ export function Anchor({
   children,
   ...props
 } : {
-  e: string,
-  ecls: Array<string>,
+  e?: string,
+  ecls?: Array<string>,
   children?: ReactNode
 } & ComponentProps<"a">) 
 {
-  return <a {...props} className={genclassname(e, props.className, ecls)} >{children}</a>
+  return <a {...props} className={genclassname(e, props.className, ecls)}>{children}</a>
+}
+
+
+/**
+ * HTML list element.
+ * @param e element.
+ * @param ecls element combined classname.
+ * @param children array of reactnode. 
+ * @returns 
+ */
+export function List({
+  e,
+  ecls,
+  children,
+  ...props
+} : {
+  e?: string,
+  ecls?: Array<string>,
+  children?: Array<ReactNode>
+} & ComponentProps<"ul">)
+{
+  return (
+    <ul {...props} className={genclassname(e, props.className, ecls)}>
+      {children?.map((item, index) => {return <li key={index}>{item}</li>})}
+    </ul>
+  )
 }
