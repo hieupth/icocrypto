@@ -2,7 +2,7 @@
 import "./azalea.css";
 import { ReactNode, useRef, useEffect } from "react";
 import { ParticleBackground } from "@/components/background";
-import { Body, Anchor } from "@/components/common";
+import { Body, Anchor, List } from "@/components/common";
 import { Navbar } from "@/components/navbar";
 import siteconf from "@/config.json";
 
@@ -43,18 +43,21 @@ export default function Layout({
               items={siteconf.menu.items} 
               visible={siteconf.menu.visible}
               activate="home">
-                <li>
-                  <Anchor 
-                    e="btn"
-                    href="#"
-                    data-bs-toggle="modal"
-                    data-bs-target="#login-popup"
-                    className="no-change"
-                    ecls={["md", "thin", "outline", "auto", "round", "primary"]}
-                  >
-                    <span>Sign In</span>
-                  </Anchor>
-                </li>
+                <List className="menu-btns">
+                  {[
+                    <Anchor 
+                      key="0"
+                      e="btn"
+                      href="#"
+                      data-bs-toggle="modal"
+                      data-bs-target="#login-popup"
+                      className="no-change"
+                      ecls={["md", "thin", "outline", "auto", "round", "primary"]}
+                    >
+                      <span>Sign In</span>
+                    </Anchor>
+                  ]}
+                </List>
             </Navbar>
           </header>
             <main className='nk-pages tc-light' style={{zIndex: 2}}>

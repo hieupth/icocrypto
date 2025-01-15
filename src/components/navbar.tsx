@@ -41,8 +41,8 @@ export function NavBrand({
   src,
   text,
 }: {
-  src: string,
-  text: string
+  src?: string,
+  text?: string
 }) {
   return (
     <div className='header-logo logo'>
@@ -69,11 +69,11 @@ export function Navbar({
   activate,
   children
 } : {
-  brand: {src: string, text: string},
-  items: Array<{title: string, href: string}>,
-  visible: number,
-  activate: string,
-  children: ReactNode
+  brand?: {src: string, text: string},
+  items?: Array<{title: string, href: string}>,
+  visible?: number,
+  activate?: string,
+  children?: ReactNode
 }) 
 {
   const btnRef = useRef<HTMLButtonElement>(null)
@@ -115,17 +115,17 @@ export function Navbar({
     <NavbarBootstrap fixed='top' expand='lg' className='header-main' style={{zIndex:999}}>
       <Container className='container-xxl'>
         <div className='header-wrap'>
-          <NavBrand src={brand.src} text={brand.text}></NavBrand>
+          <NavBrand src={brand?.src} text={brand?.text}></NavBrand>
           <NavbarToggle aria-controls='basic-navbar-nav' className='navbar-toggle toggle-line' style={{color: '#fff', border: 0}} ref={btnRef}/>
           <NavbarCollapse id='basic-navbar-nav' className='header-nav-toggle' style={{flexGrow: 0}}>
             <div className='navbar-header-overlay' onClick={() => {btnRef.current?.click()}}></div>
             <div className='header-navbar menu-mobile'>
               <nav className='header-menu' id='header-menu'>
                 <ul className='menu'>
-                  {items.slice(0, visible).map((item) => {
+                  {items?.slice(0, visible ? visible : items.length).map((item) => {
                     return <NavItem key={item.title} title={item.title} href={item.href} active={item.title === activate}></NavItem>
                   })}
-                  {items.length > visible && (
+                  {items ? items.length > (visible ? visible : items.length) && (
                     <div className='menu-item dropdown has-sub'>
                       <a className='menu-link nav-link menu-toggle' onMouseEnter={onMouseHover} onMouseLeave={onMouseLeave} onClick={onMenuToggle} href='#'>More</a>
                       <ul className='menu-sub menu-drop'>
@@ -134,11 +134,9 @@ export function Navbar({
                         })}
                       </ul>
                     </div>
-                  )}
+                  ) : <></>}
                 </ul>
-                <ul className='menu-btns'>
-                  {children}
-                </ul>
+                {children}
               </nav>
             </div>
           </NavbarCollapse>

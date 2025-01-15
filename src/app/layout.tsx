@@ -16,8 +16,9 @@ export default function Layout({
 }: {
   azalea: ReactNode,
   gentian: ReactNode
-}) {  
-  return (
-    <>{azalea}</>
-  );
+}) {
+  switch(siteconfig.theme) {
+    case "gentian": return <>{gentian}</>
+    default: return <>{azalea}</>
+  }
 }
