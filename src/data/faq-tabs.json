@@ -1,0 +1,46 @@
+{
+  "tabs": [
+    {
+      "id": "tab1",
+      "title": "General Information",
+      "faqs": [
+        {
+          "title": "What is your return policy?",
+          "content": "Our return policy allows returns within 30 days of purchase, provided the item is unused and in its original packaging."
+        },
+        {
+          "title": "Do you ship internationally?",
+          "content": "Yes, we ship to most countries worldwide. Additional shipping fees may apply based on the destination."
+        }
+      ]
+    },
+    {
+      "id": "tab2",
+      "title": "Billing and Payments",
+      "faqs": [
+        {
+          "title": "What payment methods do you accept?",
+          "content": "We accept major credit cards, PayPal, and bank transfers. Please contact us for other payment options."
+        },
+        {
+          "title": "Can I get a refund?",
+          "content": "Refunds are issued for eligible returns or cancellations as per our refund policy. Contact support for assistance."
+        }
+      ]
+    },
+    {
+      "id": "tab3",
+      "title": "Technical Support",
+      "faqs": [
+        {
+          "title": "How do I reset my password?",
+          "content": "You can reset your password by clicking on 'Forgot Password' on the login page and following the instructions."
+        },
+        {
+          "title": "Where can I find user manuals?",
+          "content": "User manuals are available in the 'Support' section of our website. You can download them for free."
+        }
+      ]
+    }
+  ]
+}

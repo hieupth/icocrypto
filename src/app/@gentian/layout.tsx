@@ -5,7 +5,8 @@ import { ParticleBackground } from "@/components/background";
 import { Body, Anchor, List } from "@/components/common";
 import { Navbar } from "@/components/navbar";
 import siteconf from "@/config.json";
-
+import { Footer } from '@/components/blocks/block-footer'
+import footerData from '@/data/footer-data.json'
 
 export default function Layout({
   children,
@@ -77,6 +78,7 @@ export default function Layout({
         <div className="nk-ovm nk-ovm-repeat nk-ovm-fixed shape-i">
           <div className="ovm-line"></div>
         </div>
+        <Footer FooterContent = {footerData} variant="S1"/>
       </Body>
     </html>
   )
