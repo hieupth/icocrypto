@@ -1,4 +1,3 @@
-import BlockBanner from "@/components/blocks/block-banner";
 import { BlockContact } from "@/components/blocks/block-contact";
 import BlockCoreTeam from "@/components/blocks/block-core-team";
 import { BlockFAQ } from '@/components/blocks/block-FAQ'
@@ -10,8 +9,6 @@ import { tokenData, tokenInfo } from "@/data/token_chart";
 import { roadmapData } from "@/data/roadmap";
 import { Footer } from '@/components/blocks/block-footer'
 import footerData from '@/data/footer-data.json'
-import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
-import { documentItems } from "@/data/docs";
 import BannerSalvia from "@/components/blocks/block-banner-salvia";
 import {leftPannel,rightPannel} from "@/data/banner";
 export default function Page() {
@@ -48,14 +45,6 @@ export default function Page() {
                     <div className="section-head text-center wide-auto">
                         <h2 className="title title-lg title-dark ">Core Team</h2>
                         <BlockCoreTeam />
-                    </div>
-                </div>
-            </section>
-            <section id="docs" className="section bg-theme-dark pb-2">
-                <div className="container">
-                    <div className="section-head text-center wide-auto">
-                        <h2 className="title title-lg title-dark ">Docs</h2>
-                        <BlockDocument documents={documentItems} />
                     </div>
                 </div>
             </section>
