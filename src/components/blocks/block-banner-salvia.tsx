@@ -25,7 +25,7 @@ interface RightPannel {
     title: string;
     date_countdown: string;
     token: TokenData | null;
-    button_link: string ;
+    button_link: string;
     percent_off: number | null;
     minimum: string | null;
 
@@ -73,7 +73,6 @@ const BannerSalvia: React.FC<BlockBannerSalviaProps> = ({ left_pannel, right_pan
                                                 </div>
                                                 :
                                                 <></>}
-
                                             <div className="token-action token-action-s2 flex-wrap flex-sm-nowrap">
                                                 <a href={right_pannel.button_link} className="btn btn-md btn-secondary">
                                                     Buy Tokens with {right_pannel.percent_off}% off
@@ -112,7 +111,6 @@ const BannerSalvia: React.FC<BlockBannerSalviaProps> = ({ left_pannel, right_pan
                                                     </li>
                                                 </ul>
                                             </div>
-
                                             {
                                                 left_pannel.community ? (
                                                     <div className="cpn-social">
@@ -126,13 +124,11 @@ const BannerSalvia: React.FC<BlockBannerSalviaProps> = ({ left_pannel, right_pan
                                                                     </a>
                                                                 </li>
                                                             ))}
-                                                                
+
                                                         </ul>
                                                     </div>
                                                 ) : null
                                             }
-
-
                                         </div>
                                     </div>
                                 </div>
