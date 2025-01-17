@@ -37,7 +37,7 @@ interface BlockBannerSalviaProps {
 
 const BannerSalvia: React.FC<BlockBannerSalviaProps> = ({ left_pannel, right_pannel }) => {
     return (
-        <div className="tab-pane" id="banner-mask-lg03">
+        <div id="banner-mask-lg03">
             <div className="header-banner bg-theme-grad">
                 <div className="nk-banner">
                     <div className="banner banner-fs banner-single banner-s1 banner-s1-overlay">
