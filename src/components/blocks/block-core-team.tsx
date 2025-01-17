@@ -150,10 +150,10 @@ const popupStyle: React.CSSProperties = {
     borderRadius: "10px",
     width: "80%",
     maxWidth: "910px",
+    position: 'absolute'
 };
 
 const closeButtonStyle: React.CSSProperties = {
-    position: 'absolute',
     right: "10px",
     top: "10px",
     fontSize: "30px",
