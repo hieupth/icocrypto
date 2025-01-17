@@ -1,4 +1,3 @@
-import BlockBanner from "@/components/blocks/block-banner";
 import { BlockContact } from "@/components/blocks/block-contact";
 import BlockCoreTeam from "@/components/blocks/block-core-team";
 import { BlockFAQ } from '@/components/blocks/block-FAQ'
@@ -10,10 +9,12 @@ import { tokenData, tokenInfo } from "@/data/token_chart";
 import { roadmapData } from "@/data/roadmap";
 import { Footer } from '@/components/blocks/block-footer'
 import footerData from '@/data/footer-data.json'
+import BannerSalvia from "@/components/blocks/block-banner-salvia";
+import {leftPannel,rightPannel} from "@/data/banner";
 export default function Page() {
     return (
         <>
-            <BlockBanner variant="S1" />
+            <BannerSalvia right_pannel={rightPannel} left_pannel={leftPannel}  />
             <section id="tokens" className="section pb-2 tc-light">
                 <div className=" text-center wide-auto">
                     <h2 className="title title-dark ">Token</h2>
@@ -22,6 +23,7 @@ export default function Page() {
                     <BlockTokens chartData={tokenData} tokenInfo={tokenInfo} canvasId={"tokens"} />
                 </div>
             </section>
+            
             <section id="roadmap" className="section  pb-2 tc-light">
                 <div className="section-head text-center wide-auto">
                     <h2 className="title title-lg title-dark ">Roadmap</h2>
