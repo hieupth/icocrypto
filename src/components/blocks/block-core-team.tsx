@@ -30,6 +30,7 @@ const BlockCoreTeam = () => {
 
     const handleClosePopup = () => {
         setSelectedMember(null);
+        console.log('okmen')
     };
 
     return (
@@ -75,7 +76,7 @@ const BlockCoreTeam = () => {
                 <div style={popupOverlayStyle}>
                     <div style={popupStyle}>
                         <a title="Close" className="mfp-close" onClick={handleClosePopup} style={closeButtonStyle}>
-                            ×
+                            x
                         </a>
                         <div className="row align-items-start">
                             <div className="col-md-6">
@@ -132,7 +133,7 @@ const BlockCoreTeam = () => {
 
 const popupOverlayStyle: React.CSSProperties = {
     position: "fixed",
-    top: 0,
+    top: "5%",
     left: 0,
     width: "100%",
     height: "100%",
@@ -152,15 +153,15 @@ const popupStyle: React.CSSProperties = {
 };
 
 const closeButtonStyle: React.CSSProperties = {
-    position: "absolute",
-    top: "10px",
+    position: 'absolute',
     right: "10px",
+    top: "10px",
     fontSize: "30px",
     cursor: "pointer",
     color: "#000",
     backgroundColor: "transparent",
     border: "none",
-    zIndex: 1101,
+    zIndex: 6,
     display: "block",
 };
 
