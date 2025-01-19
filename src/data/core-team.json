@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.postimg.cc/cJs004jH/pp46-quocbinh.png",
+        "name": "Quoc Binh",
+        "position": "Project Manager",
+        "socialLinks": {
+            "facebook": "#",
+            "linkedin": "#"
+        },
+        "description": [
+            "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+            "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks."
+        ]
+    },
+    {
+        "id": 2,
+        "image": "https://i.postimg.cc/KvPY2Vz0/ngh-a.jpg",
+        "name": "Huynh Dang Nghia",
+        "position": "Tech Lead",
+        "socialLinks": {
+            "facebook": "#",
+            "linkedin": "#"
+        },
+        "description": [
+            "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+            "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks."
+        ]
+    },
+    {
+        "id": 3,
+        "image": "https://i.postimg.cc/ThMvSRgT/IMG20240924171427.jpg",
+        "name": "Tung Duong",
+        "position": "Junior",
+        "socialLinks": {
+            "facebook": "#",
+            "linkedin": "#"
+        },
+        "description": [
+            "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+            "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks."
+        ]
+    },
+    {
+        "id": 4,
+        "image": "https://i.postimg.cc/dtjJXyHX/download-19.jpg",
+        "name": "Anh Tuan",
+        "position": "Junior",
+        "socialLinks": {
+            "facebook": "#",
+            "linkedin": "#"
+        },
+        "description": [
+            "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+            "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks."
+        ]
+    },
+    {
+        "id": 5,
+        "image": "https://i.postimg.cc/Z5YJh5Xq/download-20.jpg",
+        "name": "Quynh",
+        "position": "Intern",
+        "socialLinks": {
+            "facebook": "#",
+            "linkedin": "#"
+        },
+        "description": [
+            "She is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+            "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks."
+        ]
+    },
+    {
+        "id": 6,
+        "image": "https://i.postimg.cc/dtjJXyHX/download-19.jpg",
+        "name": "Quan",
+        "position": "Intern",
+        "socialLinks": {
+            "facebook": "#",
+            "linkedin": "#"
+        },
+        "description": [
+            "He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem.",
+            "Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks."
+        ]
+    }
+]

@@ -6,7 +6,6 @@ import { Body, Anchor, List } from "@/components/common";
 import { Navbar } from "@/components/navbar";
 import siteconf from "@/config.json";
 
-
 export default function Layout({
   children,
 } : {
