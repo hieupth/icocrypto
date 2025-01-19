@@ -1,4 +1,3 @@
-import BlockBanner from "@/components/blocks/block-banner";
 import { BlockContact } from "@/components/blocks/block-contact";
 import BlockCoreTeam from "@/components/blocks/block-core-team";
 import { BlockFAQ } from '@/components/blocks/block-FAQ'
@@ -14,14 +13,16 @@ import { BlockAbout } from "@/components/blocks/block-about";
 import aboutData from '@/data/about.json'
 import { BlockDocument } from "@/components/blocks/block-DOCUMENT";
 import documentData from '@/data/document.json'
+import BannerSalvia from "@/components/blocks/block-banner-salvia";
+import { leftPannel, rightPannel } from "@/data/banner";
 
 export default function Page() {
     return (
         <>
-            <BlockBanner variant="S1" />
+            <BannerSalvia right_pannel={rightPannel} left_pannel={leftPannel} />
             <section id="about" className="section pb-2 tc-light">
                 <div className="">
-                    <BlockAbout AboutContent={aboutData} variant="S1"/>
+                    <BlockAbout AboutContent={aboutData} variant="S1" />
                 </div>
             </section>
             <section id="tokens" className="section pb-2 tc-light">
