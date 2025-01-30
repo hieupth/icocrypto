@@ -1,23 +1,21 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@/app/vendor.bundle.css";
+import { ReactNode } from 'react';
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import defaultConfig from "@/configs/default.json"
+import siteconfig from "@/data/config.json";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: defaultConfig.title,
-  description: defaultConfig.description,
+  title: siteconfig.title,
+  description: siteconfig.description,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Layout({
+  azalea
+}: {
+  azalea: ReactNode
+}) {  
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>{azalea}</>
   );
 }
