@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, ComponentProps } from "react";
 import siteConfig from "@/data/config.json";
 
 interface ItemProps {
@@ -89,7 +89,7 @@ function Item ({href, title, items, isActivated, column}: ItemProps)
  * Main menu on the nagivation bar.
  * @returns 
  */
-export default function Menu () 
+export default function Menu (props: ComponentProps<'div'>) 
 {
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -114,6 +114,7 @@ export default function Menu ()
             return <Item key={index} {...item}/>
           })}
         </ul>
+        {props.children}
       </nav>
       <div className='header-navbar-overlay'></div>
     </div>

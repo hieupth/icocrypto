@@ -1,5 +1,4 @@
 import { ComponentProps, useEffect, useRef } from "react";
-import Navbar from "@/ui/blocks/navbar";
 
 /**
  * Header section.
@@ -27,7 +26,6 @@ export default function Header (props: ComponentProps<'div'>)
 
   return (
     <header id='header' ref={headerRef} {...props} className={`nk-header page-header is-transparent is-sticky ${props.className}`}>
-      <Navbar></Navbar>
       {props.children}
     </header>
   )

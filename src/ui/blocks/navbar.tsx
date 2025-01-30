@@ -2,7 +2,7 @@ import NavLinkWrapper from 'react-bootstrap/NavLink';
 import Container from 'react-bootstrap/Container';
 import NavbarBootstrap from 'react-bootstrap/Navbar';
 import Menu from '@/ui/blocks/menu';
-import { useRef } from 'react';
+import { ComponentProps, useRef } from 'react';
 import siteConfig from '@/data/config.json';
 
 interface NavBrandProps {
@@ -53,14 +53,14 @@ function NavbarToggle ()
  * Navigation bar.
  * @returns 
  */
-export default function Navbar() {
+export default function Navbar (props: ComponentProps<'div'>) {
   return(
     <NavbarBootstrap fixed='top' expand='lg' className='header-main' style={{zIndex:999}}>
       <Container className='container-xxl'>
         <div className='header-wrap'>
           <NavbarBrand {...siteConfig.logo}></NavbarBrand>
           <NavbarToggle></NavbarToggle>
-          <Menu></Menu>
+          <Menu>{props.children}</Menu>
         </div>
       </Container>
     </NavbarBootstrap>
