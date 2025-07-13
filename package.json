@@ -11,23 +11,23 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.5",
-    "icocrypto": "file:",
-    "lucide-react": "^0.439.0",
-    "next": "^14.2.12",
-    "react": "^18.3.1",
-    "react-bootstrap": "^2.10.4",
-    "react-dom": "^18.3.1",
+    "icocrypto": "file:.",
+    "lucide-react": "^0.525.0",
+    "next": "^15.3.5",
+    "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.0",
     "react-select": "^5.8.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/node": "^24.0.13",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@types/react-slick": "^0.23.13",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.4",
-    "typescript": "^5"
+    "eslint": "^9.31.0",
+    "eslint-config-next": "15.3.5",
+    "typescript": "^5.8.3"
   }
 }

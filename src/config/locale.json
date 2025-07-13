@@ -1,0 +1,30 @@
+{
+  "supportedLocales": ["en", "vi", "jp"],
+  "defaultLocale": "en",
+  "locales": {
+    "en": {
+      "name": "English",
+      "nativeName": "English",
+      "flag": "🇺🇸",
+      "rtl": false,
+      "dateFormat": "MM/dd/yyyy",
+      "numberFormat": "en-US"
+    },
+    "vi": {
+      "name": "Vietnamese", 
+      "nativeName": "Tiếng Việt",
+      "flag": "🇻🇳",
+      "rtl": false,
+      "dateFormat": "dd/MM/yyyy",
+      "numberFormat": "vi-VN"
+    },
+    "jp": {
+      "name": "Japanese",
+      "nativeName": "日本語", 
+      "flag": "🇯🇵",
+      "rtl": false,
+      "dateFormat": "yyyy/MM/dd",
+      "numberFormat": "ja-JP"
+    }
+  }
+}
