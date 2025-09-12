@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image}  from "next-public-assets";
 import styles from "./page.module.css";
 
 export default function Home() {
